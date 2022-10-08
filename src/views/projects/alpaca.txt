@@ -1,0 +1,13 @@
+The alpaca project, previously known as the wearable toolkit is a mobile applicaton project I helped developed in the Labaratory for Playful Computation.
+The project hopes to teach the youth about the world of machine learning through the lense of improving physical fitness and training sports skills.*
+
+The application connects through bluetooth to a accelerometer and gryoscope arduino board. 
+When the user decide to try the action in mind, they record a video while simulationously record accelerometer data in the x y z direction. 
+The application then graphs the data out for the user and using a dynamic time warping algorithm categories the action as good or bad. 
+The user can then determine if the algorithms decision is correct giving it more data to train off of for future swings*
+
+The application works to be sports trainer in any activity, correcting the users form over time to help them perfect their technique. 
+But initially, it itself is instead trained by the user, giving the user an experience with training a machine learning model. 
+The application can give a new understand to the processes involved in machine learning while also help improve sports form and technique over time.  
+
+Link %  LPC Github Link % https://github.com/LaboratoryForPlayfulComputation/AlpacaML

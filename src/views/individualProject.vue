@@ -1,0 +1,160 @@
+<template>
+  <div class="project-object">
+    <h1 :name="title_current_name"> {{title_current_name}}</h1>
+   <!--- <img class="project-icon" :src="main_img"/> -->
+
+    <div class="description" id="description">
+    </div>
+  </div>
+</template>
+
+<script>
+  import storyglowText from 'raw-loader!./projects/storyglow.txt';
+  import munchmapsText from 'raw-loader!./projects/munchmaps.txt';
+  import fractalText from 'raw-loader!./projects/fractal.txt';
+  import H3Text from 'raw-loader!./projects/H3.txt';
+  import heartbeatCheckerText from 'raw-loader!./projects/heartbeatChecker.txt';
+  import alpacaText from 'raw-loader!./projects/alpaca.txt';
+  import seagateText from 'raw-loader!./projects/seagate.txt';
+  export default {
+    name: 'project-object',
+    data() {
+      return {
+        storyglowText: storyglowText,
+        munchmapsText: munchmapsText,
+        fractalText: fractalText,
+        H3Text: H3Text,
+        heartbeatCheckerText: heartbeatCheckerText,
+        alpacaText: alpacaText,
+        seagateText
+      }
+    },
+    mounted() {
+      this.build_project_page()
+    },
+    computed: {
+      current_name() {
+        let url =  window.location.href;
+        let page_name = url.split('individual-project/');
+        return page_name[1];
+      },
+      title_current_name() {
+        var project_name = this.current_name;
+        if (project_name == "fractal") {
+          project_name = "Fractal Music Visualization";
+        }
+        return project_name.charAt(0).toUpperCase() + project_name.slice(1);
+      },
+      main_img() {
+        let base_url = '../assets/project-imgs/';
+        let current_name = this.current_name;
+        let url = base_url + current_name + ".png";
+        console.log(url);
+        var images = require.context('../assets/project-imgs/')
+        return images('./' + current_name + ".png");
+      }
+    },
+    methods: {
+      build_project_page: function() {
+        let project_name = this.current_name;
+        let project_name_description = project_name + "Text";
+        var temp = document.getElementById('description');
+        let project_description_string = this[project_name_description];
+        let project_array = project_description_string.split("*");
+        for (let i = 0; i < project_array.length; i++) {
+          var media_objects = []
+          if (project_array[i].includes('%')) {
+            media_objects = project_array[i].split("%");
+          }
+          if (project_array[i].includes("Link")) {
+            this.create_link_object(temp, media_objects)
+          } else if (project_array[i].includes("VIDEO")) {
+            this.create_video_object(temp, media_objects)
+          } else if (project_array[i].includes("LIST")) { 
+            this.create_list_object(temp, media_objects)
+          } else {
+            let p = document.createElement('p');
+            p.innerHTML = project_array[i];
+            temp.appendChild(p);
+          }
+        }
+      },
+      create_video_object(temp, media_objects) {
+        var video_div = document.createElement('div');
+        video_div.width = "100%";
+        video_div.style.textAlign = "center";
+        var video = document.createElement('iframe');
+        video.src = media_objects[1];
+        video.width = media_objects[2];
+        video.height = media_objects[3];
+        video_div.appendChild(video);
+        temp.appendChild(video_div);
+        temp.appendChild(document.createElement("p"));
+      },
+      create_link_object(temp, media_objects) {
+        var a = document.createElement("a");
+        var link_div = document.createElement('div');
+        link_div.width = "100%";
+        link_div.style.textAlign = "center";
+        var text = document.createTextNode(media_objects[1]);
+        a.appendChild(text);
+        a.title = media_objects[1];
+        a.href = media_objects[2];
+        link_div.appendChild(a);
+        temp.append(link_div);
+      },
+      create_list_object(temp, media_objects) {
+        var link_div = document.createElement('div');
+        link_div.width = "100%";
+        link_div.style.textAlign = "center";
+        var ul = document.createElement("ul");
+        for (var i = 1; i<media_objects.length; i++) {
+          var li = document.createElement('li');
+          li.value = media_objects[i]
+          ul.appendChild(li)
+        }
+        temp.append(ul);
+      },
+
+    }
+  }
+</script>
+
+<style scoped>
+  img {
+    width: 30%;
+  }
+  .project-object {
+    min-height: 100vh;
+  }
+  .project-icon {
+    max-width: 20%;
+    margin-bottom: 20px;
+  }
+  .general_info {
+    margin-top: 1px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0.5%;
+  }
+  .home {
+    height: 100%;
+    background-color: rgba(0, 0, 650, 0.2);
+    margin: 1%;
+    min-height: 100%;
+    padding: 2%;
+  }
+  .description {
+    margin-bottom: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: black;
+    font-weight: 450;
+    text-align: justify;
+    display: inline-block;
+  }
+  h1 {
+    color: black;
+    font-size: 50px;
+  }
+</style>
