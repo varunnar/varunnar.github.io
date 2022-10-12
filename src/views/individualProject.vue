@@ -32,6 +32,11 @@
     mounted() {
       this.build_project_page()
     },
+    watch: {
+      current_name: function() {
+        this.build_project_page()
+      }
+    },
     computed: {
       current_name() {
         let url =  window.location.href;
@@ -67,11 +72,11 @@
             media_objects = project_array[i].split("%");
           }
           if (project_array[i].includes("Link")) {
-            this.create_link_object(temp, media_objects)
+            this.create_link_object(temp, media_objects);
           } else if (project_array[i].includes("VIDEO")) {
-            this.create_video_object(temp, media_objects)
+            this.create_video_object(temp, media_objects);
           } else if (project_array[i].includes("LIST")) { 
-            this.create_list_object(temp, media_objects)
+            this.create_list_object(temp, media_objects);
           } else {
             let p = document.createElement('p');
             p.innerHTML = project_array[i];
@@ -110,7 +115,7 @@
         var ul = document.createElement("ul");
         for (var i = 1; i<media_objects.length; i++) {
           var li = document.createElement('li');
-          li.value = media_objects[i]
+          li.innerHTML = media_objects[i];
           ul.appendChild(li)
         }
         temp.append(ul);
