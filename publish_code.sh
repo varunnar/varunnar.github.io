@@ -14,6 +14,8 @@ cd dist
 
 git add -A 
 
+cd ..
+
 git commit -m 'deployment'
 
 git subtree push --prefix dist origin gh-pages
