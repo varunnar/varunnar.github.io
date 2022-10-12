@@ -26,16 +26,16 @@
         H3Text: H3Text,
         heartbeatCheckerText: heartbeatCheckerText,
         alpacaText: alpacaText,
-        seagateText
+        seagateText: seagateText,
+        current_url: ''
       }
     },
     mounted() {
-      this.build_project_page()
+      this.build_project_page();
     },
-    watch: {
-      current_name: function() {
-        this.build_project_page()
-      }
+    beforeUpdate() {
+      console.log("beforeUpdate")
+      this.build_project_page();
     },
     computed: {
       current_name() {
@@ -61,6 +61,7 @@
     },
     methods: {
       build_project_page: function() {
+        console.log("building project")
         let project_name = this.current_name;
         let project_name_description = project_name + "Text";
         var temp = document.getElementById('description');
