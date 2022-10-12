@@ -65,6 +65,7 @@
         let project_name = this.current_name;
         let project_name_description = project_name + "Text";
         var temp = document.getElementById('description');
+        temp.textContent = '';
         let project_description_string = this[project_name_description];
         let project_array = project_description_string.split("*");
         for (let i = 0; i < project_array.length; i++) {
