@@ -5,6 +5,17 @@
       <a v-else href="resume.pdf">Resume</a>
     </div>
   </div>
+  <!-- <div v-if="isButton" class="button-text">
+      <router-link v-if="!isResume" :to="navigationUrl"> 
+        <div class="bubble-icon" :style="styleObj"> {{navigationName}} </div> 
+      </router-link>
+      <div v-else class="bubble-icon" :style="styleObj">
+        <a href="resume.pdf">Resume</a> 
+      </div>
+    </div>
+    <div v-else> 
+      <div class="bubble-icon" :style="styleObj"> </div> 
+    </div> -->
 </template>
 
 

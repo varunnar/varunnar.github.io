@@ -70,13 +70,13 @@
         let project_array = project_description_string.split("*");
         for (let i = 0; i < project_array.length; i++) {
           var media_objects = []
-          if (project_array[i].includes('%')) {
-            media_objects = project_array[i].split("%");
+          if (project_array[i].includes('####')) {
+            media_objects = project_array[i].split("####");
           }
           if (project_array[i].includes("Link")) {
             this.create_link_object(temp, media_objects);
-          } else if (project_array[i].includes("VIDEO")) {
-            this.create_video_object(temp, media_objects);
+          } else if (project_array[i].includes("FRAME")) {
+            this.create_frame_object(temp, media_objects);
           } else if (project_array[i].includes("LIST")) { 
             this.create_list_object(temp, media_objects);
           } else {
@@ -86,16 +86,17 @@
           }
         }
       },
-      create_video_object(temp, media_objects) {
-        var video_div = document.createElement('div');
-        video_div.width = "100%";
-        video_div.style.textAlign = "center";
-        var video = document.createElement('iframe');
-        video.src = media_objects[1];
-        video.width = media_objects[2];
-        video.height = media_objects[3];
-        video_div.appendChild(video);
-        temp.appendChild(video_div);
+      create_frame_object(temp, media_objects) {
+        var frame_div = document.createElement('div');
+        frame_div.width = "100%";
+        frame_div.style.textAlign = "center";
+        var frame = document.createElement('iframe');
+        frame.src = media_objects[1];
+        frame.width = media_objects[2];
+        frame.height = media_objects[3];
+        frame.setAttribute('allowFullScreen', '')
+        frame_div.appendChild(frame);
+        temp.appendChild(frame_div);
         temp.appendChild(document.createElement("p"));
       },
       create_link_object(temp, media_objects) {
@@ -111,16 +112,17 @@
         temp.append(link_div);
       },
       create_list_object(temp, media_objects) {
-        var link_div = document.createElement('div');
-        link_div.width = "100%";
-        link_div.style.textAlign = "center";
+        var list_div = document.createElement('div');
+        list_div.width = "100%";
+        list_div.style.textAlign = "center";
         var ul = document.createElement("ul");
         for (var i = 1; i<media_objects.length; i++) {
           var li = document.createElement('li');
           li.innerHTML = media_objects[i];
           ul.appendChild(li)
         }
-        temp.append(ul);
+        list_div.append(ul);
+        temp.append(list_div);
       },
 
     }

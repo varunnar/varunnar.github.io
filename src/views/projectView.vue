@@ -65,6 +65,11 @@
       background-size: 75%;
       background-repeat: no-repeat;
       background-position: center;
+      opacity: 80%;
+    }
+
+    .project-obj:hover {
+      opacity: 100%;
     }
     .seagate {
       background-image: url("../assets/project-imgs/seagate.png");

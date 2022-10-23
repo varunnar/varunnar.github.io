@@ -4,9 +4,9 @@ Munchmaps is an iOS mobile application that allows users to search for a filtere
 Once discovered they can then save the restaurants as Saved or Future restaurants. *
 
 Below is a short video demo of how Munchmaps works in action running on a real phone *
-VIDEO % https://player.vimeo.com/video/333646784?h=f176f1acc8 % 300px % 450px * 
+FRAME #### https://player.vimeo.com/video/333646784?h=f176f1acc8 #### 300px #### 450px * 
 
 Munchmaps is developed in Swift and uses the Zomato API to display the needed restaurants in the local area. 
 It displays a map indicator of where the restaurant is and allows users to see a quick list of all saved and future restaurants.*
 
-Link % Github link % https://github.com/varunknarayanswamy/MunchMaps
+Link #### Github link #### https://github.com/varunknarayanswamy/MunchMaps
