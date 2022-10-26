@@ -114,14 +114,27 @@
       create_list_object(temp, media_objects) {
         var list_div = document.createElement('div');
         list_div.width = "100%";
-        list_div.style.textAlign = "center";
-        var ul = document.createElement("ul");
+        list_div.style.display = "flex";
+        list_div.style.justifyContent = "space-evenly";
+        var list_number = Math.round(media_objects.length/3);
+        console.log(list_number)
+        if (list_number > 4) {
+          list_number = 4;
+        }
+        var ul_array = [] 
+        for (var j = 0; j<list_number; j++) {
+          ul_array.push(document.createElement("ul"))
+        }
         for (var i = 1; i<media_objects.length; i++) {
+          let correct_array = Math.floor(i/list_number);
+          let selected_ul = i - correct_array * list_number;
           var li = document.createElement('li');
           li.innerHTML = media_objects[i];
-          ul.appendChild(li)
+          ul_array[selected_ul].appendChild(li)
         }
-        list_div.append(ul);
+        for (var k = 0; k<list_number; k++) {
+          list_div.append(ul_array[k])
+        }
         temp.append(list_div);
       },
 
