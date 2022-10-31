@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "publish": "sh publish_code.sh"
+    "publish": "sh publish_code.sh",
+    "deploy": "cd dist && cp index.html 404.html"
   },
   "dependencies": {
     "@pdftron/webviewer": "^8.0.0",
