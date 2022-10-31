@@ -117,7 +117,6 @@
         list_div.style.display = "flex";
         list_div.style.justifyContent = "space-evenly";
         var list_number = Math.round(media_objects.length/3);
-        console.log(list_number)
         if (list_number > 4) {
           list_number = 4;
         }
@@ -136,8 +135,7 @@
           list_div.append(ul_array[k])
         }
         temp.append(list_div);
-      },
-
+      }
     }
   }
 </script>
