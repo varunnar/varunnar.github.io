@@ -40,7 +40,7 @@
     computed: {
       current_name() {
         let url =  window.location.href;
-        let page_name = url.split('individual-project/');
+        let page_name = url.split('io/');
         return page_name[1];
       },
       title_current_name() {

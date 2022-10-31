@@ -26,37 +26,37 @@ const routes = [
     component: () => import('../views/resumeView.vue')
   },
   {
-    path: '/project/individual-project/storyglow',
+    path: '/storyglow',
     name: 'individual-project/storyglow',
     component: () => import( '../views/individualProject.vue'),
   },
   {
-    path: '/project/individual-project/munchmaps',
+    path: '/munchmaps',
     name: 'individual-project/munchmaps',
     component: () => import( '../views/individualProject.vue'),
   },
   {
-    path: '/project/individual-project/fractal',
+    path: '/fractal',
     name: 'individual-project/fractal',
     component: () => import( '../views/individualProject.vue'),
   },
   {
-    path: '/project/individual-project/H3',
+    path: '/H3',
     name: 'individual-project/H3',
     component: () => import( '../views/individualProject.vue'),
   },
   {
-    path: '/project/individual-project/alpaca',
+    path: '/alpaca',
     name: 'individual-project/alpaca',
     component: () => import( '../views/individualProject.vue'),
   },
   {
-    path: '/project/individual-project/heartbeatChecker',
+    path: '/heartbeatChecker',
     name: 'individual-project/heartbeatChecker',
     component: () => import( '../views/individualProject.vue'),
   },
   {
-    path: '/project/individual-project/seagate',
+    path: '/seagate',
     name: 'individual-project/seagate',
     component: () => import( '../views/individualProject.vue'),
   },
