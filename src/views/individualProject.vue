@@ -34,13 +34,13 @@
       this.build_project_page();
     },
     beforeUpdate() {
-      console.log("beforeUpdate")
       this.build_project_page();
     },
     computed: {
       current_name() {
-        let url =  window.location.href;
-        let page_name = url.split('io/');
+        let page_name = window.location.pathname.split( '/' )
+        // let url =  window.location.href;
+        // let page_name = url.split('window.location.origin');
         return page_name[1];
       },
       title_current_name() {
@@ -135,6 +135,23 @@
           list_div.append(ul_array[k])
         }
         temp.append(list_div);
+      },
+      create_image_object(temp, media_objects) {
+        var image_div = document.createElement('div');
+        let grid_col = Math.floor(Math.square_images(media_objects.length));
+        let auto_number = "";
+        for (var i = 0; i<grid_col; i++) {
+          auto_number += "auto ";
+        }
+        image_div.style.display = "grid";
+        image_div.style.gridTemplateColumns = auto_number;
+        for (var j = 0; j<media_objects.length; j++) {
+          var grid_object = document.createElement("img");
+          let image_url = "../assets/project-imgs/" + media_objects[j];
+          grid_object.src = image_url;
+          image_div.appendChild(grid_object);
+        }
+        temp.append(image_div)
       }
     }
   }
