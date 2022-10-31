@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <h1>PROJECTS</h1>
   <div class="projects">
       <div class="projects-obj">
@@ -6,7 +6,7 @@
           </div>
       </div>
   </div>
-</template> -->
+</template>
 
 <script>
   import storyglowText from 'raw-loader!./projects/storyglow.txt'
