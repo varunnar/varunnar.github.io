@@ -41,8 +41,8 @@ const routes = [
     component: () => import( '../views/individualProject.vue'),
   },
   {
-    path: '/H3',
-    name: 'individual-project/H3',
+    path: '/D3',
+    name: 'individual-project/D3',
     component: () => import( '../views/individualProject.vue'),
   },
   {

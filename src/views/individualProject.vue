@@ -12,7 +12,7 @@
   import storyglowText from 'raw-loader!./projects/storyglow.txt';
   import munchmapsText from 'raw-loader!./projects/munchmaps.txt';
   import fractalText from 'raw-loader!./projects/fractal.txt';
-  import H3Text from 'raw-loader!./projects/H3.txt';
+  import D3Text from 'raw-loader!./projects/D3.txt';
   import heartbeatCheckerText from 'raw-loader!./projects/heartbeatChecker.txt';
   import alpacaText from 'raw-loader!./projects/alpaca.txt';
   import seagateText from 'raw-loader!./projects/seagate.txt';
@@ -23,7 +23,7 @@
         storyglowText: storyglowText,
         munchmapsText: munchmapsText,
         fractalText: fractalText,
-        H3Text: H3Text,
+        D3Text: D3Text,
         heartbeatCheckerText: heartbeatCheckerText,
         alpacaText: alpacaText,
         seagateText: seagateText,
@@ -47,6 +47,9 @@
         var project_name = this.current_name;
         if (project_name == "fractal") {
           project_name = "Fractal Music Visualization";
+        } 
+        if (project_name == "D3") {
+          project_name = "Internet Acessibility Map"
         }
         return project_name.charAt(0).toUpperCase() + project_name.slice(1);
       },
@@ -72,7 +75,7 @@
           if (project_array[i].includes('####')) {
             media_objects = project_array[i].split("####");
           }
-          if (project_array[i].includes("Link")) {
+          if (project_array[i].includes("LINK")) {
             this.create_link_object(temp, media_objects);
           } else if (project_array[i].includes("FRAME")) {
             this.create_frame_object(temp, media_objects);

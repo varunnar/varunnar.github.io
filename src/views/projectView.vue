@@ -19,7 +19,7 @@
     },
     computed: {
         objects() {
-            return ["storyglow", "munchmaps", "seagate", "H3", "heartbeatChecker", 
+            return ["storyglow", "munchmaps", "seagate", "D3", "heartbeatChecker", 
             "alpaca", "fractal"]
         }
     },
@@ -65,11 +65,10 @@
       background-size: 75%;
       background-repeat: no-repeat;
       background-position: center;
-      opacity: 80%;
     }
 
     .project-obj:hover {
-      opacity: 100%;
+      filter: brightness(80%);
     }
     .seagate {
       background-image: url("../assets/project-imgs/seagate.png");
@@ -85,8 +84,8 @@
       background-size: 120%;
       background-image: url("../assets/project-imgs/fractal.png");
     }
-    .H3 {
-      background-image: url("../assets/project-imgs/H3.png");
+    .D3 {
+      background-image: url("../assets/project-imgs/D3.png");
       background-size: 100%;
       background-color: white;
     }

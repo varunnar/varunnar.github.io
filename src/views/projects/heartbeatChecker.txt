@@ -2,6 +2,6 @@ The HeartbeatChecker is a mobile application that allows users to effectively ch
 After launching the app, simply cover the iphone camera with a finger and press record. The application will turn on the iPhone's flashlight, illuminating the finger pad to get a better sense of the pulses moving through it. The application will give 5 seconds to readjust and afterward will begin checking the number of heartbeats it receives. After the user decides the application has checked for long enough they can finish recording and the application with report to them their heartbeat in beats per minute.*
 
 FRAME #### https://player.vimeo.com/video/757682451?h=f6b7088fbb" #### 300px #### 600px * 
-The application works by grabbing each frame of the video the user is taking, getting an average value for the pixel data in that frame. By comparing the frame to the ones surrounding it, we can easily finds the peaks in pixel data that indicate a heartbeat and keep track of the number of hearbeats in the duration of the video.*
+The application works by grabbing each frame of the video the user is taking and calculating the average value for the pixel data in that frame. By comparing this frame to the ones surrounding it, we can easily finds the peaks in pixel data that indicate a heartbeat and keep track of the number of hearbeats in the duration of the video. The users heartbeat will be conveyed in beats per minute.*
 
-Link #### Github Link #### https://github.com/varunknarayanswamy/heartbeatChecker
+LINK #### Github Link #### https://github.com/varunknarayanswamy/heartbeatChecker
