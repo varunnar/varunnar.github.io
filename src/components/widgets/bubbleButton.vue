@@ -61,7 +61,6 @@ export default {
       return "/" + this.navigationName
     },
     isResume() {
-      console.log(this.navigationName)
       if (this.navigationName == 'Resume') {
         return true;
       }

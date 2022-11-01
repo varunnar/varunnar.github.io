@@ -61,7 +61,6 @@
     },
     methods: {
       build_project_page: function() {
-        console.log("building project")
         let project_name = this.current_name;
         let project_name_description = project_name + "Text";
         var temp = document.getElementById('description');
@@ -79,6 +78,8 @@
             this.create_frame_object(temp, media_objects);
           } else if (project_array[i].includes("LIST")) { 
             this.create_list_object(temp, media_objects);
+          } else if (project_array[i].includes("IMAGE")) {
+            this.create_image_object(temp, media_objects);
           } else {
             let p = document.createElement('p');
             p.innerHTML = project_array[i];
@@ -138,17 +139,19 @@
       },
       create_image_object(temp, media_objects) {
         var image_div = document.createElement('div');
-        let grid_col = Math.floor(Math.square_images(media_objects.length));
+        let grid_col = Math.floor(Math.sqrt(media_objects.length));
         let auto_number = "";
         for (var i = 0; i<grid_col; i++) {
           auto_number += "auto ";
         }
         image_div.style.display = "grid";
         image_div.style.gridTemplateColumns = auto_number;
-        for (var j = 0; j<media_objects.length; j++) {
+        image_div.style.textAlign = "center !important";
+        image_div.setAttribute( 'style', 'text-align: center !important' );
+        for (var j = 1; j<media_objects.length; j++) {
           var grid_object = document.createElement("img");
-          let image_url = "../assets/project-imgs/" + media_objects[j];
-          grid_object.src = image_url;
+          //let image_url = "../assets/project-imgs/" + media_objects[j];
+          grid_object.src = require("@/assets/project-imgs/seagateGroupPhoto.png");
           image_div.appendChild(grid_object);
         }
         temp.append(image_div)
