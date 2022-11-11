@@ -11,6 +11,8 @@ However initially, it itself is instead trained by the user, giving the user an 
 In other words, the user first trains the user on what the correct action is, and afterward the application will continue to inform users on the state of their action.
 The application can give a new understand to the processes involved in machine learning while also help improve sports form and technique over time.  
 
+FRAME ####  https://player.vimeo.com/video/308479504?h=0e1c14a792  #### 800px #### 450px *
+
 LINK #### LPC Github Link #### https://github.com/LaboratoryForPlayfulComputation/AlpacaML
 
 LINK #### Link to Interactive Prototype #### https://projects.invisionapp.com/share/NMPRYCYHFGR#/screens
