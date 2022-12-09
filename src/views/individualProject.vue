@@ -117,7 +117,7 @@
       },
       create_list_object(temp, media_objects) {
         var list_div = document.createElement('div');
-        list_div.width = "100%";
+        list_div.style.width = "100%";
         list_div.style.display = "flex";
         list_div.style.justifyContent = "space-evenly";
         var list_number = Math.round(media_objects.length/3);
@@ -142,19 +142,17 @@
       },
       create_image_object(temp, media_objects) {
         var image_div = document.createElement('div');
-        let grid_col = Math.floor(Math.sqrt(media_objects.length));
+        let grid_col = Math.floor(Math.sqrt(media_objects.length - 1));
         let auto_number = "";
         for (var i = 0; i<grid_col; i++) {
           auto_number += "auto ";
         }
-        image_div.style.display = "grid";
-        image_div.style.gridTemplateColumns = auto_number;
-        image_div.style.textAlign = "center !important";
-        image_div.setAttribute( 'style', 'text-align: center !important' );
+        var image_div_style = "display: grid; grid-template-columns: " + auto_number + "; text-align: center !important; "
+        image_div.setAttribute( 'style', image_div_style );
         for (var j = 1; j<media_objects.length; j++) {
           var grid_object = document.createElement("img");
-          //let image_url = "../assets/project-imgs/" + media_objects[j];
-          grid_object.src = require("@/assets/project-imgs/seagateGroupPhoto.png");
+          grid_object.setAttribute('style', 'width: 96%; margin: 2%;');
+          grid_object.src = require("@/assets/project-imgs/" + media_objects[j]);
           image_div.appendChild(grid_object);
         }
         temp.append(image_div)
@@ -189,12 +187,12 @@
   }
   .description {
     margin-bottom: 5%;
+    max-width: 80%;
     margin-left: 20%;
     margin-right: 20%;
     color: black;
     font-weight: 450;
     text-align: justify;
-    display: inline-block;
   }
   h1 {
     color: black;
