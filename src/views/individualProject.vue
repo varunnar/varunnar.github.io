@@ -151,7 +151,7 @@
         image_div.setAttribute( 'style', image_div_style );
         for (var j = 1; j<media_objects.length; j++) {
           var grid_object = document.createElement("img");
-          grid_object.setAttribute('style', 'width: 96%; margin: 2%;');
+          grid_object.setAttribute('style', 'width: 96%; margin: 2%; height: 96%');
           grid_object.src = require("@/assets/project-imgs/" + media_objects[j]);
           image_div.appendChild(grid_object);
         }
