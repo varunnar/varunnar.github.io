@@ -92,12 +92,16 @@
       },
       create_frame_object(temp, media_objects) {
         var frame_div = document.createElement('div');
+        frame_div.className = "frame"
         frame_div.width = "100%";
         frame_div.style.textAlign = "center";
         var frame = document.createElement('iframe');
         frame.src = media_objects[1];
-        frame.width = media_objects[2];
-        frame.height = media_objects[3];
+        var aspect_ratio = parseFloat(media_objects[2])/parseFloat(media_objects[3])
+        console.log(aspect_ratio)
+        var width = (parseFloat(media_objects[2]) < window.innerWidth) ? media_objects[2] : '90%';
+        frame.width = width;
+        frame.style.aspectRatio = aspect_ratio
         frame.setAttribute('allowFullScreen', '')
         frame_div.appendChild(frame);
         temp.appendChild(frame_div);
@@ -106,6 +110,7 @@
       create_link_object(temp, media_objects) {
         var a = document.createElement("a");
         var link_div = document.createElement('div');
+        link_div.className = "link"
         link_div.width = "100%";
         link_div.style.textAlign = "center";
         var text = document.createTextNode(media_objects[1]);
@@ -142,6 +147,7 @@
       },
       create_image_object(temp, media_objects) {
         var image_div = document.createElement('div');
+        image_div.className = "ImageSet"
         let grid_col = Math.floor(Math.sqrt(media_objects.length - 1));
         let auto_number = "";
         for (var i = 0; i<grid_col; i++) {

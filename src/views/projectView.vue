@@ -53,6 +53,12 @@
       margin-right: 5%;
       justify-items: center;
     }
+
+    @media (max-width: 960px) {
+      .projects-obj {
+        grid-template-columns: 1fr;
+      }
+    }
     .project-obj {
       width: var(--s);
       margin-top: 6%;

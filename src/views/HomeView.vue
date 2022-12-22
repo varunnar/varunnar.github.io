@@ -56,6 +56,7 @@
   }
   .sm {
     background-size: contain;
+    background-repeat: no-repeat;
     background-color: transparent;
     border: transparent;
     width: 100px;
