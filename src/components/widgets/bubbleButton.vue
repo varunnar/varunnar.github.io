@@ -72,10 +72,12 @@ export default {
 
 <style lang="scss">
   .bubble-icon {
-    background-image: url("../../assets/Ellipse.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    //background-image: url("../../assets/Ellipse.png");
+    //background-repeat: no-repeat;
+    //background-position: center;
+    //background-size: contain;
+    background-color: #fff7e0;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,9 +86,6 @@ export default {
       color: antiquewhite;
       text-align: center;
       vertical-align: center;
-    }
-    a {
-      color: white;
     }
   }
 </style>

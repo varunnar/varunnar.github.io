@@ -23,20 +23,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #1a1e22;
-  background-color: rgba(65,	179, 163, 1);
+  color: #ffffff;
+  background-color: #fff7e0;
   overflow: auto;
+  height: 100vh;
 }
 
 nav a {
   font-weight: bold;
-  color: #348f82;
+  color: #014a39;
 }
 
 nav a.router-link-exact-active {
   color: #42b983;
 }
 nav a:hover {
-  color: pink;
+  color: #604C32;
 }
 </style>

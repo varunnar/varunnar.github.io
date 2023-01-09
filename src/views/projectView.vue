@@ -1,10 +1,12 @@
 <template>
-  <h1>PROJECTS</h1>
-  <div class="projects">
-      <div class="projects-obj">
-          <div v-for="object in objects" :class="'project-obj ' + object" :key="object" :objectinfo="object" @click="navigateToPage(object)">
-          </div>
-      </div>
+  <div class="projects_page">
+    <h1>PROJECTS</h1>
+    <div class="projects">
+        <div class="projects-obj">
+            <div v-for="object in objects" :class="'project-obj ' + object" :key="object" :objectinfo="object" @click="navigateToPage(object)">
+            </div>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -20,7 +22,7 @@
     computed: {
         objects() {
             return ["storyglow", "munchmaps", "seagate", "D3", "heartbeatChecker", 
-            "alpaca", "fractal"]
+            "alpaca"]
         }
     },
     methods: {
@@ -33,6 +35,20 @@
 </script>
 
 <style lang="scss">
+    .projects_page {
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      border-radius: 5%;
+      padding: 2%;
+      background-color: #014a39;
+    }
+    @media (max-width: 960px) {
+      .projects_page {
+        border-radius: 0%;
+      }
+    }
     h1 {
       margin-top: 4%;
       font-size: 50px;

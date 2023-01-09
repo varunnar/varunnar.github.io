@@ -1,12 +1,16 @@
 <template>
   <div class="home">
-    <h1>Who is Varun Narayanswamy?</h1>
-    <img src="../assets/prof-pic.png">
-    <p class="general_info"> Hi There! My name is Varun Narayanswamy. I am an alumni of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p>
-    <div class="social_media_icons">
-      <button class="sm github" id="github" @click="social_media_click"></button>
-      <button class="sm linkedin" id="linkedin" @click="social_media_click"></button>
-      <button class="sm instagram" id="instagram" @click="social_media_click"></button>
+    <div class="pic_paragraph">
+      <div class="paragraph">
+        <h1>Who is Varun Narayanswamy?</h1>
+        <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am an alumnus of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p>
+        <div class="social_media_icons">
+          <button class="sm github" id="github" @click="social_media_click"></button>
+          <button class="sm linkedin" id="linkedin" @click="social_media_click"></button>
+          <button class="sm instagram" id="instagram" @click="social_media_click"></button>
+        </div>  
+      </div>
+      <img src="../assets/prof-pic.png">
     </div>
   </div>
 </template>
@@ -31,23 +35,57 @@
 </script>
 
 <style scoped>
+  .pic_paragraph {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 1%;
+    background-color: #014a39;
+    margin-bottom: 2%;
+    border-radius: 5%;
+  }
+  @media (max-width: 960px) {
+    .pic_paragraph {
+      flex-direction: column;
+      margin-left: 0%;
+      margin-right: 0%;
+      border-radius: 0%;
+    }
+  }
+  .paragraph {
+    padding: 5%;
+  }
+  h1 {
+    margin-left: 10%;
+    margin-right: 10%;
+    align-content: center;
+  }
+  @media (max-width: 960px) {
+    h1 {
+      margin: 0%;
+    }
+  }
   img {
-    width: 30%;
+    width: 50%;
+    border-radius: 50%;
+  }
+  @media (max-width: 960px) {
+    img {
+      margin: 5%;
+      width: 90%;
+    }
   }
   .general_info {
     margin-top: 1px;
-    margin-left: 20%;
-    margin-right: 20%;
-    background-color: #369b8e;
     padding: 1%;
-    color: #000000;
+    color: #ffffff;
     font-size: 22px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   .home {
-    height: 100%;
-    margin: 1%;
-    min-height: 100%;
+    margin: 1%; 
     padding: 2%;
   }
   .h1 {
@@ -65,8 +103,6 @@
   .social_media_icons{
     display: flex;
     flex-direction: row;
-    margin-left: 20%;
-    margin-right: 20%;
     justify-content: space-evenly;
   }
   .github {
