@@ -82,7 +82,7 @@ export default {
     align-items: center;
     justify-content: center;
     .button-text {
-      font-size: 15px;
+      font-size: 18px;
       color: antiquewhite;
       text-align: center;
       vertical-align: center;
