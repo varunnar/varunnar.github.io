@@ -9,4 +9,4 @@ FRAME #### https://player.vimeo.com/video/333646784?h=f176f1acc8 #### 300px ####
 Munchmaps is developed in Swift and uses the Zomato API to display the filtered restaurants in the local area. 
 It displays a map indicator of where the restaurant is and allows users to see a quick list of all of their saved and future restaurants.*
 
-LINK #### Github link #### https://github.com/varunknarayanswamy/MunchMaps
+LINK #### Github link #### https://github.com/varunnar/MunchMaps

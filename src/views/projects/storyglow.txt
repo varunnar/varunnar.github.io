@@ -12,6 +12,6 @@ FRAME #### https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.fi
 
 While storyglow's initial goal was to improve upon storytelling, this application can be used in a multitude of other environments such as for building sets for plays and musicals or playing dungeons and dragons with friends.*
 
-LINK ####  Github Link #### https://github.com/varunknarayanswamy/StoryGlow *
+LINK ####  Github Link #### https://github.com/varunnar/StoryGlow *
 
 LINK #### Progress Blog Link #### https://jennifermahtam.wordpress.com/category/capstone/
