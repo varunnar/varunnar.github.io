@@ -22,7 +22,7 @@
   methods: {
     social_media_click: function(event) {
       if (event.target.id == "github") {
-        window.location.assign("https://github.com/varunknarayanswamy");
+        window.location.assign("https://github.com/varunnar");
       } else if (event.target.id == "linkedin") {
         window.location.assign("https://www.linkedin.com/in/varun-narayanswamy");
       } else if (event.target.id == "instagram"){ 
