@@ -39,12 +39,14 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding: 1%;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
     background-color: #014a39;
     margin-bottom: 2%;
     border-radius: 5%;
+    width: 60%;
   }
   @media (max-width: 960px) {
     .pic_paragraph {
@@ -58,10 +60,12 @@
     background-image: url("../assets/prof-pic.png");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 80%;
+    width: 50%;
+    background-position: center;
   }
   .paragraph {
     padding: 5%;
+    width: 50%;
   }
   h1 {
     margin-left: 10%;
