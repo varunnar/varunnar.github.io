@@ -10,7 +10,6 @@
           <button class="sm instagram" id="instagram" @click="social_media_click"></button>
         </div>  
       </div>
-      <img src="../assets/prof-pic.png">
       <div class="profile_picture"> </div>
     </div>
   </div>
