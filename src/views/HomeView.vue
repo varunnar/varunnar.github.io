@@ -11,6 +11,7 @@
         </div>  
       </div>
       <img src="../assets/prof-pic.png">
+      <div class="profile_picture"> </div>
     </div>
   </div>
 </template>
@@ -53,6 +54,11 @@
       margin-right: 0%;
       border-radius: 0%;
     }
+  }
+  .profile_picture {
+    background-image: url("../assets/prof-pic.png");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .paragraph {
     padding: 5%;
