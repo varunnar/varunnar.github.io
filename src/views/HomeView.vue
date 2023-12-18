@@ -59,6 +59,7 @@
     background-image: url("../assets/prof-pic.png");
     background-size: cover;
     background-repeat: no-repeat;
+    height: 80%;
   }
   .paragraph {
     padding: 5%;
