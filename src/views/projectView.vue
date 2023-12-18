@@ -75,18 +75,35 @@
         grid-template-columns: 1fr;
       }
     }
-    .project-obj {
-      width: var(--s);
-      margin-top: 6%;
-      margin-bottom: 10%;
-      height: calc(var(--s) * 1.1547);
-      font-size: initial;
-      display: inline-block;
-      clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    // .project-obj {
+    //   width: var(--s);
+    //   margin-top: 6%;
+    //   margin-bottom: 10%;
+    //   height: calc(var(--s) * 1.1547);
+    //   font-size: initial;
+    //   display: inline-block;
+    //   clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    //   background-color: black;
+    //   background-size: 75%;
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    // }
+
+    .projects-obj {
+      width: 20vw;
+      height: 20vw;
       background-color: black;
       background-size: 75%;
       background-repeat: no-repeat;
       background-position: center;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 960px) {
+      .project-obj {
+        width: 60vw;
+        height: 60vw; 
+      }
     }
 
     .project-obj:hover {
