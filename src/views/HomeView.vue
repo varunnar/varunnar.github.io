@@ -73,16 +73,6 @@
       margin: 0%;
     }
   }
-  img {
-    width: 50%;
-    border-radius: 50%;
-  }
-  @media (max-width: 960px) {
-    img {
-      margin: 5%;
-      width: 90%;
-    }
-  }
   .general_info {
     margin-top: 1px;
     padding: 1%;
