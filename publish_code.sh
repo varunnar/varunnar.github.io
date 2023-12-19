@@ -4,7 +4,7 @@ rm -rf dist
 
 git add .
 
-git commit -m "updates made "
+git commit -m "$1"
 
 git push 
 

@@ -62,17 +62,20 @@
       border-radius: 0%;
     }
     .profile_picture {
-      width: 50vw;
-      height: 50vw;
+      width: 80vw;
+      height: 80vw;
+      margin-left: auto;
+      margin-right: auto;
     }
     .paragraph {
-      width: 100%;
+      min-width: 100%;
+      padding: 0%;
     }
     h1 {
-      width: 100%;
+      min-width: 100%;
     }
     .general_info {
-      width: 100%;
+      min-width: 100%;
     }
   }
   
