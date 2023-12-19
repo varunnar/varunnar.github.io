@@ -178,6 +178,11 @@
     max-width: 20%;
     margin-bottom: 20px;
   }
+  @media (max-width: 960px) {
+    p {
+      word-spacing: 5px;
+    }
+  }
   .general_info {
     margin-top: 1px;
     margin-left: 10%;
