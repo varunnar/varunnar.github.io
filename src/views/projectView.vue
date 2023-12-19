@@ -75,8 +75,8 @@
         grid-template-columns: 1fr;
       }
       .project-obj {
-        width: 60vw;
-        height: 60vw; 
+        width: 60vw !important;
+        height: 60vw !important; 
       }
     }
     // .project-obj {
@@ -101,6 +101,7 @@
       background-repeat: no-repeat;
       background-position: center;
       border-radius: 50%;
+      margin-bottom: 20px;
     }
 
     .project-obj:hover {
