@@ -62,14 +62,14 @@
       border-radius: 0%;
     }
     .profile_picture {
-      width: 80vw;
-      height: 80vw;
+      width: 50vw;
+      height: 50vw;
       margin-left: auto;
       margin-right: auto;
     }
     .paragraph {
       min-width: 100%;
-      padding: 0%;
+      padding: 0% !important;
     }
     h1 {
       min-width: 100%;

@@ -16,6 +16,6 @@ git add -A
 
 cd ..
 
-git commit -m 'deployment'
+git commit -m "deploying - $1"
 
 git push origin `git subtree split --prefix dist master`:gh-pages --force
