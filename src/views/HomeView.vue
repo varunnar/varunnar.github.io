@@ -48,14 +48,6 @@
     border-radius: 5%;
     width: 60%;
   }
-  @media (max-width: 960px) {
-    .pic_paragraph {
-      flex-direction: column;
-      margin-left: 0%;
-      margin-right: 0%;
-      border-radius: 0%;
-    }
-  }
   .profile_picture {
     background-image: url("../assets/prof-pic.png");
     background-size: cover;
@@ -63,6 +55,27 @@
     width: 50%;
     background-position: center;
   }
+
+  @media (max-width: 960px) {
+    .pic_paragraph {
+      flex-direction: column;
+      border-radius: 0%;
+    }
+    .profile_picture {
+      width: 50vw;
+      height: 50vw;
+    }
+    .paragraph {
+      width: 100%;
+    }
+    h1 {
+      width: 100%;
+    }
+    .general_info {
+      width: 100%;
+    }
+  }
+  
   .paragraph {
     padding: 5%;
     width: 50%;
