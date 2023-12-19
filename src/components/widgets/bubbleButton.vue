@@ -76,7 +76,7 @@ export default {
     //background-repeat: no-repeat;
     //background-position: center;
     //background-size: contain;
-    background-color: #fff7e0;
+    background-color: #fff9e8;
     border-radius: 50%;
     display: flex;
     align-items: center;
