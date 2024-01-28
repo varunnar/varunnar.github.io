@@ -1,12 +1,16 @@
 <template>
   <div class="projects_page">
-    <h1>PROJECTS</h1>
-    <div class="projects">
-        <div class="projects-obj">
-            <div v-for="object in objects" :class="'project-obj ' + object" :key="object" :objectinfo="object" @click="navigateToPage(object)">
+      <div>
+        <h1>PROJECTS</h1>
+        <transition name="fade" appear>
+        <div class="projects">
+            <div class="projects-obj">
+                <div v-for="object in objects" :class="'project-obj ' + object" :key="object" :objectinfo="object" @click="navigateToPage(object)">
+                </div>
             </div>
         </div>
-    </div>
+        </transition>
+      </div>
   </div>
 </template>
 
@@ -35,12 +39,21 @@
 </script>
 
 <style lang="scss">
+    .fade-enter-from {
+      opacity: 0;
+    }
+    .fade-enter-to {
+      opacity: 1;
+    }
+    .fade-enter-active {
+      transition: all 2s ease;
+    }
     .projects_page {
-      margin-left: 10%;
-      margin-right: 10%;
+      margin-left: 2%;
+      margin-right: 2%;
       margin-top: 2%;
       margin-bottom: 2%;
-      border-radius: 5%;
+      border-radius: 2%;
       padding: 2%;
       background-color: #014a39;
     }

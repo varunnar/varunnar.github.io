@@ -1,10 +1,13 @@
 <template>
   <div class="project-object">
-    <h1 :name="title_current_name"> {{title_current_name}}</h1>
-   <!--- <img class="project-icon" :src="main_img"/> -->
+    <transition name="fade" appear>
+      <div>
+        <h1 :name="title_current_name"> {{title_current_name}}</h1>
+      <!--- <img class="project-icon" :src="main_img"/> -->
 
-    <div class="description" id="description">
-    </div>
+        <div class="description" id="description"> </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -168,6 +171,15 @@
 </script>
 
 <style scoped>
+  .fade-enter-from {
+      opacity: 0;
+    }
+    .fade-enter-to {
+      opacity: 1;
+    }
+    .fade-enter-active {
+      transition: all 2s ease;
+    }
   img {
     width: 30%;
   }

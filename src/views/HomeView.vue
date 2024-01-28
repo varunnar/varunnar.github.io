@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <transition name="fade">
+    <transition name="fade" appear>
     <div class="pic_paragraph">
-      <div class="paragraph" v-if="show">
+      <div class="paragraph">
         <h1>Who is Varun Narayanswamy?</h1>
         <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am an alumnus of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p>
         <div class="social_media_icons">
@@ -21,6 +21,14 @@
   export default {
   name: 'HomeView',
   methods: {
+    data() {
+      return {
+        show: false
+      }
+    },
+    mounted() {
+      this.show = true;
+    },
     social_media_click: function(event) {
       if (event.target.id == "github") {
         window.location.assign("https://github.com/varunnar");
@@ -31,14 +39,6 @@
       } else {
         console.log("invalid url");
       }
-    },
-    data() {
-      return {
-        show: false
-      }
-    },
-    mounted() {
-      this.show = true;
     },
   },
 }
@@ -53,15 +53,6 @@
   }
   .fade-enter-active {
     transition: all 2s ease;
-  }
-  .fade-leave-from {
-
-  }
-  .fade-leave-to {
-
-  }
-  .fade-leave-active {
-
   }
   .pic_paragraph {
     display: flex;
