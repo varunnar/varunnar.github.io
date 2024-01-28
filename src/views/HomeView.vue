@@ -13,7 +13,7 @@
       </div>
       <div class="profile_picture"> </div>
     </div>
-    <transition>
+    </transition>
   </div>
 </template>
 
@@ -55,7 +55,7 @@
     transition: all 2s ease;
   }
   .fade-leave-from {
-    
+
   }
   .fade-leave-to {
 
