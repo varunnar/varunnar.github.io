@@ -1,6 +1,8 @@
 <template class="App">
   <navigation></navigation>
-  <router-view/>
+  <transition>
+  <router-view></router-view>
+  </transition>
 </template>
 
 <script>
@@ -24,7 +26,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #ffffff;
-  background-color: #fff9e8;
+  background-color: #fbf8f0;
   overflow: auto;
   height: 100vh;
 }

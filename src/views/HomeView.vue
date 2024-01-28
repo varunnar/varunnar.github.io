@@ -1,7 +1,8 @@
 <template>
   <div class="home">
+    <transition name="fade">
     <div class="pic_paragraph">
-      <div class="paragraph">
+      <div class="paragraph" v-if="show">
         <h1>Who is Varun Narayanswamy?</h1>
         <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am an alumnus of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p>
         <div class="social_media_icons">
@@ -12,6 +13,7 @@
       </div>
       <div class="profile_picture"> </div>
     </div>
+    <transition>
   </div>
 </template>
 
@@ -29,12 +31,38 @@
       } else {
         console.log("invalid url");
       }
-    }
+    },
+    data() {
+      return {
+        show: false
+      }
+    },
+    mounted() {
+      this.show = true;
+    },
   },
 }
 </script>
 
 <style scoped>
+  .fade-enter-from {
+    opacity: 0;
+  }
+  .fade-enter-to {
+    opacity: 1;
+  }
+  .fade-enter-active {
+    transition: all 2s ease;
+  }
+  .fade-leave-from {
+    
+  }
+  .fade-leave-to {
+
+  }
+  .fade-leave-active {
+
+  }
   .pic_paragraph {
     display: flex;
     flex-direction: row;
