@@ -34,7 +34,6 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #014a39;
     margin: 1%;
     padding: 30px;
   }

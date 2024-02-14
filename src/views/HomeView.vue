@@ -4,6 +4,8 @@
     <div class="pic_paragraph">
       <div class="paragraph">
         <h1>Who is Varun Narayanswamy?</h1>
+        <!--- <div class="profile_picture"> </div> -->
+        <img src="../assets/linkedin_photo.jpg" alt="Varun profile photo">
         <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am an alumnus of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p>
         <div class="social_media_icons">
           <button class="sm github" id="github" @click="social_media_click"></button>
@@ -11,7 +13,6 @@
           <button class="sm instagram" id="instagram" @click="social_media_click"></button>
         </div>  
       </div>
-      <div class="profile_picture"> </div>
     </div>
     </transition>
   </div>
@@ -56,51 +57,25 @@
   }
   .pic_paragraph {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    justify-content: space-evenly;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5%;
-    background-color: #014a39;
-    margin-bottom: 2%;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
     border-radius: 5%;
-    width: 60%;
+    align-items: center;
   }
   .profile_picture {
-    background-image: url("../assets/prof-pic.png");
+    background-image: url("../assets/linkedin_photo.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    width: 50%;
+    min-width: 200px;
     background-position: center;
-  }
-
-  @media (max-width: 960px) {
-    .pic_paragraph {
-      flex-direction: column;
-      border-radius: 0%;
-    }
-    .profile_picture {
-      width: 50vw;
-      height: 50vw;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .paragraph {
-      min-width: 100%;
-      padding: 0% !important;
-    }
-    h1 {
-      min-width: 100%;
-    }
-    .general_info {
-      min-width: 100%;
-    }
   }
   
   .paragraph {
-    padding: 5%;
-    width: 50%;
+    width: 50%
+  }
+  img {
+    max-width: 95%;
   }
   h1 {
     margin-left: 10%;
@@ -115,18 +90,43 @@
   .general_info {
     margin-top: 1px;
     padding: 1%;
-    color: #ffffff;
+    color: #014a39;
     font-size: 22px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   .home {
     margin: 1%; 
-    padding: 2%;
   }
   .h1 {
     color: #1a1e22;
     font-size: 25px;
   }
+
+   @media (max-width: 960px) {
+    .pic_paragraph {
+      flex-direction: column;
+      border-radius: 0%;
+    }
+    .profile_picture {
+      width: 50vw;
+      height: 50vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .paragraph {
+      min-width: 100%;
+      padding: 0% !important;
+      margin: auto;
+    }
+    h1 {
+      min-width: 100%;
+      font-size: 1.5em;
+    }
+    .general_info {
+      min-width: 100%;
+    }
+  }
+
   .sm {
     background-size: contain;
     background-repeat: no-repeat;

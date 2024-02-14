@@ -25,7 +25,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #ffffff;
+  color: #014a39;
   background-color: #fbf8f0;
   overflow: auto;
   height: 100vh;
@@ -33,13 +33,13 @@ body {
 
 nav a {
   font-weight: bold;
-  color: #014a39;
+  color: #ffffff;
 }
 
 nav a.router-link-exact-active {
   color: #42b983;
 }
 nav a:hover {
-  color: #604C32;
+  color: #fceab7;
 }
 </style>

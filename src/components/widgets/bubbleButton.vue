@@ -76,14 +76,14 @@ export default {
     //background-repeat: no-repeat;
     //background-position: center;
     //background-size: contain;
-    background-color: #fff9e8;
+    background-color: #014a39;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     .button-text {
       font-size: 18px;
-      color: antiquewhite;
+      color: #ffffff;
       text-align: center;
       vertical-align: center;
     }

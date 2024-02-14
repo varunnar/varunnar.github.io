@@ -53,9 +53,6 @@
       margin-right: 2%;
       margin-top: 2%;
       margin-bottom: 2%;
-      border-radius: 2%;
-      padding: 2%;
-      background-color: #014a39;
     }
     @media (max-width: 960px) {
       .projects_page {
@@ -107,18 +104,18 @@
     // }
 
     .project-obj {
-      width: 20vw;
-      height: 20vw;
+      width: 25vw;
+      height: 25vw;
       background-color: black;
       background-size: 75%;
       background-repeat: no-repeat;
       background-position: center;
-      border-radius: 50%;
       margin-bottom: 20px;
+      filter: brightness(20%);
     }
 
     .project-obj:hover {
-      filter: brightness(80%);
+      filter: brightness(100%);
     }
     .seagate {
       background-image: url("../assets/project-imgs/seagate.png");
@@ -138,11 +135,17 @@
       background-image: url("../assets/project-imgs/D3.png");
       background-size: 100%;
       background-color: white;
+      border-width: 2px;
+      border-color: #014a39;
+      border-style: solid;
     }
     .heartbeatChecker {
       background-image: url("../assets/project-imgs/heartbeatChecker.png");
       background-size: 65%;
       background-color: white;
+      border-width: 2px;
+      border-color: #014a39;
+      border-style: solid;
     }
     .alpaca {
       background-image: url("../assets/project-imgs/alpaca.png");
