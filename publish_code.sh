@@ -1,5 +1,5 @@
  /* eslint-disable no-console */
-
+ 
 rm -rf dist
 
 git add .

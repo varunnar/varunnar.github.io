@@ -4,9 +4,12 @@
     <div class="pic_paragraph">
       <div>
         <h1>Welcome</h1>
-        <img src="../assets/linkedin_photo-removebg.png" alt="Varun profile photo">
+        <p>Hello, my name is Varun Narayanswamy. I am a <em>Software Developer</em> and a <em>Designer</em></p>
+        <div class="img_div">
+          <img src="../assets/linkedin_photo-removebg.png" alt="Varun profile photo">
+        </div>
       </div>
-    <div>
+    </div>
         <!--- <div class="profile_picture"> </div> -->
         <!---<img src="../assets/linkedin_photo.jpg" alt="Varun profile photo">-->
         <!-- <h2>Who is Varun Narayanswamy?</h2>
@@ -16,8 +19,6 @@
           <button class="sm linkedin" id="linkedin" @click="social_media_click"></button>
           <button class="sm instagram" id="instagram" @click="social_media_click"></button>
         </div>  -->
-      </div>
-    </div>
     <!---<div class="pic_paragraph">
       <h1>Welcome</h1>
       <div class="paragraph">
@@ -63,7 +64,6 @@
   },
 }
 </script>
-
 <style scoped>
   .fade-enter-from {
     opacity: 0;
@@ -92,6 +92,16 @@
     background-repeat: no-repeat;
     min-width: 200px;
     background-position: center;
+  }
+
+  p {
+    color: black;
+    font-size: 18px;
+  }
+  p em {
+    font-style: normal;
+    font-weight: bold;
+    color: #014a39;
   }
   
   .paragraph {

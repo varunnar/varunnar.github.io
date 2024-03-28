@@ -2,7 +2,7 @@
   <h1>Who is Varun Narayanswamy?</h1>
   <div class="paragraph">
     <img src="../assets/pic-2.jpg" alt="Varun profile photo">
-    <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am an alumnus of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p>
+    <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am a current Master in Human Computer Interaction and Design at the University of Washington. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games, and making bad jokes. </p>
     <div class="social_media_icons">
       <button class="sm github" id="github" @click="social_media_click"></button>
       <button class="sm linkedin" id="linkedin" @click="social_media_click"></button>
