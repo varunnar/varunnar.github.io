@@ -19,6 +19,8 @@
   import heartbeatCheckerText from 'raw-loader!./projects/heartbeatChecker.txt';
   import alpacaText from 'raw-loader!./projects/alpaca.txt';
   import seagateText from 'raw-loader!./projects/seagate.txt';
+    import mhcidText from 'raw-loader!./projects/mhcid.txt';
+
   export default {
     name: 'project-object',
     data() {
@@ -30,6 +32,7 @@
         heartbeatCheckerText: heartbeatCheckerText,
         alpacaText: alpacaText,
         seagateText: seagateText,
+        mhcidText: mhcidText,
         current_url: ''
       }
     },
@@ -173,6 +176,9 @@
 <style scoped>
   .fade-enter-from {
       opacity: 0;
+    }
+    p {
+      font-size: 20px;
     }
     .fade-enter-to {
       opacity: 1;

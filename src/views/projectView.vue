@@ -1,14 +1,39 @@
 <template>
   <div class="projects_page">
       <div>
-        <h1>PROJECTS</h1>
+        <h1>PORTFOLIO</h1>
         <transition name="fade" appear>
+        <div>
+        <div class="header_title">
+          <div>Projects</div>
+          <!--<div>see more</div>-->
+        </div>
         <div class="projects">
             <div class="projects-obj">
-                <div v-for="object in objects" :class="'project-obj ' + object" :key="object" :objectinfo="object" @click="navigateToPage(object)">
+                <div v-for="object in objects" class="project-object-set" :key="object" @click="navigateToPage(object)">
+                  <div :class="'project-obj ' + object" :key="object" :objectinfo="object"></div>
+                  <div v-if="object == 'alpaca'" class="text_info" v-text="'AplacaML'"></div>
+                  <div v-else-if="object == 'D3'" class="text_info" v-text="'D3 Visualization'"></div>
+                  <div v-else-if="object == 'heartbeatChecker'" class="text_info" v-text="'HeartbeatChecker Mobile App'"></div>
+                  <div v-else class="text_info" v-text="object"></div>
                 </div>
             </div>
         </div>
+        <div class="header_title">
+          <div>Experience</div>
+          <div>see more</div>
+        </div>
+        <div class="projects">
+            <div class="projects-obj">
+                <div v-for="object in experience" class="project-object-set" :key="object" @click="navigateToPage(object)">
+                  <div :class="'project-obj ' + object" :key="object" :objectinfo="object"></div>
+                  <div v-if="object == 'mhcid'" class="text_info" v-text="'MHCI+D'"></div>
+                  <div v-else-if="object == 'seagate'" class="text_info" v-text="'Seagate Technology'"></div>
+                  <div v-else class="text_info" v-text="object"></div>
+                </div>
+            </div>
+        </div>
+          </div>
         </transition>
       </div>
   </div>
@@ -25,8 +50,11 @@
     },
     computed: {
         objects() {
-            return ["storyglow", "munchmaps", "seagate", "D3", "heartbeatChecker", 
-            "alpaca"]
+            return ["storyglow", "munchmaps", "D3", "heartbeatChecker", 
+            "alpaca","fractal"]
+        },
+        experience() {
+          return ["seagate", "mhcid", "ATLAS"];
         }
     },
     methods: {
@@ -48,6 +76,31 @@
     .fade-enter-active {
       transition: all 2s ease;
     }
+    .project-object-set {
+      margin-bottom: 20px;
+      filter: brightness(20%);
+      align-items: center;
+    }
+    .project-object-set:hover {
+      margin-bottom: 20px;
+      filter: brightness(100%);
+    }
+    .header_title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 7%;
+      padding-right: 7%;
+      font-size: 25px;
+      margin-top: 2%;
+    }
+    .text_info {
+      height: 2%;
+      color: #014a39;
+      font-size: 20px;
+      text-transform: capitalize;
+      font-weight: bold;
+    }
     .projects_page {
       margin-left: 2%;
       margin-right: 2%;
@@ -63,8 +116,12 @@
       margin-top: 4%;
       font-size: 50px;
     }
+    h2 {
+      font-weight: bold;
+      font-size: 25px;
+    }
     .projects {
-        margin-top: 4%;
+        margin-top: 1%;
         display: flex;
         --s: 300px;
         --m: 4%;
@@ -110,12 +167,7 @@
       background-size: 75%;
       background-repeat: no-repeat;
       background-position: center;
-      margin-bottom: 20px;
-      filter: brightness(20%);
-    }
-
-    .project-obj:hover {
-      filter: brightness(100%);
+      margin-bottom: 5px;
     }
     .seagate {
       background-image: url("../assets/project-imgs/seagate.png");
@@ -151,5 +203,8 @@
       background-image: url("../assets/project-imgs/alpaca.png");
       background-size: 100%;
       background-color: rgb(121, 50, 50); 
+    }
+    .mhcid {
+      background-image:url("../assets/project-imgs/mhcid.png");
     }
 </style>

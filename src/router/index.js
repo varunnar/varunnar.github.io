@@ -26,6 +26,11 @@ const routes = [
     component: () => import('../views/resumeView.vue')
   },
   {
+    path: '/aboutMe',
+    name: 'aboutMeView',
+    component: () => import('../views/AboutView.vue')
+  },
+  {
     path: '/storyglow',
     name: 'individual-project/storyglow',
     component: () => import( '../views/individualProject.vue'),
@@ -60,6 +65,11 @@ const routes = [
     name: 'individual-project/seagate',
     component: () => import( '../views/individualProject.vue'),
   },
+  {
+    path: '/mhcid',
+    name: 'individual-project/mhcid',
+    component: () => import( '../views/individualProject.vue'),
+  }
 ]
 
 const router = createRouter({

@@ -2,18 +2,37 @@
   <div class="home">
     <transition name="fade" appear>
     <div class="pic_paragraph">
-      <div class="paragraph">
-        <h1>Who is Varun Narayanswamy?</h1>
+      <div>
+        <h1>Welcome</h1>
+        <img src="../assets/linkedin_photo-removebg.png" alt="Varun profile photo">
+      </div>
+    <div>
         <!--- <div class="profile_picture"> </div> -->
+        <!---<img src="../assets/linkedin_photo.jpg" alt="Varun profile photo">-->
+        <!-- <h2>Who is Varun Narayanswamy?</h2>
+        <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am an alumnus of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p>  -->
+        <!-- <div class="social_media_icons">
+          <button class="sm github" id="github" @click="social_media_click"></button>
+          <button class="sm linkedin" id="linkedin" @click="social_media_click"></button>
+          <button class="sm instagram" id="instagram" @click="social_media_click"></button>
+        </div>  -->
+      </div>
+    </div>
+    <!---<div class="pic_paragraph">
+      <h1>Welcome</h1>
+      <div class="paragraph">
+        <div class="profile_picture"> </div>
         <img src="../assets/linkedin_photo.jpg" alt="Varun profile photo">
-        <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am an alumnus of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p>
+        <img src="../assets/linkedin_photo-removebg.png" alt="Varun profile photo">
+        <h2>Who is Varun Narayanswamy?</h2>
+        <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am an alumnus of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p> 
         <div class="social_media_icons">
           <button class="sm github" id="github" @click="social_media_click"></button>
           <button class="sm linkedin" id="linkedin" @click="social_media_click"></button>
           <button class="sm instagram" id="instagram" @click="social_media_click"></button>
-        </div>  
+        </div> 
       </div>
-    </div>
+    </div> -->
     </transition>
   </div>
 </template>
@@ -63,6 +82,10 @@
     border-radius: 5%;
     align-items: center;
   }
+  .pic_paragraph_grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+    }
   .profile_picture {
     background-image: url("../assets/linkedin_photo.jpg");
     background-size: cover;
@@ -72,18 +95,23 @@
   }
   
   .paragraph {
-    width: 50%
+    width: 70%
   }
   img {
-    max-width: 95%;
+    max-width: 50%;
   }
   h1 {
+    font-size: 5em;
+    margin: 0;
+  }
+  h2 {
     margin-left: 10%;
     margin-right: 10%;
     align-content: center;
+    font-size: 2em;
   }
   @media (max-width: 960px) {
-    h1 {
+    h2 {
       margin: 0%;
     }
   }
@@ -102,7 +130,7 @@
     font-size: 25px;
   }
 
-   @media (max-width: 960px) {
+  @media (max-width: 960px) {
     .pic_paragraph {
       flex-direction: column;
       border-radius: 0%;
@@ -125,37 +153,5 @@
     .general_info {
       min-width: 100%;
     }
-  }
-
-  .sm {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    border: transparent;
-    width: 100px;
-    height: 100px;
-  }
-  .social_media_icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  .github {
-    background-image: url("../assets/social_media/github.png");
-  }
-  .github:hover {
-    background-image: url("../assets/social_media/github_white.png");
-  }
-  .linkedin {
-    background-image: url("../assets/social_media/linkedin.png");
-  }
-  .linkedin:hover {
-    background-image: url("../assets/social_media/linkedin_white.png");
-  }
-  .instagram {
-    background-image: url("../assets/social_media/instagram.png");
-  }
-  .instagram:hover {
-    background-image: url("../assets/social_media/instagram_white.png");
   }
 </style>

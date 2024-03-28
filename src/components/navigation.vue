@@ -17,7 +17,7 @@ export default {
   name: 'navigation-bar',
   computed: {
     navigationBarObjects() {
-      return [{title: 'Home', url: '/'}, {title:'Projects', url:'/projects'}, {title:'Resume', url:'/resume'}]
+      return [{title: 'Home', url: '/'}, {title:'Projects', url:'/projects'}, {title:'About Me', url: '/aboutMe'}, {title:'Resume', url:'/resume'}]
     },
     navigationObjectStyle() {
       return {
