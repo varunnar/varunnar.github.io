@@ -21,7 +21,7 @@
         </div>
         <div class="header_title">
           <div>Experience</div>
-          <div>see more</div>
+          <!--<div>see more</div>-->
         </div>
         <div class="projects">
             <div class="projects-obj">

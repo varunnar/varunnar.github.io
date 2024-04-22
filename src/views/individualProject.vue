@@ -89,7 +89,11 @@
             this.create_list_object(temp, media_objects);
           } else if (project_array[i].includes("IMAGE")) {
             this.create_image_object(temp, media_objects);
-          } else {
+          } else if (project_array[i].includes("SEE MORE")) {
+            this.make_hide_bucket(temp, true);
+          } else if (project_array[i].includes("SEE MORE END")) {
+            this.make_hide_bucket(temp, false);
+          }else {
             let p = document.createElement('p');
             p.innerHTML = project_array[i];
             temp.appendChild(p);
@@ -153,7 +157,7 @@
       },
       create_image_object(temp, media_objects) {
         var image_div = document.createElement('div');
-        image_div.className = "ImageSet"
+        image_div.className = "ImageSet";
         let grid_col = Math.floor(Math.sqrt(media_objects.length - 1));
         let auto_number = "";
         for (var i = 0; i<grid_col; i++) {
@@ -168,6 +172,17 @@
           image_div.appendChild(grid_object);
         }
         temp.append(image_div)
+      },
+      make_hide_bucket(temp, is_first) {
+        if (is_first) {
+          var see_more_button = document.createElement('div');
+          see_more_button.className = "buttonSet";
+          see_more_button.setAttribute('style', 'width: 10%; margin: 45%; height: 10%');
+          see_more_button.onclick = function() { // Note this is a function
+            alert("blabla");
+          };
+          temp.appendChild(see_more_button);
+        }
       }
     }
   }

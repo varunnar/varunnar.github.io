@@ -74,6 +74,9 @@
   .fade-enter-active {
     transition: all 2s ease;
   }
+  .img_div {
+    mask-image: linear-gradient(rgb(0 0 0 / 100%), 50%, transparent);
+  }
   .pic_paragraph {
     display: flex;
     flex-direction: column;
