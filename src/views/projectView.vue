@@ -50,11 +50,13 @@
     },
     computed: {
         objects() {
-            return ["storyglow", "munchmaps", "D3", "heartbeatChecker", 
-            "alpaca","fractal"]
+            return ["storyglow", "munchmaps", "heartbeatChecker", 
+            "D3", "alpaca","fractal"]
         },
         experience() {
-          return ["seagate", "mhcid", "ATLAS"];
+
+          //return ["seagate", "mhcid", "ATLAS"];
+          return ["seagate", "mhcid"];
         }
     },
     methods: {

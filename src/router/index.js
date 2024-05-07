@@ -61,6 +61,11 @@ const routes = [
     component: () => import( '../views/individualProject.vue'),
   },
   {
+    path: '/projectTightrope',
+    name: 'individual-project/projectTightrope',
+    component: () => import( '../views/projectTightRope.vue'),
+  },
+  {
     path: '/seagate',
     name: 'individual-project/seagate',
     component: () => import( '../views/individualProject.vue'),
