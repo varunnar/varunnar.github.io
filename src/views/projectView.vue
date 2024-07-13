@@ -10,12 +10,9 @@
         </div>
         <div class="projects">
             <div class="projects-obj">
-                <div v-for="object in objects" class="project-object-set" :key="object" @click="navigateToPage(object)">
-                  <div :class="'project-obj ' + object" :key="object" :objectinfo="object"></div>
-                  <div v-if="object == 'alpaca'" class="text_info" v-text="'AplacaML'"></div>
-                  <div v-else-if="object == 'D3'" class="text_info" v-text="'D3 Visualization'"></div>
-                  <div v-else-if="object == 'heartbeatChecker'" class="text_info" v-text="'HeartbeatChecker Mobile App'"></div>
-                  <div v-else class="text_info" v-text="object"></div>
+                <div v-for="object in objects" class="project-object-set" :key="object.getProjectName()" @click="navigateToPage(object.getProjectName())">
+                  <div :class="'project-obj ' + object.getProjectName()" :key="object.getProjectName()" :objectinfo="object.getProjectName()"></div>
+                  <div class="text_info" v-text="object.getProjectTitle()"></div>
                 </div>
             </div>
         </div>
@@ -26,7 +23,7 @@
         <div class="projects">
             <div class="projects-obj">
                 <div v-for="object in experience" class="project-object-set" :key="object" @click="navigateToPage(object)">
-                  <div :class="'project-obj ' + object" :key="object" :objectinfo="object"></div>
+                  <div :class="'project-obj ' + object" :key="object" :objectinfo="object" v-text="object"></div>
                   <div v-if="object == 'mhcid'" class="text_info" v-text="'MHCI+D'"></div>
                   <div v-else-if="object == 'seagate'" class="text_info" v-text="'Seagate Technology'"></div>
                   <div v-else class="text_info" v-text="object"></div>
@@ -41,6 +38,7 @@
 
 <script>
   import storyglowText from 'raw-loader!./projects/storyglow.txt'
+  import {storyglow, munchmaps, heartbeat_checker, map_visualization, alpaca, fractal} from './projectClass.js'
   export default {
     name: 'projectView',
     data() {
@@ -50,9 +48,16 @@
     },
     computed: {
         objects() {
-            return ["storyglow", "munchmaps", "heartbeatChecker", 
-            "D3", "alpaca","fractal"]
+            return [storyglow, munchmaps, heartbeat_checker, 
+            map_visualization, alpaca, fractal]
         },
+        // objectName(object){
+        //   return object.getProjectName()
+        // },
+        // objectTitle(object){
+        //   return object.getProjectTitle()
+        // },
+
         experience() {
 
           //return ["seagate", "mhcid", "ATLAS"];
@@ -208,5 +213,12 @@
     }
     .mhcid {
       background-image:url("../assets/project-imgs/mhcid.png");
+    }
+
+    .projectTightRope, .capstoneMHCID, .dataVIZ{
+      background-image: url("../assets/project-imgs/coming_soon.png");
+      background-size: cover;
+      border-color: #014a39;
+      border-width: 10px;
     }
 </style>

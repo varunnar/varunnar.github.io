@@ -1,5 +1,0 @@
-class ProjectExpObject {
-    constructor() {
-        
-    }
-}
