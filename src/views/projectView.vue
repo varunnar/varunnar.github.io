@@ -38,7 +38,7 @@
 
 <script>
   import storyglowText from 'raw-loader!./projects/storyglow.txt'
-  import {storyglow, munchmaps, heartbeat_checker, map_visualization, alpaca, fractal} from './projectClass.js'
+  import {storyglow, munchmaps, heartbeat_checker, map_visualization, alpaca, fractal, project_tightrope, capstone_mhcid} from './projectClass.js'
   export default {
     name: 'projectView',
     data() {
@@ -48,8 +48,8 @@
     },
     computed: {
         objects() {
-            return [storyglow, munchmaps, heartbeat_checker, 
-            map_visualization, alpaca, fractal]
+            return [project_tightrope, storyglow, munchmaps, heartbeat_checker, 
+            map_visualization, alpaca, fractal, capstone_mhcid]
         },
         // objectName(object){
         //   return object.getProjectName()
@@ -215,7 +215,12 @@
       background-image:url("../assets/project-imgs/mhcid.png");
     }
 
-    .projectTightRope, .capstoneMHCID, .dataVIZ{
+    .projectTightrope {
+      background-image: url("../assets/project-imgs/tightrope.png");
+      background-size: cover;
+    }
+
+    .capstoneMHCID, .dataVIZ{
       background-image: url("../assets/project-imgs/coming_soon.png");
       background-size: cover;
       border-color: #014a39;

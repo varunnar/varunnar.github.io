@@ -65,7 +65,7 @@ const alpaca = new projectClass('alpaca', 'AlpacaML', [project_tags.mobile_app, 
 
 const fractal = new projectClass('fractal', 'Music Visualization', [project_tags.data_visualization, project_tags.music, project_tags.math]);
 
-const project_tightrope = new projectClass('projectTightRope', 'Project Tightrope', [project_tags.game, project_tags.prototype, project_tags.hardware, project_tags["MHCI+D"]])
+const project_tightrope = new projectClass('projectTightrope', 'Project Tightrope', [project_tags.game, project_tags.prototype, project_tags.hardware, project_tags["MHCI+D"]])
 
 const capstone_mhcid = new projectClass('capstoneMHCID', 'MHCID Capstone', [project_tags.health, project_tags.prototype, project_tags["MHCI+D"] ])
 

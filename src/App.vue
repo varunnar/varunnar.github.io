@@ -31,6 +31,10 @@ body {
   height: 100vh;
 }
 
+p {
+  font-size: 20px;
+}
+
 nav a {
   font-weight: bold;
   color: #ffffff;
