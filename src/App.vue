@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import navigation from './components/navigation.vue'
+import navigation from './components/navigation.vue';
 
 export default{
   name: 'App',
@@ -37,13 +37,17 @@ p {
 
 nav a {
   font-weight: bold;
-  color: #ffffff;
+  /* font-style: italic; */
+  /* color: #ffffff; */
+  color: #036b53;
+  text-decoration: none;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #19945d;
 }
 nav a:hover {
-  color: #fceab7;
+  /* color: #fceab7; */
+  color: #000101;
 }
 </style>

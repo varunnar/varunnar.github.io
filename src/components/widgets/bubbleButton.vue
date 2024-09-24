@@ -1,10 +1,10 @@
 <template>
-  <div class="bubble-icon" :style="styleObj">
+  <!--<div class="bubble-icon" :style="styleObj">-->
     <div v-if="isButton" class="button-text">
       <router-link v-if="!isResume" :to="navigationUrl"> {{navigationName}} </router-link>
       <a v-else href="resume.pdf">Resume</a>
     </div>
-  </div>
+  <!--</div>-->
   <!-- <div v-if="isButton" class="button-text">
       <router-link v-if="!isResume" :to="navigationUrl"> 
         <div class="bubble-icon" :style="styleObj"> {{navigationName}} </div> 
@@ -71,21 +71,22 @@ export default {
 </script>
 
 <style lang="scss">
-  .bubble-icon {
-    //background-image: url("../../assets/Ellipse.png");
-    //background-repeat: no-repeat;
-    //background-position: center;
-    //background-size: contain;
-    background-color: #014a39;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  // .bubble-icon {
+  //   //background-image: url("../../assets/Ellipse.png");
+  //   //background-repeat: no-repeat;
+  //   //background-position: center;
+  //   //background-size: contain;
+  //   background-color: #014a39;
+  //   border-radius: 50%;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
     .button-text {
       font-size: 18px;
-      color: #ffffff;
+      //color: #ffffff;
+      color: #014a39;
       text-align: center;
       vertical-align: center;
     }
-  }
+  //}
 </style>

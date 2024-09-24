@@ -22,8 +22,7 @@ function draw() {
   background(backgroundImg);
   
   if (game_state == "playing"){
-  
-    for (let i = 0; i &lt; batArray.length; i++) {
+    for (let i = 0; i<batArray.length; i++) {
       if (batArray[i].y_position > height) {
         batArray.splice(i, 1);
       } else {

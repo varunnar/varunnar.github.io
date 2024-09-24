@@ -3,26 +3,26 @@
     <!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" onload="this.width=screen.width-100;this.height=screen.height;" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FYMt6LSZGrnwEE9iW6f0V4D%2FWebpage%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D0-1%26viewport%3D-567%252C-2041%252C0.18%26t%3D6LigpQb20GFEuMoP-1%26scaling%3Dmin-zoom%26mode%3Ddesign" allowfullscreen="true"></iframe> -->
   <div class="section hero_section">
     <h1>Project Tightrope</h1>
-    <div class="hero_image"></div>
+    <!-- <div class="hero_img_set">
+      <div class="hero_image"></div>
+    </div> -->
+    <slideshow 
+      :imageUrls="main_images"
+      :numberOfImages="2"
+      :autoPlay="true">
+    </slideshow>
     <div class="header_text"> A walk-up-and-play style multiplayer videogame, that teaches players about the physical/mental experience of anxiety and display the importance of community support. </div>
-    <div class="cards_obj">
-      <div class="card white_container" style="width:300px">
-        <h2>Organization</h2>
-        <p>Master's for Human Computer Interaction and Design</p>
-      </div>
-      <div class="card white_container" style="width:300px">
-        <h2>The Project Duration</h2>
-        <p>The project began was January 3rd, 2024 and concluded on March 10th, 2024.</p>
-      </div>
-      <div class ="card white_container" style="width:300px">
-        <h2>The Team</h2>
-        <p><b>Varun Narayanswamy,</b> Samantha Ting, Annie Song, Husna Tabbassun</p>
-      </div>
-      <div class ="card white_container" style="width:300px">
-          <h2>My Roles</h2>
-          <p><b>Lead Developer</b>, designer, user researcher</p>
-        </div>
-      </div>
+    <div style="text-align: left; align-self: left;">
+    <h2>Members</h2>
+    <ul>
+      <li><b>Varun Narayanswamy</b></li>
+      <li>Samantha Ting</li>
+      <li>Annie Song</li>
+      <li>Husna Tabbassun</li>
+    </ul>
+    <h2>Timeline</h2>
+    <p>This project originated from the Prototyping Studio course in the Master's program for Human-Computer Interaction and Design.<b>(MHCI+D)</b>. It ran from January 2024 to March 2024 <b>(11 weeks)</b></p>
+  </div>
     </div>
 
     <div class="section situation"> 
@@ -59,6 +59,25 @@
         <p>From our initial research, we focused on anxiety and mental health. 
           We designed a controller where the main player uses a balancing board and rod to dodge obstacles, 
           simulating the physical and mental experience of anxiety. The following are the key tenants we utilized in our design</p>
+          <!-- <div class="flex_spacing_MD">
+            <div style="width: 47%; max-width: 505px;">
+              <img style="width: 100%; object-fit: cover;" src="../assets//project_tightrope/research_1.png">
+              <h3>The Importance of Physicality</h3>
+              <div>The Feeling Pressured activity at Exploratorium SF simulates pressure from anxiety and health challenges using a vacuum-sealed bag.This inspired us to consider using physical simulation to convey our message when designing our game. </div>
+            </div>
+            <div style="width: 47%; max-width: 505px;">
+              <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/research_2.png">
+              <h3>The use of metaphors and abstraction</h3>
+              <p>We then shared our ideas out, asking our classmates for feedback and opinions on our varying ideas</p>
+            </div>
+            <div style="width: 100%; max-width: 505px;">
+              <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/research_3.png">
+              <h3>The role of haptic feedback</h3>
+              <p>Our team took our classmates feedback and after many rounds of discussing, dot voting, and refining we generated our idea - <b>Project Tightrope.</b></p>
+            </div> -->
+          <!-- <img style="width: 47%; object-fit: cover;" src="../assets/project_tightrope/planning_2.png">
+          <img style="width: 30%; object-fit: cover;" src="../assets/project_tightrope/board_1.jpg"> -->
+          <!-- </div> -->
         <div class = "initial_research_circles">
           <div class="research_circles">
             <img src="../assets/project_tightrope/game1.png">
@@ -77,7 +96,23 @@
       <div>
         <h2>IDEATION</h2>
         <p>After completing our desk research we built out a number of projects, all that focused either on social issues, interesting controllers, multiplayer interactions, or emmersive feelings. </p>
-          <img style="width: 100%" src="../assets//project_tightrope/big_img.png">
+          <div class="flex_spacing_MD">
+            <div style="width: 47%;">
+              <img style="width: 100%; object-fit: cover;" src="../assets//project_tightrope/big_img.png">
+              <p>We designed several ideas, using the opportunity to explore AI image generation and explain them to our classmates.</p>
+            </div>
+            <div style="width: 47%;">
+              <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/board.jpg">
+              <p>We then shared our ideas out, asking our classmates for feedback and opinions on our varying ideas</p>
+            </div>
+            <div style="width: 100%">
+              <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/planning_1.png">
+              <p>Our team took our classmates feedback and after many rounds of discussing, dot voting, and refining we generated our idea - <b>Project Tightrope.</b></p>
+            </div>
+          <!-- <img style="width: 47%; object-fit: cover;" src="../assets/project_tightrope/planning_2.png">
+          <img style="width: 30%; object-fit: cover;" src="../assets/project_tightrope/board_1.jpg"> -->
+          </div>
+
       </div>
     </div>
     <div class="white_container section WOZ_testing"> 
@@ -149,11 +184,11 @@
       <div class="grid_template_2r">
         <div id="wings_iterations">
           <h3>Wing Iterations</h3>
-          <img src="../assets/project_tightrope/wings_set.png" style="border-radius: 20px; width: 90%">
+          <slideshow style="width: 95%" :autoPlay="false" :imageUrls="wing_images" :textUrls="wing_text" :numberOfImages="3"></slideshow>
         </div>
         <div id="rod_iterations">
           <h3>Rod Iterations</h3>
-          <img src="../assets/project_tightrope/rod_set.png" style="border-radius: 20px; width: 90%">
+          <slideshow style="width: 95%" :autoPlay="false" :imageUrls="rod_images" :textUrls="rod_text" :numberOfImages="3"></slideshow>
         </div>
       </div>
     </div>
@@ -221,15 +256,26 @@
 import woz_text_1 from 'raw-loader!../assets/project_tightrope/code_files/woz_1.txt';
 import woz_text_2 from 'raw-loader!../assets/project_tightrope/code_files/woz_2.txt';
 import woz_text_3 from 'raw-loader!../assets/project_tightrope/code_files/woz_3.txt';
+import slideshow from '../components/widgets/slideshow.vue';
 export default {
   name: 'projectTightRope',
+  components: { slideshow },
   data() {
       return {
         width_val: window.innerWidth,
         height_val: window.innerHeight,
         woz_text_1: woz_text_1,
         woz_text_2: woz_text_2,
-        woz_text_3: woz_text_3
+        woz_text_3: woz_text_3,
+        main_images: ["/assets/tv_screen.png", "/assets/playing.png"],
+        wing_images: ["/assets/wings1.png", "/assets/wings2.png", "/assets/wings3.png"],
+        wing_text: ["Our first test version made of cardboard, used to test the swiping motion", 
+        "The refined the design for WOZ testing using foam core, color coded for each of the players", 
+        "For the final design, we paper-mached the wings, centered the CPX inside, and glued the wings to hide cords and electronics"],
+        rod_images: ["/assets/rod_1.png", "/assets/rod_2.png", "/assets/rod_3.png"],
+        rod_text: ["Our first test version made of a random rod taped with the CPX, used to test the tilting motion", 
+        "The WOZ design used a larger rod that was better balanced, including cardboard holder for the CPX", 
+        "The final design uses the same rod, but instead included a 3D printed CPX holder with cloth that covers the CPX fdrom view"],
       };
     },
   computed: {
@@ -259,18 +305,38 @@ export default {
     font-size: 20px;
     //color: black;
   }
+  li {
+    font-size: 20px;
+  }
   .header_text {
     font-size: 30px;
     font-weight: bold;
   }
+
+  .hero_img_set{
+    display: relative;
+    width: 100%;
+    height: auto;
+  }
+
   .hero_image {
+    display: inline-block;
+    position: relative;
     background-image: url("../assets/project_tightrope/main_image.png");
-    width: 700px;
-    height: 700px;
-    background-size: contain;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: cover;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2%;
+  }
+  .corner_img {
+    //position: absolute;
+    width: 30%;
+    aspect-ratio: 2/3;
+    transform: translate(185%, -50%);
+    background-size: cover;
+    background-image: url("../assets/project_tightrope/corner_img_square.png");
   }
   .section {
     padding-left: 10%;
@@ -292,7 +358,6 @@ export default {
     }
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 60px;
   }
 
@@ -407,6 +472,8 @@ export default {
     margin: auto;
   }
 
+  .flex_spacing_
+
   .flex_spacing_FS {
     display: flex;
     flex-direction: row;
@@ -444,6 +511,15 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
+    width: 100%
+  }
+
+  .flex_spacing_MD {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
     width: 100%
   }
 
@@ -494,16 +570,16 @@ export default {
     width: 90%;
   }
 
-  .change_1 {
-    background-image: url("../assets/project_tightrope/change_1.png");
-  }
-  .change_2 {
-    background-image: url("../assets/project_tightrope/change_2.png");
-  }
-  .change_3 {
-    background-image: url("../assets/project_tightrope/change_3.png");
-    width: 350px !important;
-  }
+  // .change_1 {
+  //   background-image: url("../assets/project_tightrope/change_1.png");
+  // }
+  // .change_2 {
+  //   background-image: url("../assets/project_tightrope/change_2.png");
+  // }
+  // .change_3 {
+  //   background-image: url("../assets/project_tightrope/change_3.png");
+  //   width: 350px !important;
+  // }
 
   .change_obj {
     background-size: cover;
@@ -514,10 +590,4 @@ export default {
       border-radius: 2000px;
     }
   }
-
-
-
-
-
-
 </style>
