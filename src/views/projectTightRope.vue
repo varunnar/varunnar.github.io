@@ -59,26 +59,34 @@
         <p>From our initial research, we focused on anxiety and mental health. 
           We designed a controller where the main player uses a balancing board and rod to dodge obstacles, 
           simulating the physical and mental experience of anxiety. The following are the key tenants we utilized in our design</p>
+          <slideshow
+            style="width: 50%; margin: auto;"
+            :autoPlay="false"
+            :imageUrls="ideation_images"
+            :headerArray="['The Importance of Physicality', 'The use of Metaphors and Abstraction', 'The role of Haptic Feedback']"
+            :bodyArray="['The Feeling Pressured activity at Exploratorium SF simulates pressure from anxiety and health challenges using a vacuum-sealed bag. The project inspired us to consider using physical simulation to convey our message when designing our game.',
+              'spiritfarer uses anthropomorphized animals to explore loss, relationships, regrets, and acceptance of death. Its art style, abstract narratives, and metaphors make the heavy topic of grief more lighthearted and approachable. We aimed to apply similar techniques in our work to convey important messages without triggering players.',
+              'Lightbattle III, honoring Dutch cycling, uses 6 bikes to power a light and sound display, where cyclists compete as lights fill a canopy. We used this piece to inspire us to consider multisensory experiences when designing our game.'
+            ]"
+          ></slideshow>
           <!-- <div class="flex_spacing_MD">
-            <div style="width: 47%; max-width: 505px;">
+            <div style="width: 100%; max-width: 505px;">
               <img style="width: 100%; object-fit: cover;" src="../assets//project_tightrope/research_1.png">
               <h3>The Importance of Physicality</h3>
               <div>The Feeling Pressured activity at Exploratorium SF simulates pressure from anxiety and health challenges using a vacuum-sealed bag.This inspired us to consider using physical simulation to convey our message when designing our game. </div>
             </div>
-            <div style="width: 47%; max-width: 505px;">
+            <div style="width: 100%; max-width: 505px;">
               <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/research_2.png">
               <h3>The use of metaphors and abstraction</h3>
-              <p>We then shared our ideas out, asking our classmates for feedback and opinions on our varying ideas</p>
+              <div>Spiritfarer uses anthropomorphized animals to explore loss, relationships, regrets, and acceptance of death. Its art style, abstract narratives, and metaphors make the heavy topic of grief more lighthearted and approachable. We aimed to apply similar techniques in our work to convey important messages without triggering players.</div>
             </div>
             <div style="width: 100%; max-width: 505px;">
               <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/research_3.png">
               <h3>The role of haptic feedback</h3>
-              <p>Our team took our classmates feedback and after many rounds of discussing, dot voting, and refining we generated our idea - <b>Project Tightrope.</b></p>
-            </div> -->
-          <!-- <img style="width: 47%; object-fit: cover;" src="../assets/project_tightrope/planning_2.png">
-          <img style="width: 30%; object-fit: cover;" src="../assets/project_tightrope/board_1.jpg"> -->
-          <!-- </div> -->
-        <div class = "initial_research_circles">
+              <div>Lightbattle III, honoring Dutch cycling, uses 6 bikes to power a light and sound display, where cyclists compete as lights fill a canopy. We used this piece to inspire us to consider multisensory experiences when designing our game.</div>
+            </div>
+          </div> -->
+        <!-- <div class = "initial_research_circles">
           <div class="research_circles">
             <img src="../assets/project_tightrope/game1.png">
             <p>The value of a physically embodied experience</p>
@@ -91,17 +99,17 @@
             <img src="../assets/project_tightrope/game3.png">
             <p>When covering serious topics, metaphors and abstraction can be valuable to conveying important sentiments</p>
           </div>
-        </div>
+        </div> -->
       </div>
       <div>
         <h2>IDEATION</h2>
         <p>After completing our desk research we built out a number of projects, all that focused either on social issues, interesting controllers, multiplayer interactions, or emmersive feelings. </p>
           <div class="flex_spacing_MD">
-            <div style="width: 47%;">
+            <div style="width: 100%; max-width: 505px;">
               <img style="width: 100%; object-fit: cover;" src="../assets//project_tightrope/big_img.png">
               <p>We designed several ideas, using the opportunity to explore AI image generation and explain them to our classmates.</p>
             </div>
-            <div style="width: 47%;">
+            <div style="width: 100%; max-width: 505px;">
               <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/board.jpg">
               <p>We then shared our ideas out, asking our classmates for feedback and opinions on our varying ideas</p>
             </div>
@@ -184,11 +192,11 @@
       <div class="grid_template_2r">
         <div id="wings_iterations">
           <h3>Wing Iterations</h3>
-          <slideshow style="width: 95%" :autoPlay="false" :imageUrls="wing_images" :textUrls="wing_text" :numberOfImages="3"></slideshow>
+          <slideshow style="width: 95%" :autoPlay="false" :imageUrls="wing_images" :bodyArray="wing_text" :numberOfImages="3"></slideshow>
         </div>
         <div id="rod_iterations">
           <h3>Rod Iterations</h3>
-          <slideshow style="width: 95%" :autoPlay="false" :imageUrls="rod_images" :textUrls="rod_text" :numberOfImages="3"></slideshow>
+          <slideshow style="width: 95%" :autoPlay="false" :imageUrls="rod_images" :bodyArray="rod_text" :numberOfImages="3"></slideshow>
         </div>
       </div>
     </div>
@@ -268,6 +276,7 @@ export default {
         woz_text_2: woz_text_2,
         woz_text_3: woz_text_3,
         main_images: ["/assets/tv_screen.png", "/assets/playing.png"],
+        ideation_images: ["/assets/research_1.png", "/assets/research_2.png", "assets/research_3.png"],
         wing_images: ["/assets/wings1.png", "/assets/wings2.png", "/assets/wings3.png"],
         wing_text: ["Our first test version made of cardboard, used to test the swiping motion", 
         "The refined the design for WOZ testing using foam core, color coded for each of the players", 
@@ -280,8 +289,6 @@ export default {
     },
   computed: {
     woz1Code() {
-      console.log("hello");
-      console.log(this.woz_text_1);
       return this.woz_text_1;
     }
   }
@@ -517,7 +524,7 @@ export default {
   .flex_spacing_MD {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
     width: 100%

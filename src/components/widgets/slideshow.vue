@@ -2,9 +2,10 @@
     <div class="slideshow">
       <div v-if="imagePaths.length > 0" class="image-container">
         <transition :name="transitionName" mode="out-in">
-          <div class="container">
+          <div class="slideshow_container">
             <img :src="imagePaths[currentIndex]" alt="Slideshow Image" class="slideshow-image" :key="imagePaths[currentIndex]"/>
-            <div v-if="textUrls" v-text="textUrls[currentIndex]"></div>
+            <h3 v-if="headerArray" v-text="headerArray[currentIndex]"></h3>
+            <div v-if="bodyArray" v-text="bodyArray[currentIndex]" style="margin: 10px;"></div>
           </div>
       </transition>
       </div>
@@ -14,7 +15,7 @@
       
       <div class="controls" v-if="showControls">
         <button @click="clickPrev">Previous</button>
-        <button @click="handlePauseClick">{{ isPaused ? 'Resume' : 'Pause' }}</button>
+        <button v-if="autoPlay" @click="handlePauseClick">{{ isPaused ? 'Resume' : 'Pause' }}</button>
         <button @click="clickNext">Next</button>
       </div>
     </div>
@@ -28,7 +29,11 @@
         type: Array,
         required: true,
       },
-      textUrls: {
+      bodyArray: {
+        type: Array,
+        required: false
+      },
+      headerArray: {
         type: Array,
         required: false
       },
@@ -79,7 +84,6 @@
       },
       transitionName() {
         // Return 'fade' if transition is not disabled, otherwise empty (no transition)
-        console.log(this.disableTransition)
         return this.disableTransition ? '' : 'fade';
       }
     },
@@ -87,14 +91,16 @@
       clickPrev() {
         this.disableTransition = true;
         this.prevImage()
-        this.stopAutoPlay();
-        this.startAutoPlay();
+        if (this.autoPlay) {
+          this.resetAutoPlay();
+        }
       },
       clickNext() {
         this.disableTransition = true;
         this.nextImage();
-        this.stopAutoPlay();
-        this.startAutoPlay();
+        if (this.autoPlay) {
+          this.resetAutoPlay();
+        }
       },
       handlePauseClick() {
         // Toggle pause/resume state
@@ -113,7 +119,6 @@
         } else {
           this.currentIndex = this.imagePaths.length-1;
         }
-        this.resetTransition();
       },
       nextImage() {
         if (this.currentIndex < this.imagePaths.length - 1) {
@@ -121,7 +126,6 @@
         } else {
           this.currentIndex = 0;
         }
-        this.resetTransition();
       },
 
       startAutoPlay() {
@@ -139,12 +143,17 @@
           this.autoPlayTimer = null;
         }
       },
-      resetTransition() {
-      // Re-enable the fade transition after a delay
-        setTimeout(() => {
-          this.disableTransition = false;
-        }, 100); // Small delay to ensure the image has changed before re-enabling fade
-      }
+
+      resetAutoPlay() {
+        this.stopAutoPlay();
+        this.startAutoPlay();
+      },
+      // resetTransition() {
+      // // Re-enable the fade transition after a delay
+      //   setTimeout(() => {
+      //     this.disableTransition = false;
+      //   }, 100); // Small delay to ensure the image has changed before re-enabling fade
+      // }
     },
     watch: {
       // Watch for changes to the autoPlay prop and update autoplay behavior
@@ -162,6 +171,11 @@
   <style lang="scss">
   .slideshow {
     text-align: center;
+  }
+  .slideshow_container{
+    background-color: rgb(32, 32, 32);
+    padding: 5%;
+    border-radius: 2%;
   }
   
   .image-container {
