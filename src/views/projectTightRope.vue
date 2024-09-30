@@ -1,56 +1,53 @@
 <template>
   <div class="container">
     <!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" onload="this.width=screen.width-100;this.height=screen.height;" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FYMt6LSZGrnwEE9iW6f0V4D%2FWebpage%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D0-1%26viewport%3D-567%252C-2041%252C0.18%26t%3D6LigpQb20GFEuMoP-1%26scaling%3Dmin-zoom%26mode%3Ddesign" allowfullscreen="true"></iframe> -->
-  <div class="section hero_section">
-    <h1>Project Tightrope</h1>
-    <!-- <div class="hero_img_set">
-      <div class="hero_image"></div>
-    </div> -->
-    <slideshow 
-      :imageUrls="main_images"
-      :numberOfImages="2"
-      :autoPlay="true">
-    </slideshow>
-    <div class="header_text"> A walk-up-and-play style multiplayer videogame, that teaches players about the physical/mental experience of anxiety and display the importance of community support. </div>
-    <div style="text-align: left; align-self: left;">
-    <h2>Members</h2>
-    <ul>
-      <li><b>Varun Narayanswamy</b></li>
-      <li>Samantha Ting</li>
-      <li>Annie Song</li>
-      <li>Husna Tabbassun</li>
-    </ul>
-    <h2>Timeline</h2>
-    <p>This project originated from the Prototyping Studio course in the Master's program for Human-Computer Interaction and Design.<b>(MHCI+D)</b>. It ran from January 2024 to March 2024 <b>(11 weeks)</b></p>
-  </div>
-    </div>
+    <sectionContainer class="hero_section">
+      <h1>Project Tightrope</h1>
+      <slideshow 
+        :imageUrls="main_images"
+        :numberOfImages="2"
+        :autoPlay="true">
+      </slideshow>
+      <div class="header_text"> A walk-up-and-play style multiplayer videogame, that teaches players about the physical/mental experience of anxiety and display the importance of community support. </div>
+      <div style="text-align: left; align-self: left;">
+      <h2>Members</h2>
+      <ul>
+        <li><b>Varun Narayanswamy</b></li>
+        <li>Samantha Ting</li>
+        <li>Annie Song</li>
+        <li>Husna Tabbassun</li>
+      </ul>
+      <h2>Timeline</h2>
+      <p>This project originated from the Prototyping Studio course in the Master's program for Human-Computer Interaction and Design.<b>(MHCI+D)</b>. It ran from January 2024 to March 2024 <b>(11 weeks)</b></p>
+      </div>
+    </sectionContainer>
 
-    <div class="section situation"> 
-      <div class="header" style="margin: auto">
+    <sectionContainer class="situation"> 
+      <div class="header">
         <h1>The Situation</h1>
         <p>This project was assigned in prototyping studio course. We were asked to make a game that fit the following criteria: </p>
       </div>
-      <div class="cards_obj">
-        <div class="card green_container">
+      <div class="grid_template_2r">
+        <div>
           <h2>Multiplayer</h2>
           <p>The game needed to include some form of multiplayer element. This game should be an experience to share.</p>
         </div>
-        <div class="card green_container">
+        <div>
           <h2>Walk Up and Play</h2>
           <p>The game shouldn’t require previous exposure and should friendly to a different players independent. </p>
         </div>
-        <div class ="card green_container">
+        <div>
           <h2>Custom Controller</h2>
           <p>The game should include at least 1 custom made controller. The controller should be large and fun, compelling in of itself.</p>
         </div>
-        <div class ="card green_container">
+        <div>
           <h2>Social Issue</h2>
           <p>The game should make a statement on a social issue. Players should leave feeling informed and motivated to make changes going forward.</p>
         </div>
       </div>
-    </div>
+    </sectionContainer>
 
-    <div class="green_container section research_ideation"> 
+    <sectionContainer class="green_container research_ideation"> 
       <div class="header">
         <h1>Research and Ideation</h1>
       </div>
@@ -122,8 +119,8 @@
           </div>
 
       </div>
-    </div>
-    <div class="white_container section WOZ_testing"> 
+    </sectionContainer>
+    <sectionContainer class="white_container WOZ_testing"> 
       <div class="header_section">
       <h1>WOZ Testing</h1>
       <p>After refining and validating our idea, we conducted three Wizard of Oz (WOZ) testing sessions. We developed the on-screen game elements while simulating the controllers, which allowed us to progress on the game code, test controllers for players 2 and 3, and assess our message's effectiveness.</p>
@@ -132,7 +129,7 @@
       <div class="woz_test">
         <h2>PROTOTYPE 1 - TILT MECHANISM</h2>
         <p>The first prototype tested player 1's tilting mechanism. During gameplay, bat obstacles representing stress and responsibilities flew down from the top of the screen, and the player character could move left and right to dodge them.</p>
-        <div class="woz_obj">
+        <div class="woz_obj type_1">
           <div class="code_obj">
             <pre v-html="woz_text_1"></pre>
           </div>
@@ -142,7 +139,7 @@
       <div class="woz_test">
         <h2>PROTOTYPE 2 - SWATTING MECHANISM</h2>
         <p>The second prototype tested a swatting mechanism for the second and third players. During gameplay, bat obstacles from the first prototype moved in from the left and right.</p>
-        <div class="woz_obj">
+        <div class="woz_obj type_2">
           <img src="../assets/project_tightrope/woz_2.gif">
           <div class="code_obj">
             <pre v-html="woz_text_2"></pre>
@@ -152,7 +149,7 @@
       <div class="woz_test">
         <h2>PROTOTYPE 3 - FLAPPING MECHANISM</h2>
         <p>The final prototype tested a flapping motion for the second and third players. During gameplay, the players flapped in unison to move the character closer to the cliff face. </p>
-        <div class="woz_obj">
+        <div class="woz_obj type_1">
           <div class="code_obj">
             <pre v-html="woz_text_3"></pre>
           </div>
@@ -180,8 +177,8 @@
           </div>
         </div>
       </div>
-  </div>
-  <div class="green_container section idea_refinement">
+  </sectionContainer>
+  <sectionContainer class="green_container idea_refinement" style="padding: auto">
     <div class="header">
       <h1>Design Iterations</h1>
       <p>After completing the WOZ testing the next steps was to build out the game.
@@ -202,6 +199,7 @@
     </div>
     <div class="software">
       <h2>SOFTWARE FEATURES</h2>
+      <p>A large load of the work done next was within the software elements of the code. The finalized p5.js software code can be found <a href="https://editor.p5js.org/varunk.narayanswamy-round/sketches/F_rfpgcrT">here.</a></p>
       <div class="grid_template">
         <div class="software_update" id="initial_story">
           <h3>Inital Story</h3>
@@ -225,12 +223,12 @@
         <div class="software_update" id="player_1_control">
           <h3>Player 1 Controls</h3>
           <img src="../assets/project_tightrope/p1.gif" style="border-radius: 20px; width: 90%">
-          <p>I synced the controller with player 1's CPX. The board's tilt triggered key presses to move the in-game character. </p>
+          <p>I synced the controller with player 1's CPX. The board's tilt triggered key presses to move the in-game character. Controller logic can be found <a href="https://makecode.com/_Wf0ix15KRD5d">here.</a></p>
         </div>
         <div class="software_update" id="player_2_control">
           <h3>Player 2 Controls</h3>
           <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
-          <p>Shaking player 2 and 3 wings (with CPX boards) triggers one of four keys, moving the wing in-game and transferring nearby emotion orbs. </p>
+          <p>Shaking player 2 and 3 wings (with CPX boards) triggers one of four keys, moving the wing in-game and transferring nearby emotion orbs.  Controller logic can be found <a href="https://makecode.com/_gsocvTPVEig2">here.</a> </p>
         </div>
         <div class="software_update" id="ending_sequence">
           <h3>Ending Sequence</h3>
@@ -239,10 +237,13 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="white_container section showcase">
-      <h1>Showcase</h1>
-      <iframe src="https://www.youtube.com/embed/DoGYisWcmu8?si=PPjT6fK4Aat2n2zx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </sectionContainer>
+  <sectionContainer class="white_container showcase">
+      <h1>Showcase and Final Video</h1>
+      <div>
+      <h2>SHOWCASE</h2>
+      <p>After completing our project we held a public showcase, where we could demo Project Tightrope. The follow is video content that displays that experience</p>
+      <iframe src="https://www.youtube.com/embed/DoGYisWcmu8?si=PPjT6fK4Aat2n2zx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin: auto"></iframe>
       <!-- <div class="grid_template">
         <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
         <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
@@ -254,10 +255,14 @@
         <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
 
       </div> -->
-  </div>
-  <div>
-    
-  </div>
+    </div>
+
+    <div>
+    <H2> FINAL VIDEO</H2>
+    <p>We concluded our project by putting together a final video that explain our concept, approach and implementation.</p>
+    <iframe src="https://www.youtube.com/embed/AU4bc2cfOug?si=Va65FkhBQWWL5tHL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen  style="margin: auto"></iframe>
+    </div>
+  </sectionContainer>
   </div>
 </template>
 <script>
@@ -265,9 +270,10 @@ import woz_text_1 from 'raw-loader!../assets/project_tightrope/code_files/woz_1.
 import woz_text_2 from 'raw-loader!../assets/project_tightrope/code_files/woz_2.txt';
 import woz_text_3 from 'raw-loader!../assets/project_tightrope/code_files/woz_3.txt';
 import slideshow from '../components/widgets/slideshow.vue';
+import sectionContainer from '../components/widgets/section.vue';
 export default {
   name: 'projectTightRope',
-  components: { slideshow },
+  components: { slideshow, sectionContainer },
   data() {
       return {
         width_val: window.innerWidth,
@@ -345,17 +351,17 @@ export default {
     background-size: cover;
     background-image: url("../assets/project_tightrope/corner_img_square.png");
   }
-  .section {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    border-radius: 20px;
-  }
+  // .section {
+  //   padding-left: 10%;
+  //   padding-right: 10%;
+  //   padding-top: 5%;
+  //   padding-bottom: 5%;
+  //   margin-left: 10%;
+  //   margin-right: 10%;
+  //   margin-top: 5%;
+  //   margin-bottom: 5%;
+  //   border-radius: 20px;
+  // }
   .hero_section {
     background-color: #131315;
     color: #ffebe8;
@@ -368,7 +374,7 @@ export default {
     gap: 60px;
   }
 
-  .WOZ_testing, .research_ideation, .idea_refinement, .showcase{
+  .WOZ_testing, .research_ideation, .idea_refinement, .showcase, .situation{
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -379,35 +385,41 @@ export default {
     margin-top: 50px;
   }
 
+  // @media (max-width: 400px) {
+  //      .type_1 {
+  //       flex-direction: row-reverse;
+  //      }
+  //   }
+
   .woz_obj {
-    //display: grid;
     display: flex;
-    //@at-rootgrid-template-columns: 1fr 1fr;
     flex-direction: row;
+    align-items: flex-end;
     gap: 50px;
     justify-content: space-around;
-    // margin-left: 5%;
-    // margin-right: 5%;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    //align-items: flex-start;
     p {
-      //width: 50%;
       margin: 0px;
     }
     img {
       border-radius: 5px;
-      height: 400px;
       width: 100%;
-     // width: 70%;
+      height: 400px;
+      object-fit: cover;
+      max-width: 700px;
     }
-  }
-
-  .code_obj {
-    width: 100%; 
-    height: 400px;
-    background-color: black;
-    overflow: scroll;
-    pre {
-      color: white;
+    .code_obj {
+      flex: 1;
+      max-height: 400px;
+      min-width: 200px; 
+      max-width: 700px;
+      background-color: black;
+      overflow: scroll;
+      pre {
+        color: white;
+        overflow: scroll;
+      }
     }
   }
 
@@ -424,6 +436,10 @@ export default {
       color: #2B2D34;
     }
   }
+
+  // img {
+  //   object-fit: cover;
+  // }
 
   .green_container {
     background-color: #131315;
@@ -479,8 +495,6 @@ export default {
     margin: auto;
   }
 
-  .flex_spacing_
-
   .flex_spacing_FS {
     display: flex;
     flex-direction: row;
@@ -499,6 +513,13 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .grid_template_2_3rds {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+
 
   @media (max-width: 1570px) {
     .grid_template {
@@ -534,15 +555,16 @@ export default {
     margin-top: 50px;
     margin-bottom: 50px;
 
-    iframe {
-      width: 90%;
-      aspect-ratio: 40/27;
-    }
+    // iframe {
+    //   width: 100%;
+    //   height: auto;
+    //   aspect-ratio: 40/27;
+    // }
 
   }
 
   iframe {
-      width: 90%;
+      width: 100%;
       aspect-ratio: 40/27;
     }
 

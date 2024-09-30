@@ -2,7 +2,7 @@
     <div class="slideshow">
       <div v-if="imagePaths.length > 0" class="image-container">
         <transition :name="transitionName" mode="out-in">
-          <div class="slideshow_container">
+          <div class="slideshow_container" :key="imagePaths[currentIndex]">
             <img :src="imagePaths[currentIndex]" alt="Slideshow Image" class="slideshow-image" :key="imagePaths[currentIndex]"/>
             <h3 v-if="headerArray" v-text="headerArray[currentIndex]"></h3>
             <div v-if="bodyArray" v-text="bodyArray[currentIndex]" style="margin: 10px;"></div>

@@ -11,13 +11,16 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.8.1",
+    "@observablehq/runtime": "^5.9.9",
     "@pdftron/webviewer": "^8.0.0",
+    "b02a387aa7a1c933": "https://api.observablehq.com/d/b02a387aa7a1c933.tgz?v=3",
     "core-js": "^3.8.3",
     "raw-loader": "^4.0.2",
     "sass": "^1.72.0",
     "vue": "^3.2.13",
     "vue-pdf": "^4.3.0",
     "vue-pdf-embed": "^1.1.4",
+    "vue-plugin-load-script": "^2.1.1",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },

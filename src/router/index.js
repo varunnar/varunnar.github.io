@@ -65,6 +65,12 @@ const routes = [
     name: 'individual-project/projectTightrope',
     component: () => import( '../views/projectTightRope.vue'),
   },
+
+  {
+    path: '/dataVizPortal',
+    name: 'individual-project/DataViz',
+    component: () => import( '../views/globem.vue'),
+  },
   {
     path: '/seagate',
     name: 'individual-project/seagate',
