@@ -175,6 +175,7 @@
       background-repeat: no-repeat;
       background-position: center;
       margin-bottom: 5px;
+      border-radius: 20px;
     }
     .seagate {
       background-image: url("../assets/project-imgs/seagate.png");
