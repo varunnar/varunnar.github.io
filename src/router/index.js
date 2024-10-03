@@ -80,6 +80,11 @@ const routes = [
     path: '/mhcid',
     name: 'individual-project/mhcid',
     component: () => import( '../views/individualProject.vue'),
+  },
+  {
+    path: '/yourAWizardSarah',
+    name: 'missLady',
+    component: () => import( '../views/missLady.vue'),
   }
 ]
 

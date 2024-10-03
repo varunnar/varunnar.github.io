@@ -4,6 +4,9 @@
       <router-link v-if="!isResume" :to="navigationUrl"> {{navigationName}} </router-link>
       <a v-else href="resume.pdf">Resume</a>
     </div>
+    <div v-else class="button-text">
+      <p>{{ navigationName }} </p>
+    </div>
   <!--</div>-->
   <!-- <div v-if="isButton" class="button-text">
       <router-link v-if="!isResume" :to="navigationUrl"> 

@@ -217,8 +217,9 @@
     }
 
     .projectTightrope {
-      background-image: url("../assets/project-imgs/tightrope.png");
-      background-size: cover;
+      background-image: url("../../public/assets/tv_screen.png");
+      background-size: contain;
+
     }
 
     .capstoneMHCID, .dataVIZ{

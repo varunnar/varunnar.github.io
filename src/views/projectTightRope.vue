@@ -66,37 +66,6 @@
               'Lightbattle III, honoring Dutch cycling, uses 6 bikes to power a light and sound display, where cyclists compete as lights fill a canopy. We used this piece to inspire us to consider multisensory experiences when designing our game.'
             ]"
           ></slideshow>
-          <!-- <div class="flex_spacing_MD">
-            <div style="width: 100%; max-width: 505px;">
-              <img style="width: 100%; object-fit: cover;" src="../assets//project_tightrope/research_1.png">
-              <h3>The Importance of Physicality</h3>
-              <div>The Feeling Pressured activity at Exploratorium SF simulates pressure from anxiety and health challenges using a vacuum-sealed bag.This inspired us to consider using physical simulation to convey our message when designing our game. </div>
-            </div>
-            <div style="width: 100%; max-width: 505px;">
-              <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/research_2.png">
-              <h3>The use of metaphors and abstraction</h3>
-              <div>Spiritfarer uses anthropomorphized animals to explore loss, relationships, regrets, and acceptance of death. Its art style, abstract narratives, and metaphors make the heavy topic of grief more lighthearted and approachable. We aimed to apply similar techniques in our work to convey important messages without triggering players.</div>
-            </div>
-            <div style="width: 100%; max-width: 505px;">
-              <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/research_3.png">
-              <h3>The role of haptic feedback</h3>
-              <div>Lightbattle III, honoring Dutch cycling, uses 6 bikes to power a light and sound display, where cyclists compete as lights fill a canopy. We used this piece to inspire us to consider multisensory experiences when designing our game.</div>
-            </div>
-          </div> -->
-        <!-- <div class = "initial_research_circles">
-          <div class="research_circles">
-            <img src="../assets/project_tightrope/game1.png">
-            <p>The value of a physically embodied experience</p>
-          </div>
-          <div class="research_circles">
-            <img src="../assets/project_tightrope/game2.png">
-            <p>A low learning curve is essential to the walk up and play style model</p>
-          </div>
-          <div class="research_circles">
-            <img src="../assets/project_tightrope/game3.png">
-            <p>When covering serious topics, metaphors and abstraction can be valuable to conveying important sentiments</p>
-          </div>
-        </div> -->
       </div>
       <div>
         <h2>IDEATION</h2>
@@ -114,8 +83,6 @@
               <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/planning_1.png">
               <p>Our team took our classmates feedback and after many rounds of discussing, dot voting, and refining we generated our idea - <b>Project Tightrope.</b></p>
             </div>
-          <!-- <img style="width: 47%; object-fit: cover;" src="../assets/project_tightrope/planning_2.png">
-          <img style="width: 30%; object-fit: cover;" src="../assets/project_tightrope/board_1.jpg"> -->
           </div>
 
       </div>
@@ -244,17 +211,6 @@
       <h2>SHOWCASE</h2>
       <p>After completing our project we held a public showcase, where we could demo Project Tightrope. The follow is video content that displays that experience</p>
       <iframe src="https://www.youtube.com/embed/DoGYisWcmu8?si=PPjT6fK4Aat2n2zx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin: auto"></iframe>
-      <!-- <div class="grid_template">
-        <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
-        <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
-        <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
-        <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
-        <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
-        <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
-        <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
-        <img src="../assets/project_tightrope/p2.gif" style="border-radius: 20px; width: 90%">
-
-      </div> -->
     </div>
 
     <div>
@@ -262,6 +218,14 @@
     <p>We concluded our project by putting together a final video that explain our concept, approach and implementation.</p>
     <iframe src="https://www.youtube.com/embed/AU4bc2cfOug?si=Va65FkhBQWWL5tHL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen  style="margin: auto"></iframe>
     </div>
+  </sectionContainer>
+
+  <sectionContainer class="white_container">
+    <H2>REFLECTION</H2>
+    <p>This project was one of my favorites. While the timeline was fast, I am proud of how the it progressed and the final product we delivered. Below are next steps and changes I would make: </p>
+    <div class="circle"> 1 </div>
+    <div class="circle"> 2 </div>
+    <div class="circle"> 3 </div>
   </sectionContainer>
   </div>
 </template>
@@ -351,17 +315,6 @@ export default {
     background-size: cover;
     background-image: url("../assets/project_tightrope/corner_img_square.png");
   }
-  // .section {
-  //   padding-left: 10%;
-  //   padding-right: 10%;
-  //   padding-top: 5%;
-  //   padding-bottom: 5%;
-  //   margin-left: 10%;
-  //   margin-right: 10%;
-  //   margin-top: 5%;
-  //   margin-bottom: 5%;
-  //   border-radius: 20px;
-  // }
   .hero_section {
     background-color: #131315;
     color: #ffebe8;
@@ -421,6 +374,16 @@ export default {
         overflow: scroll;
       }
     }
+  }
+
+  .circle {
+    width: 5vw;
+    height: 5vw;
+    background-color: white;
+    border-radius: 1000px;
+    font-size: 40px;
+    border-color: black;
+    padding: auto;
   }
 
   .white_container {

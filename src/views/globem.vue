@@ -42,9 +42,11 @@
 
     <sectionContainer class="light">
       <h3>Expanding selections</h3>
-      <div ref="viewofYear_steps"></div>
-      <div ref="viewofParticipant_dropdown"></div>
-      <div ref="final_chart"></div>
+      <div class="graph_object">
+        <div ref="viewofYear_steps"></div>
+        <div ref="viewofParticipant_dropdown"></div>
+        <div ref="final_chart"></div>
+      </div>
     </sectionContainer>
 
     <sectionContainer class="dark">
@@ -129,20 +131,32 @@
   <style scoped>
 
   .container {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 209, 209);
     width:auto;
-    padding-top: 2%;    
+    padding-top: 2%; 
+    height: auto; 
+    padding-bottom: 2%;  
   }
   .dark {
-    background-color: rgba(115, 158, 243, .4);
+    /* background-color: rgb(243, 247, 255); */
+    background-color: rgb(234, 235, 255);
     border-width: 2px;
     border-color: rgb(240, 240, 240);
   }
 
   .light {
-    background-color: rgba(255, 124, 124, .4);
+    background-color: rgb(255, 255, 255);
     border-width: 2px;
     border-color: rgb(240, 240, 240);
+  }
+  canvas {
+    padding: 20px;
+    width: auto;
+    height: auto;
+    background-color: white;
+  }
+  .final_chart {
+    background-color: white;
   }
 /* Adds dark mode */
 @media (prefers-color-scheme: dark) {
