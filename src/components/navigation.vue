@@ -37,4 +37,10 @@ export default {
     margin: 1%;
     padding: 10px;
   }
+
+  @media (max-width: 960px) {
+    .navigation-widget {
+      font-size: 10vw;
+    }
+  }
 </style>

@@ -3,12 +3,18 @@
         <!-- Iterating over the book(s) -->
             <div class="book" v-for="(book, bookIndex) in chapter_info" :key="'book_' + bookIndex" :id="'book_' + bookIndex">
                 <sectionContainer class="dark">
+                <h1>Harry Potter and the Philospher's Stone</h1>
+                <h3>Read by Mr. Cheesecake</h3>
                 <!-- Iterating over 17 chapters within the book -->
-                 <div class="order">
-                    <div v-for="(chapter, chapterIndex) in book" :key="'ch_' + chapterIndex">
-                        <div class="chapter_button" @click="play_or_stop_audio(bookIndex, chapterIndex)">
-                            <!-- Button text changes depending on if audio is playing -->
-                            {{ isPlaying && currentChapter === chapterIndex ? 'Pause' : 'Play' }} Chapter {{ chapterIndex + 1 }}
+
+                <div class="grid_view_image">
+                    <img :src="books_img[bookIndex]"/>
+                    <div class="order">
+                        <div v-for="(chapter, chapterIndex) in book" :key="'ch_' + chapterIndex">
+                            <div class="chapter_button" @click="play_or_stop_audio(bookIndex, chapterIndex)">
+                                <!-- Button text changes depending on if audio is playing -->
+                                {{ isPlaying && currentChapter === chapterIndex ? 'Pause' : 'Play' }} Chapter {{ chapterIndex + 1 }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,8 +36,18 @@ export default {
             ],
             currentAudio: null, // To keep track of the currently playing audio instance
             currentChapter: null, // To track which chapter's audio is currently playing
-            isPlaying: false // Boolean to track if audio is currently playing
+            isPlaying: false, // Boolean to track if audio is currently playing,
+            books_img: ['/assets/other/hp_1.jpg']
         };
+    },
+    computed: {
+        imageUrl(book_num) {
+            console.log("index " + book_num)
+            if (book_num==1){
+            return `/assets/other/hp_${book_num}.jpg`
+            } 
+            return null;
+        }
     },
     methods: {
         play_or_stop_audio(book_num, chapter_num) {
@@ -79,6 +95,7 @@ export default {
         height: 100%;
         padding-top: 10px;
         padding-bottom: 10px;
+        color: white;
     }
 
     .dark {
@@ -92,8 +109,12 @@ export default {
         gap: 50px;
         flex-wrap: wrap;
         justify-content: space-around;
+    }
 
-
+    .grid_view_image {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
     }
 
     .chapter_button {
@@ -102,6 +123,11 @@ export default {
         background-color: white;
         color: black;
         display: inline-block;
+    }
+
+    img {
+        height: 500px;
+        width: auto;
     }
 
 

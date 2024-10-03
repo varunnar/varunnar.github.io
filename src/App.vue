@@ -43,6 +43,12 @@ nav a {
   text-decoration: none;
 }
 
+@media (max-width: 500px) {
+    nav a {
+      font-size: 4vw;
+    }
+  }
+
 nav a.router-link-exact-active {
   color: #19945d;
 }
