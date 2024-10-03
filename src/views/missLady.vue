@@ -90,7 +90,7 @@ export default {
 
 <style>
     .container {
-        background-image: url('../../public/assets/other/me_sarah.png'); /* Ensure the correct path for the image */
+        background-image: url('../../public/assets/other/hp_background.png'); /* Ensure the correct path for the image */
         background-size: contain;
         height: 100%;
         padding-top: 10px;
@@ -117,17 +117,28 @@ export default {
         width: 100%;
     }
 
+    img {
+        height: 500px;
+        width: auto;
+    }
+
+    @media (max-width: 960px) {
+        .grid_view_image {
+            grid-template-columns: 1fr;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    }
+
     .chapter_button {
         padding: 10px;
         border-radius: 20px;
         background-color: white;
         color: black;
         display: inline-block;
-    }
-
-    img {
-        height: 500px;
-        width: auto;
     }
 
 

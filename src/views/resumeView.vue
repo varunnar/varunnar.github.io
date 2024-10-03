@@ -1,10 +1,10 @@
 <template>
     <div id="webviewer" ref="viewer"></div>
-    <vue-pdf-embed :source="pdfUrl"/>
+    <vue-pdf-embed :annotationLayer="true" :textLayer="true" :source="pdfUrl"/>
 </template>
 
 <script>
-import VuePdfEmbed from 'vue-pdf-embed'
+import VuePdfEmbed from 'vue-pdf-embed';
 
 export default {
     name: 'resumeView',
