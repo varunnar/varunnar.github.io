@@ -6,8 +6,7 @@
       <h2 style="text-align: center;">
       Visualizing Wellness: Understanding student mental health through Longitudinal data analysis
     </h2>
-    <p>
-        In today's world where college students have to juggle multiple responsibilities, mental health and wellness is something that is often overlooked.  For this project, we have used the <a href="https://physionet.org/content/globem/1.1/INS-W_1/#files-panel">GLOBEM dataset</a>, which is a mult-year dataset for logitudinal human behavior, 
+    <p> In today's world where college students have to juggle multiple responsibilities, mental health and wellness is something that is often overlooked.  For this project, we have used the <a href="https://physionet.org/content/globem/1.1/INS-W_1/#files-panel">GLOBEM dataset</a>, which is a mult-year dataset for logitudinal human behavior, 
         collected from the daily activities of around 705 diverse UW students. The data collection spans three years (~14 weeks each year, March to June, from 2019 to 2021) and it contains a variety of different sensor, phone usage, and sleep
         data for analysing student behavior. Each of the attributes are collected during different phases of the day: morning, afternoon, evening, and night. It also provides an insight into the mental health of the students through quantitative depression and anxiety scores.
         The dataset is huge, being split into multiple files for different years and type of data, with some files having more than 1100 attributes to analyze. It also has many missing values, either because the students did not respond to the questionnaire or they did not wear the device to collect the sensor data.

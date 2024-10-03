@@ -220,13 +220,31 @@
     </div>
   </sectionContainer>
 
-  <sectionContainer class="white_container">
+  <!-- <sectionContainer class="white_container">
     <H2>REFLECTION</H2>
     <p>This project was one of my favorites. While the timeline was fast, I am proud of how the it progressed and the final product we delivered. Below are next steps and changes I would make: </p>
-    <div class="circle"> 1 </div>
-    <div class="circle"> 2 </div>
-    <div class="circle"> 3 </div>
-  </sectionContainer>
+    <div class="grid_template">
+      <div class="reflection_item">
+        <div class="flex_spacing_FS" style="gap: 10px">
+          <div class="circle"> 1 </div>
+          <H3>Further Research</H3>
+        </div>
+        <p>With our project being so centered on mental health and anxiety, In the future I hope to do further researcher into the project</p>
+      </div>
+      <div class="reflection_item">
+        <div class="flex_spacing_FS" style="gap: 10px">
+          <div class="circle"> 2 </div>
+          <h3>Showing not Telling</h3>
+        </div>
+      </div>
+      <div class="reflection_item">
+        <div class="flex_spacing_FS" style="gap: 10px">
+          <div class="circle"> 3 </div>
+          <h3>Using A Gaming Platform</h3>
+        </div>
+      </div>
+    </div>
+  </sectionContainer> -->
   </div>
 </template>
 <script>
