@@ -26,7 +26,7 @@ export default {
         return {
             // This array contains 17 chapters (1 book with 17 chapters)
             chapter_info: [
-                Array.from({ length: 17 }, (_, i) => i + 1) // [1, 2, 3, ..., 17]
+                Array.from({ length: 2 }, (_, i) => i + 1) // [1, 2, 3, ..., 17]
             ],
             currentAudio: null, // To keep track of the currently playing audio instance
             currentChapter: null, // To track which chapter's audio is currently playing
