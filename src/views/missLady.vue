@@ -32,7 +32,7 @@ export default {
         return {
             // This array contains 17 chapters (1 book with 17 chapters)
             chapter_info: [
-                Array.from({ length: 2 }, (_, i) => i + 1) // [1, 2, 3, ..., 17]
+                Array.from({ length: 4 }, (_, i) => i + 1) // [1, 2, 3, ..., 17]
             ],
             currentAudio: null, // To keep track of the currently playing audio instance
             currentChapter: null, // To track which chapter's audio is currently playing
@@ -106,9 +106,9 @@ export default {
     .order {
         display: flex;
         flex-direction: row;
-        gap: 50px;
+        column-gap: 20px;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .grid_view_image {
