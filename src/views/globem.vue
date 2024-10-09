@@ -48,14 +48,24 @@
         <h3>Students Variation</h3>
         <p>Even with more data, each and every student is highly different. Looking at averages, and approaches was many times unhelpful, forcing us to consider the individuals.</p>
       </div>
-      <p>Our approach to making design was to build many different visualizations, constantly using them to analyze for potential patterns and answers</p>
+      <p>Our approach to making design was to build many different visualizations, constantly using them to analyze for potential patterns and answers. Below are examples of some of these.</p>
+      <div class="small_image_set">
+        <img src="../assets/data_viz_portal/old_graph_1.png">
+        <img src="../assets/data_viz_portal/old_graph_2.png">
+        <img src="../assets/data_viz_portal/old_graph_3.png">
+        <img src="../assets/data_viz_portal/old_graph_4.png">
+        <img src="../assets/data_viz_portal/old_graph_5.png">
+        <img src="../assets/data_viz_portal/old_graph_6.png">
+      </div>
+      <br/>
+      <p>Below are the <b>finalized visualizations</b> we chose to showcase. </p>
     </sectionContainer>
 
     <sectionContainer class="light">
     <h2>Changes in mental health over weeks</h2>
-    <br />
-    <p> First, we observe how student mental health changes over the weeks. Hovering over a line reveals the trend for that student for a given year and a given mental health metric.
-      There are many interesting patterns observable, with some students' mental health deterioriating over the quarter, possibly due to increased workload, while improving for other students.</p>
+    <p> We first examine weekly changes in student mental health. Hovering over a line shows trends for each student by year and metric. 
+      Patterns reveal varied trajectories, with some students' 
+      mental health declining, potentially from increased workload, while others improve.</p>
       <div ref="viewofYear_range"></div>
       <div ref="viewofEmotion_score"></div>
       <div id="first" ref="first_plot"></div>
@@ -63,21 +73,22 @@
 
     <sectionContainer class="dark">
       <h3>Analysing global trends</h3>
-      <p>Next, to understand global behavior, we combine the data for all the years and create a heatmap to show the correlation between any two attributes. Each attribute is further subdivided into the time of day and the naming
-        convention followed is {attribute_name}.{time_of_day}. <strong>Sleep</strong> refers to the total minutes of sleep, <strong>Screen</strong> refers to the total time the phone screen was turned on, <strong>Episodes</strong> refers to the number of unlock episodes of the phone, <strong>Steps</strong>
-        refers to the number of steps taken, and <strong>Loc</strong> refers to the locational area covered by the student in meters. The matrix is re-orderable, and any attribute can be selected and dragged to make it easier to analyse. 
-        This allowed us to identify any potential attributes which could be correlated with mental health. 
-        <br><br>
-        Focusing on the the mental health metrics, anxiety and depression seem to be highly correlated with each other, which is perhaps unsurprising but it is still intersting since they track two different aspects of mental health. 
-        None of anxiety, depression, or PANAS negative score seem to be correlated with the daily activities that were measured which is a bit surprising. They are slightly correlated with morning sleep, albeit it is pretty weak. PANAS positive score on the other hand seems to have a correlation with the number of steps. </p>
+      <p>We aggregate yearly data to analyze global patterns, creating a heatmap to show correlations between attributes. 
+        Each attribute is subdivided by time of day using the format {attribute_name}.{time_of_day}: "Sleep" denotes total minutes slept, 
+        <b>"Screen"</b> the phone screen time, <b>"Episodes"</b> the number of unlocks, <b>"Steps"</b> the step count, and <b>"Loc"</b> the distance covered in meters. 
+        <br><br></p>
+
+        <!-- Focusing on the the mental health metrics, anxiety and depression seem to be highly correlated with each other, which is perhaps unsurprising but it is still intersting since they track two different aspects of mental health. 
+        None of anxiety, depression, or PANAS negative score seem to be correlated with the daily activities that were measured which is a bit surprising. They are slightly correlated with morning sleep, albeit it is pretty weak. PANAS positive score on the other hand seems to have a correlation with the number of steps. </p> -->
       <img src="../assets/data_viz_portal/initial_correlation.png" style="width:100%; margin: auto; height: auto;">
     </sectionContainer>
 
     <sectionContainer class="light">
       <h3>Diving deeper into individual student behavior</h3>
-      <p> After analysing the global trends, we found that there might be a correlation between the PANAS positive score and the number of steps. The visualization below explores into this relationship on a per-student basis. Given a year and a student id, we can  
-    observe how the number of average steps has changed over the different weeks. Selecting over the different weeks reveals how the steps and PANAS positive score are related for that student compared to the other students. 'All' can be selected to highlight all the students. 
-    An additional linear trendline allows for observing a more interpretable pattern from the scatter plot. The tooltip allows us to select interesting students and observe their trends over weeks. </p>
+      <p>Analyzing global trends suggests a possible correlation between the PANAS positive score and step count. 
+        The visualization below explores this per student, showing weekly changes in average steps and their relation to PANAS positive scores. 
+        Selecting weeks or "All" highlights trends across students, with a linear trendline for clarity. 
+        The tooltip enables selecting specific students to observe their weekly patterns.</p>
       <div class="graph_object">
         <div ref="viewofYear_steps"></div>
         <div ref="viewofParticipant_dropdown"></div>
@@ -87,8 +98,11 @@
 
     <sectionContainer class="dark">
       <h2>Expanding Selections</h2>
-      <p>Instead of looking at individual weeks, the visualization below allows for combining arbitrary number of weeks and students. On brushing over the dot plot to select a subset of students based on the period of time and steps, the step counts are sub-divided into different times of the day and their relationship to the PANAS positive score can be observed. In this case, both the x and y values are averaged 
-        over the selected period for each student. This allows for probing into questions like "For students who walk a lot, how does their step count at different times of the day relate to their PANAS positive score over time?"</p>
+      <p>
+        The visualization below enables combining multiple weeks and students. 
+        By selecting a subset of students and time periods in the dot plot, step counts are divided by times of day, showing their relationship to PANAS positive scores. 
+        Both x and y values are averaged over the selected period, allowing insights like,
+         "For students who walk a lot, how does their step count at different times of day relate to their PANAS positive score over time?"</p>
       <div ref="viewofYear_drop_down"></div>
       <div ref="student_phone"></div>
     </sectionContainer>
@@ -201,6 +215,22 @@
     width: 100%;
     aspect-ratio: 2202/1334;
     background-size: contain;
+  }
+  .small_image_set {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 40px;
+  }
+
+  .small_image_set img {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 30px rgb(158, 158, 158);
+    object-fit: contain;
+    background-color: white;
   }
   h1 {
     text-align: center;

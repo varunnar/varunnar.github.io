@@ -1,9 +1,32 @@
 <template>
     <div class="container">
+        <sectionContainer class="dark">
+            <h1>Miss Lady Support Recordings!</h1>
+            <div class="order">
+                <div class="chapter_button" @click="play_or_stop_audio(chapter_num=-1, other='/assets/other/ml_audio/Feeling_overwhelmed.mp3')">
+                    {{ isPlaying && currentChapter === -1 ? 'Pause' : 'Play' }} Recording for feeling Overwhelmed!
+                </div>
+                <div class="chapter_button" @click="play_or_stop_audio(chapter_num=-1, other='/assets/other/ml_audio/Feeling_insecure.mp3')">
+                    {{ isPlaying && currentChapter === -1 ? 'Pause' : 'Play' }} Recording for feeling insecure!
+                </div>
+                <div class="chapter_button" @click="play_or_stop_audio(chapter_num=-1, other='/assets/other/ml_audio/Missing.mp3')">
+                    {{ isPlaying && currentChapter === -1 ? 'Pause' : 'Play' }} Recording for missing me!
+                </div>
+            </div>
+        </sectionContainer>
+        <sectionContainer class="dark slideContainer">
+            <h1>Slideshows of US!</h1>
+            <slideShow class="missLadySlides"
+                folderPath="/assets/other/album"
+                :autoPlay="true"
+                :random="true"
+                :numberOfImages="14">
+            </slideShow>
+        </sectionContainer>
         <!-- Iterating over the book(s) -->
             <div class="book" v-for="(book, bookIndex) in chapter_info" :key="'book_' + bookIndex" :id="'book_' + bookIndex">
                 <sectionContainer class="dark">
-                <h1>Harry Potter and the Philospher's Stone</h1>
+                <h1>Harry Potter and the Philosopher's Stone</h1>
                 <h3>Read by Mr. Cheesecake</h3>
                 <!-- Iterating over 17 chapters within the book -->
 
@@ -24,10 +47,11 @@
 </template>
 
 <script>
+import slideShow from '@/components/widgets/slideshow.vue';
 import sectionContainer from '../components/widgets/section.vue'; 
 export default {
     name: 'MissLady',
-    components: {sectionContainer},
+    components: {sectionContainer, slideShow },
     data() {
         return {
             // This array contains 17 chapters (1 book with 17 chapters)
@@ -50,8 +74,13 @@ export default {
         }
     },
     methods: {
-        play_or_stop_audio(book_num, chapter_num) {
-            const audioPath = `/assets/other/ml_audio/HP_${book_num + 1}_${chapter_num + 1}.mp3`; // Adjust the path to your audio files
+        play_or_stop_audio(book_num='', chapter_num='', other='') {
+            let audioPath = '';
+            if(other != '') {
+                audioPath = other; // Adjust the path to your audio files
+            } else if (book_num !=''){
+                audioPath = `/assets/other/ml_audio/HP_${book_num + 1}_${chapter_num + 1}.mp3`; // Adjust the path to your audio files
+            }
 
             // Check if the same chapter is being clicked
             if (this.currentAudio && this.currentChapter === chapter_num) {
@@ -91,8 +120,8 @@ export default {
 <style>
     .container {
         background-image: url('../../public/assets/other/hp_background.png'); /* Ensure the correct path for the image */
+        background-repeat: repeat;
         background-size: contain;
-        height: 100%;
         padding-top: 10px;
         padding-bottom: 10px;
         color: white;
@@ -116,6 +145,15 @@ export default {
         grid-template-columns: 1fr 1fr;
         width: 100%;
     }
+    .missLadySlides {
+        max-width: 600px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .slideContainer {
+        text-align: center;
+    }
 
     img {
         height: 500px;
@@ -129,6 +167,7 @@ export default {
         img {
             width: 100%;
             height: auto;
+            max-height: 100%;
             margin-bottom: 20px;
         }
     }

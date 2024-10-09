@@ -26,8 +26,10 @@
     name: 'slide-show',
     props: {
       imageUrls: {
-        type: Array,
-        required: true,
+        type: Array
+      },
+      folderPath: {
+        type: String
       },
       bodyArray: {
         type: Array,
@@ -52,7 +54,15 @@
       showControls: {
         type: Boolean,
         default: true
-      }
+      }, 
+      album: {
+        type: String,
+        required: false
+      },
+      random: {
+        type: Boolean,
+        default: false
+      },
     },
     data() {
       return {
@@ -64,14 +74,11 @@
       };
     },
     mounted() {
-      this.imagePaths = this.imageUrls.map((image) => {
-        // console.log("in here")
-        // console.log(image)
-        // console.log(require(`@/assets/${image}`))
-       // return "../../assets/" + image;
-       return image;
-        //return require(`@/assets/${image}`);
-      });
+      if (this.imageUrls && this.imageUrls.length > 0) {
+      this.imagePaths = this.imageUrls; // Use provided URLs if available
+    } else if (this.folderPath) {
+      this.generateNumericImagePaths(this.folderPath, this.numberOfImages); // Generate URLs based on a numeric pattern
+    }
       
        // Start autoplay if autoPlay is true
     if (this.autoPlay) {
@@ -88,6 +95,10 @@
       }
     },
     methods: {
+      generateNumericImagePaths(folderPath, numImages) {
+        // Generate URLs assuming a naming pattern like image1.jpg, image2.jpg, etc.
+        this.imagePaths = Array.from({ length: numImages }, (_, i) => `${folderPath}/img_${i}.jpg`);
+      },
       clickPrev() {
         this.disableTransition = true;
         this.prevImage()
@@ -121,7 +132,14 @@
         }
       },
       nextImage() {
-        if (this.currentIndex < this.imagePaths.length - 1) {
+        if (this.random) {
+          let currentI = this.currentIndex;
+          while (currentI == this.currentIndex) {
+            this.currentIndex = Math.round(Math.random()*14);
+            console.log(this.currentIndex)
+          }
+        }
+        else if (this.currentIndex < this.imagePaths.length - 1) {
           this.currentIndex++;
         } else {
           this.currentIndex = 0;
@@ -193,6 +211,10 @@
   .slideshow-image {
     width: 100%;
     height: auto;
+    max-height: 100%;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
   }
   
   .controls {
