@@ -3,14 +3,14 @@
         <sectionContainer class="dark">
             <h1>Miss Lady Support Recordings!</h1>
             <div class="order">
-                <div class="chapter_button" @click="play_or_stop_audio(chapter_num=-1, other='/assets/other/ml_audio/Feeling_overwhelmed.mp3')">
+                <div class="chapter_button" @click="play_or_stop_audio(null, -1, `/assets/other/ml_audio/Feeling_overwhelmed.mp3`)">
                     {{ isPlaying && currentChapter === -1 ? 'Pause' : 'Play' }} Recording for feeling Overwhelmed!
                 </div>
-                <div class="chapter_button" @click="play_or_stop_audio(chapter_num=-1, other='/assets/other/ml_audio/Feeling_insecure.mp3')">
-                    {{ isPlaying && currentChapter === -1 ? 'Pause' : 'Play' }} Recording for feeling insecure!
+                <div class="chapter_button" @click="play_or_stop_audio(null, -2, `/assets/other/ml_audio/Feeling_insecure.mp3`)">
+                    {{ isPlaying && currentChapter === -2 ? 'Pause' : 'Play' }} Recording for feeling insecure!
                 </div>
-                <div class="chapter_button" @click="play_or_stop_audio(chapter_num=-1, other='/assets/other/ml_audio/Missing.mp3')">
-                    {{ isPlaying && currentChapter === -1 ? 'Pause' : 'Play' }} Recording for missing me!
+                <div class="chapter_button" @click="play_or_stop_audio(null, -3, `/assets/other/ml_audio/Missing.mp3`)">
+                    {{ isPlaying && currentChapter === -3 ? 'Pause' : 'Play' }} Recording for missing me!
                 </div>
             </div>
         </sectionContainer>
@@ -34,7 +34,7 @@
                     <img :src="books_img[bookIndex]"/>
                     <div class="order">
                         <div v-for="(chapter, chapterIndex) in book" :key="'ch_' + chapterIndex">
-                            <div class="chapter_button" @click="play_or_stop_audio(bookIndex, chapterIndex)">
+                            <div class="chapter_button" @click="play_or_stop_audio(book_num=bookIndex, chapter_num=chapterIndex)">
                                 <!-- Button text changes depending on if audio is playing -->
                                 {{ isPlaying && currentChapter === chapterIndex ? 'Pause' : 'Play' }} Chapter {{ chapterIndex + 1 }}
                             </div>
@@ -66,7 +66,6 @@ export default {
     },
     computed: {
         imageUrl(book_num) {
-            console.log("index " + book_num)
             if (book_num==1){
             return `/assets/other/hp_${book_num}.jpg`
             } 
@@ -74,13 +73,16 @@ export default {
         }
     },
     methods: {
-        play_or_stop_audio(book_num='', chapter_num='', other='') {
+        play_or_stop_audio(book_num=null, chapter_num=null, other='') {
             let audioPath = '';
             if(other != '') {
+                console.log("IN THIS 1")
                 audioPath = other; // Adjust the path to your audio files
-            } else if (book_num !=''){
+            } else if (book_num != null){
+                console.log("IN THIS")
                 audioPath = `/assets/other/ml_audio/HP_${book_num + 1}_${chapter_num + 1}.mp3`; // Adjust the path to your audio files
             }
+            console.log(audioPath)
 
             // Check if the same chapter is being clicked
             if (this.currentAudio && this.currentChapter === chapter_num) {

@@ -136,7 +136,6 @@
           let currentI = this.currentIndex;
           while (currentI == this.currentIndex) {
             this.currentIndex = Math.round(Math.random()*14);
-            console.log(this.currentIndex)
           }
         }
         else if (this.currentIndex < this.imagePaths.length - 1) {
