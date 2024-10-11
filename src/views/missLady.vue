@@ -76,10 +76,8 @@ export default {
         play_or_stop_audio(book_num=null, chapter_num=null, other='') {
             let audioPath = '';
             if(other != '') {
-                console.log("IN THIS 1")
                 audioPath = other; // Adjust the path to your audio files
             } else if (book_num != null){
-                console.log("IN THIS")
                 audioPath = `/assets/other/ml_audio/HP_${book_num + 1}_${chapter_num + 1}.mp3`; // Adjust the path to your audio files
             }
             console.log(audioPath)

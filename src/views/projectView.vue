@@ -9,12 +9,15 @@
           <!--<div>see more</div>-->
         </div>
         <div class="projects">
-            <div class="projects-obj">
-                <div v-for="object in objects" class="project-object-set" :key="object.getProjectName()" @click="navigateToPage(object.getProjectName())">
-                  <div :class="'project-obj ' + object.getProjectName()" :key="object.getProjectName()" :objectinfo="object.getProjectName()"></div>
-                  <div class="text_info" v-text="object.getProjectTitle()"></div>
-                </div>
+          <div class="projects-obj">
+            <div v-for="object in objects" class="project-object-set" :key="object.getProjectName()">
+              <div :class="'project-obj ' + object.getProjectName()" :key="object.getProjectName()" :objectinfo="object.getProjectName()" @click="navigateToPage(object.getProjectName())"></div>
+              <div class="text_info" v-text="object.getProjectTitle()" @click="navigateToPage(object.getProjectName())"></div>
+              <div class="tags_object">
+              <div class="tags" :class="{active: isSelected(tag)}" v-for="tag in object.getTags()" @click="addTag(tag)" :key="object + ': ' + tag" v-text="tag"></div>
             </div>
+          </div>
+         </div>
         </div>
         <div class="header_title">
           <div>Experience</div>
@@ -38,18 +41,26 @@
 
 <script>
   import storyglowText from 'raw-loader!./projects/storyglow.txt'
-  import {storyglow, munchmaps, heartbeat_checker, map_visualization, alpaca, fractal, project_tightrope, capstone_mhcid} from './projectClass.js'
+  import {storyglow, munchmaps, heartbeat_checker, map_visualization, alpaca, fractal, project_tightrope, capstone_mhcid, data_visualization} from './projectClass.js'
   export default {
     name: 'projectView',
     data() {
       return {
-        storyglowText: storyglowText
+        storyglowText: storyglowText,
+        filter_array: []
       }
     },
     computed: {
         objects() {
-            return [project_tightrope, storyglow, munchmaps, heartbeat_checker, 
-            map_visualization, alpaca, fractal, capstone_mhcid]
+            let all_proj = [project_tightrope, data_visualization, storyglow, munchmaps, heartbeat_checker, 
+            map_visualization, alpaca, fractal, capstone_mhcid];
+            if (this.filter_array.length == 0) {
+              return all_proj;
+            } else {
+              return all_proj.filter(x => x.tags.some(tag => this.filter_array.includes(tag)));
+            }
+            // return [project_tightrope, data_visualization, storyglow, munchmaps, heartbeat_checker, 
+            // map_visualization, alpaca, fractal, capstone_mhcid]
         },
         // objectName(object){
         //   return object.getProjectName()
@@ -59,16 +70,35 @@
         // },
 
         experience() {
-
           //return ["seagate", "mhcid", "ATLAS"];
           return ["seagate", "mhcid"];
-        }
+        },
+        // selected(tag) {
+        //   if (this.filter_array.includes(tag)) {
+        //     return true;
+        //   }
+        //   return false;
+        // }
     },
     methods: {
         navigateToPage: function(object) {
           let individual_project = 'individual-project/' + object
           this.$router.push({name: individual_project}); 
         },
+
+        addTag: function(tag) {
+          let tag_index = this.filter_array.indexOf(tag);
+          if (tag_index != -1) {
+            this.filter_array.splice(tag_index, 1);
+          } else {
+            this.filter_array.push(tag);
+          }
+        },
+        isSelected(tag) {
+          console.log("hello")
+          console.log(tag)
+          return this.filter_array.includes(tag);
+        }
     }
   }
 </script>
@@ -83,14 +113,23 @@
     .fade-enter-active {
       transition: all 2s ease;
     }
+    .project-obj, .text_info {
+      filter: brightness(20%);
+      margin-bottom: 10px;
+    }
+    .project-obj:hover, .text_info:hover {
+      filter: brightness(100%);
+    }
+    .project-obj:hover, .text_info:hover {
+      filter: brightness(100%);
+    }
     .project-object-set {
       margin-bottom: 20px;
-      filter: brightness(20%);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      //justify-content: center;
       align-items: center;
-    }
-    .project-object-set:hover {
-      margin-bottom: 20px;
-      filter: brightness(100%);
     }
     .header_title {
       display: flex;
@@ -102,7 +141,7 @@
       margin-top: 2%;
     }
     .text_info {
-      height: 2%;
+      height: auto;
       color: #014a39;
       font-size: 20px;
       text-transform: capitalize;
@@ -127,6 +166,37 @@
       font-weight: bold;
       font-size: 25px;
     }
+    .tags_object {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+    .tags {
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: auto;
+      height: auto;
+      //background-color: white;
+      border-radius: 50px;
+      //border-width: thin;
+      color: #014a39;
+      font-weight: bold;
+      font-size: 12px;
+      border: solid;
+    }
+    .tags:hover {
+      color: black;
+    }
+    .tags.active {
+      background-color:#014a39;
+      color: white;
+      border-color: #014a39;
+    }
     .projects {
         margin-top: 1%;
         display: flex;
@@ -135,13 +205,13 @@
         width: 100%;
     }
     .projects-obj {
-      font-size: 0;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       width: 100%;
       margin-left: 5%;
       margin-right: 5%;
       justify-items: center;
+      align-items: start;
     }
 
     @media (max-width: 960px) {
@@ -151,6 +221,7 @@
       .project-obj {
         width: 60vw !important;
         height: 60vw !important; 
+        margin: auto;
       }
     }
     // .project-obj {
@@ -183,6 +254,7 @@
     .storyglow {
       background-image: url("../assets/project-imgs/storyglow.png");
     }
+
     .munchmaps {
       background-color: rgba(0, 95, 255, 255);
       background-image: url("../assets/project-imgs/munchmaps.png");
@@ -222,7 +294,14 @@
 
     }
 
-    .capstoneMHCID, .dataVIZ{
+    .DataViz {
+      background-image: url("../assets/data_viz_portal/pink_background.png");
+      background-size: contain;
+      background-size: 80%;
+      background-color: rgb(255, 235, 235);
+    }
+
+    .capstoneMHCID {
       background-image: url("../assets/project-imgs/coming_soon.png");
       background-size: cover;
       border-color: #014a39;

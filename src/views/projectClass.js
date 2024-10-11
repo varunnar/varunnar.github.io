@@ -34,18 +34,18 @@ class projectClass {
 }
 
 const project_tags = {
-    'mobile_app': "mobile app",
-    'storytelling': 'storytelling',
+    'mobile_app': "Mobile App",
+    'storytelling': 'Storytelling',
     'iOS': 'iOS',
-    'prototype': 'prototype',
-    'health': 'health',
-    'data_visualization': 'data_visualization',
-    'map': 'map',
-    'vegalite': 'vegalite',
-    'music': 'music',
-    'math':'math',
-    'game': 'game',
-    'hardware': 'hardware',
+    'prototype': 'Prototype',
+    'health': 'Health',
+    'data_visualization': 'Data Visualization',
+    'map': 'Map',
+    'vegalite': 'Vegalite',
+    'music': 'Music',
+    'math':'Math',
+    'game': 'Game',
+    'hardware': 'Hardware',
     'MHCI+D': "MHCI+D"
 
 }
@@ -69,7 +69,7 @@ const project_tightrope = new projectClass('projectTightrope', 'Project Tightrop
 
 const capstone_mhcid = new projectClass('capstoneMHCID', 'MHCID Capstone', [project_tags.health, project_tags.prototype, project_tags["MHCI+D"] ])
 
-const data_visualization = new projectClass('dataVIZ', 'Health Data Visualization', [project_tags.health, project_tags.data_visualization, project_tags["MHCI+D"], project_tags.data_visualization])
+const data_visualization = new projectClass('DataViz', 'Health Data Visualization', [project_tags.health, project_tags.data_visualization, project_tags["MHCI+D"], project_tags.data_visualization])
 
 export { 
     storyglow,
