@@ -6,6 +6,8 @@
       <h3 style="text-align: center;">
       Visualizing Wellness: Understanding student mental health through Longitudinal data analysis
     </h3>
+    <p><b>This project is best viewed on desktop views</b></p>
+
     <div class="main_img"></div>
     <h2> Team</h2>
     <p>Mars Gao, Soham Gadgil, <b>Varun Narayanswamy</b></p>
@@ -232,6 +234,13 @@
     object-fit: contain;
     background-color: white;
   }
+
+  @media (max-width: 1000px) {
+    .small_image_set img{
+      width: 100%;
+    }
+  }
+
   h1 {
     text-align: center;
   }

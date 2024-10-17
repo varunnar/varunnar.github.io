@@ -1,6 +1,53 @@
 <template>
     <div class="container">
         <sectionContainer class="dark">
+            <h1>Chapters with Cheesecake</h1>
+            <div class="order">
+                <div class="grid_view_obj">
+                    <div class="chapter_button" @click="play_or_stop_audio(null, -4, `/assets/other/ml_audio/zoo_lights.mp3`)">
+                        {{ isPlaying && currentChapter === -4 ? 'Pause' : 'Play' }} Zoo Lights
+                    </div>
+                    <slideShow class="cheesecake_chapters"
+                    folderPath="/assets/other/c_w_c/zoo_light"
+                    :autoPlay="false"
+                    :numberOfImages="3">
+                    </slideShow>
+                </div>
+                <div class="grid_view_obj">
+                    <div class="chapter_button" @click="play_or_stop_audio(null, -5, `/assets/other/ml_audio/costume_shopping.mp3`)">
+                        {{ isPlaying && currentChapter === -5 ? 'Pause' : 'Play' }} Costume Shopping
+                    </div>
+                    <slideShow class="cheesecake_chapters"
+                    folderPath="/assets/other/c_w_c/costume"
+                    :autoPlay="false"
+                    :numberOfImages="3">
+                    </slideShow>
+                </div>
+                <div class="grid_view_obj">
+                    <div class="chapter_button" @click="play_or_stop_audio(null, -6, `/assets/other/ml_audio/harry_potter_books.mp3`)">
+                        {{ isPlaying && currentChapter === -6 ? 'Pause' : 'Play' }} Buying HP
+                    </div>
+                    <slideShow class="cheesecake_chapters"
+                    folderPath="/assets/other/c_w_c/hp_finding"
+                    :autoPlay="false"
+                    :showControls="false"
+                    :numberOfImages="1">
+                    </slideShow>
+                </div>
+                <div class="grid_view_obj">
+                    <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/soft_launch.mp3`)">
+                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Soft Launch
+                    </div>
+                    <slideShow class="cheesecake_chapters"
+                    folderPath="/assets/other/c_w_c/soft_launch"
+                    :autoPlay="false"
+                    :showControls="false"
+                    :numberOfImages="1">
+                    </slideShow>
+                </div>
+            </div>
+        </sectionContainer>
+        <sectionContainer class="dark">
             <h1>Miss Lady Support Recordings!</h1>
             <div class="order">
                 <div class="chapter_button" @click="play_or_stop_audio(null, -1, `/assets/other/ml_audio/Feeling_overwhelmed.mp3`)">
@@ -16,8 +63,8 @@
         </sectionContainer>
         <sectionContainer class="dark slideContainer">
             <h1>Slideshows of US!</h1>
-            <slideShow class="missLadySlides"
-                folderPath="/assets/other/album"
+            <slideShow class="miss_lady_slides"
+                folderPath="/assets/other/album/img"
                 :autoPlay="true"
                 :random="true"
                 :numberOfImages="14">
@@ -56,7 +103,7 @@ export default {
         return {
             // This array contains 17 chapters (1 book with 17 chapters)
             chapter_info: [
-                Array.from({ length: 4 }, (_, i) => i + 1) // [1, 2, 3, ..., 17]
+                Array.from({ length: 7 }, (_, i) => i + 1) // [1, 2, 3, ..., 17]
             ],
             currentAudio: null, // To keep track of the currently playing audio instance
             currentChapter: null, // To track which chapter's audio is currently playing
@@ -136,8 +183,15 @@ export default {
         display: flex;
         flex-direction: row;
         column-gap: 20px;
+        row-gap: 20px;
         flex-wrap: wrap;
         justify-content: space-between;
+    }
+
+    .grid_view_obj {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .grid_view_image {
@@ -145,7 +199,10 @@ export default {
         grid-template-columns: 1fr 1fr;
         width: 100%;
     }
-    .missLadySlides {
+    .cheesecake_chapters {
+        max-width: 200px;
+    }
+    .miss_lady_slides {
         max-width: 600px;
         margin-top: 20px;
         margin-left: auto;
@@ -178,6 +235,11 @@ export default {
         background-color: white;
         color: black;
         display: inline-block;
+        height: auto;
+        box-shadow: 0 0 20px yellow;
+    }
+    .chapter_button:hover {
+        background-color: rgb(255,255,224);
     }
 
 

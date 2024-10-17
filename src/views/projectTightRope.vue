@@ -52,7 +52,7 @@
         <h1>Research and Ideation</h1>
       </div>
       <div>
-        <h2>INITIAL RESEARCH</h2>
+        <h2>Initial Research</h2>
         <p>From our initial research, we focused on anxiety and mental health. 
           We designed a controller where the main player uses a balancing board and rod to dodge obstacles, 
           simulating the physical and mental experience of anxiety. The following are the key tenants we utilized in our design</p>
@@ -68,7 +68,7 @@
           ></slideshow>
       </div>
       <div>
-        <h2>IDEATION</h2>
+        <h2>Ideation</h2>
         <p>After completing our desk research we built out a number of projects, all that focused either on social issues, interesting controllers, multiplayer interactions, or emmersive feelings. </p>
           <div class="flex_spacing_MD">
             <div style="width: 100%; max-width: 505px;">
@@ -94,7 +94,7 @@
       </div>
 
       <div class="woz_test">
-        <h2>PROTOTYPE 1 - TILT MECHANISM</h2>
+        <h2>Prototype 1 - Tilt Mechanism</h2>
         <p>The first prototype tested player 1's tilting mechanism. During gameplay, bat obstacles representing stress and responsibilities flew down from the top of the screen, and the player character could move left and right to dodge them.</p>
         <div class="woz_obj type_1">
           <div class="code_obj">
@@ -104,7 +104,7 @@
         </div>
       </div>
       <div class="woz_test">
-        <h2>PROTOTYPE 2 - SWATTING MECHANISM</h2>
+        <h2>Prototype 2 - Swatting Mechanism</h2>
         <p>The second prototype tested a swatting mechanism for the second and third players. During gameplay, bat obstacles from the first prototype moved in from the left and right.</p>
         <div class="woz_obj type_2">
           <img src="../assets/project_tightrope/woz_2.gif">
@@ -114,7 +114,7 @@
         </div>
       </div>
       <div class="woz_test">
-        <h2>PROTOTYPE 3 - FLAPPING MECHANISM</h2>
+        <h2>Prototype 3 - Flapping Mechanism</h2>
         <p>The final prototype tested a flapping motion for the second and third players. During gameplay, the players flapped in unison to move the character closer to the cliff face. </p>
         <div class="woz_obj type_1">
           <div class="code_obj">
@@ -152,7 +152,7 @@
         This included refining the fidelity of hardware and software</p>
     </div>
     <div class="hardware">
-      <h2>HARDWARE ITERATIONS</h2>
+      <h2>Hardware Iterations</h2>
       <div class="grid_template_2r">
         <div id="wings_iterations">
           <h3>Wing Iterations</h3>
@@ -165,7 +165,7 @@
       </div>
     </div>
     <div class="software">
-      <h2>SOFTWARE FEATURES</h2>
+      <h2>Software Features</h2>
       <p>A large load of the work done next was within the software elements of the code. The finalized p5.js software code can be found <a href="https://editor.p5js.org/varunk.narayanswamy-round/sketches/F_rfpgcrT">here.</a></p>
       <div class="grid_template">
         <div class="software_update" id="initial_story">
@@ -208,13 +208,13 @@
   <sectionContainer class="white_container showcase">
       <h1>Showcase and Final Video</h1>
       <div>
-      <h2>SHOWCASE</h2>
+      <h2>Showcase</h2>
       <p>After completing our project we held a public showcase, where we could demo Project Tightrope. The follow is video content that displays that experience</p>
       <iframe src="https://www.youtube.com/embed/DoGYisWcmu8?si=PPjT6fK4Aat2n2zx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin: auto"></iframe>
     </div>
 
     <div>
-    <H2> FINAL VIDEO</H2>
+    <H2> Final Video</H2>
     <p>We concluded our project by putting together a final video that explain our concept, approach and implementation.</p>
     <iframe src="https://www.youtube.com/embed/AU4bc2cfOug?si=Va65FkhBQWWL5tHL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen  style="margin: auto"></iframe>
     </div>
@@ -300,6 +300,12 @@ export default {
     font-size: 20px;
     //color: black;
   }
+  // h2 {
+  //     text-transform: uppercase;
+  //   }
+  // h3 {
+  //   text-transform: uppercase;
+  // }
   li {
     font-size: 20px;
   }

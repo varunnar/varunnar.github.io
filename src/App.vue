@@ -34,6 +34,9 @@ body {
 p {
   font-size: 20px;
 }
+h3 {
+  text-transform: uppercase;
+}
 
 nav a {
   font-weight: bold;

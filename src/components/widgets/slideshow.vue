@@ -97,7 +97,7 @@
     methods: {
       generateNumericImagePaths(folderPath, numImages) {
         // Generate URLs assuming a naming pattern like image1.jpg, image2.jpg, etc.
-        this.imagePaths = Array.from({ length: numImages }, (_, i) => `${folderPath}/img_${i}.jpg`);
+        this.imagePaths = Array.from({ length: numImages }, (_, i) => `${folderPath}_${i}.jpg`);
       },
       clickPrev() {
         this.disableTransition = true;
