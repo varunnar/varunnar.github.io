@@ -220,31 +220,32 @@
     </div>
   </sectionContainer>
 
-  <!-- <sectionContainer class="white_container">
-    <H2>REFLECTION</H2>
+  <sectionContainer class="green_container">
+    <H1>Reflection</H1>
     <p>This project was one of my favorites. While the timeline was fast, I am proud of how the it progressed and the final product we delivered. Below are next steps and changes I would make: </p>
-    <div class="grid_template">
-      <div class="reflection_item">
-        <div class="flex_spacing_FS" style="gap: 10px">
-          <div class="circle"> 1 </div>
-          <H3>Further Research</H3>
-        </div>
-        <p>With our project being so centered on mental health and anxiety, In the future I hope to do further researcher into the project</p>
+    <div class="flex_spacing_SB">
+      <div class="reflection_items" style="gap: 10px">
+        <div class="circle"> 1 </div>
+        <h3>Further Research</h3>
+        <p>With the focus of this project being on mental health, we wished to conduct further research to see how our projects messaging aligned with players mental models.</p>
       </div>
-      <div class="reflection_item">
-        <div class="flex_spacing_FS" style="gap: 10px">
-          <div class="circle"> 2 </div>
-          <h3>Showing not Telling</h3>
-        </div>
+      <div class="reflection_items" style="gap: 10px">
+        <div class="circle"> 2 </div>
+        <h3>Showing not Telling</h3>
+        <p>We refined the narrative, but the current version with two friends discussing mental health felt too direct. If research supports it, I’d consider revising to show rather than tell.</p>
       </div>
-      <div class="reflection_item">
-        <div class="flex_spacing_FS" style="gap: 10px">
-          <div class="circle"> 3 </div>
-          <h3>Using A Gaming Platform</h3>
-        </div>
+      <div class="reflection_items" style="gap: 10px">
+        <div class="circle"> 3 </div>
+        <h3>Using A Gaming Platform</h3>
+        <p>Using P5.js was fun for building the game, but its lack of structure limited us given the timeline. In the future, I'd consider converting it to a gaming engine like Unity.</p>
       </div>
     </div>
-  </sectionContainer> -->
+  </sectionContainer>
+  <sectionContainer class="white_container" style="text-align: left">
+    <h1>Links</h1>
+    <a href="https://github.com/varunnar/projectTightrope"><p>Github</p></a>
+    <a @click="downloadPDF" href="#" class="pdf-link"><p>Download PDF</p></a>
+  </sectionContainer>
   </div>
 </template>
 <script>
@@ -279,7 +280,31 @@ export default {
     woz1Code() {
       return this.woz_text_1;
     }
+  },
+  methods: {
+    downloadPDF() {
+      const pdfUrl = '/assets/tightrope/project_tightrope_documentation.pdf'; // Path to your PDF file in the public folder
+      const fileName = 'project_tightrope_documentation.pdf'; // Desired name for the downloaded file
+
+      // Create an anchor element to trigger the download
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = fileName;
+      link.target = '_blank'; // Optional: opens in a new tab
+
+      // Append the link to the document body and trigger a click event
+      document.body.appendChild(link);
+      link.click();
+
+      // Clean up by removing the link from the document
+      document.body.removeChild(link);
+    }
   }
+  // methods: {
+  //   downloadPDF() {
+  //     window.
+  //   }
+  // }
 }
 </script>
 
@@ -401,14 +426,24 @@ export default {
   }
 
   .circle {
-    width: 5vw;
-    height: 5vw;
+    width: 80px;
+    height: 80px;
     background-color: white;
+    color: black;
     border-radius: 1000px;
     font-size: 40px;
     border-color: black;
     padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  // .reflection_item {
+  //   max-width: 200px;
+  // }
 
   .white_container {
     background-color: #fff1ee;
@@ -563,19 +598,24 @@ export default {
     }
   }
 
-  .initial_research_circles {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
-  }
+  // .initial_reflection_items {
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: center;
+  //   flex-wrap: wrap;
+  //   gap: 20px;
+  //   width: 100%;
+  // }
 
-  .research_circles {
+  .reflection_items {
     display: flex;
-    align-items: center;
+    align-items: space;
     flex-direction: column;
+    max-width: 300px;
+    flex-basis: 100%;
+    background-color: black;
+    padding: 30px 10px 30px 10px;
+    border-radius: 30px;
   }
 
   .findings {

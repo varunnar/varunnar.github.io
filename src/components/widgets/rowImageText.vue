@@ -1,7 +1,7 @@
 <template>
     <div class="object">
       <!-- Display the row of images -->
-      <div class="image-row">
+      <div v-if="images" class="image-row">
         <img 
           v-for="(image, index) in images" 
           :key="index" 
@@ -11,6 +11,15 @@
           :alt="'Image ' + index"
         />
       </div>
+
+      <div v-if="header" class="image-row">
+        <h2 
+          v-for="(header, index) in header" 
+          :key="header" 
+          v-text="header" 
+          @click="fetchContent(index)"></h2>
+      </div>
+
       
       <!-- Display the fetched HTML content -->
        <Transition name="slide-fade">
@@ -25,7 +34,11 @@
     props: {
       images: {
         type: Array,
-        required: true,
+        required: false,
+      },
+      header: {
+        type: Array,
+        required: false,
       },
       textFiles: {
         type: Array,

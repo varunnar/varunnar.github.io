@@ -19,10 +19,10 @@
           </div>
          </div>
         </div>
-        <div class="header_title">
-          <div>Experience</div>
+        <!-- <div class="header_title">
+          <div>Experience</div> -->
           <!--<div>see more</div>-->
-        </div>
+        <!-- </div>
         <div class="projects">
             <div class="projects-obj">
                 <div v-for="object in experience" class="project-object-set" :key="object" @click="navigateToPage(object)">
@@ -32,7 +32,7 @@
                   <div v-else class="text_info" v-text="object"></div>
                 </div>
             </div>
-        </div>
+        </div> -->
           </div>
         </transition>
       </div>
