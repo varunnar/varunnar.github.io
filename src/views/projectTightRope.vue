@@ -72,7 +72,7 @@
         <p>After completing our desk research we built out a number of projects, all that focused either on social issues, interesting controllers, multiplayer interactions, or emmersive feelings. </p>
           <div class="flex_spacing_MD">
             <div style="width: 100%; max-width: 505px;">
-              <img style="width: 100%; object-fit: cover;" src="../assets//project_tightrope/big_img.png">
+              <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/big_img.png">
               <p>We designed several ideas, using the opportunity to explore AI image generation and explain them to our classmates.</p>
             </div>
             <div style="width: 100%; max-width: 505px;">
