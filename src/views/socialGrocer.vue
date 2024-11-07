@@ -276,8 +276,8 @@
                     <!-- 400/750 for full pdf -->
                     <embed src="/assets/social_grocer/Final Poster-compressed.pdf#navpanes=0" style="width: 100%; aspect-ratio: 800/600"/>
                 </div>
-            <h2>Final Documentation</h2>
-            <pdfDownloader fileName="Team H_Design_Documentation.pdf" pdfString="Design Documentation" pdfUrl="/asset/socialGrocer/Team H_Design_Documentation.pdf" textColor="#FFFFFF"></pdfDownloader>
+            <!-- <h2>Final Documentation</h2>
+            <pdfDownloader fileName="Team H_Design_Documentation.pdf" pdfString="Design Documentation" pdfUrl="/asset/socialGrocer/Team H_Design_Documentation.pdf" textColor="#FFFFFF"></pdfDownloader> -->
         </sectionContainer>
 
         <sectionContainer class="off">
