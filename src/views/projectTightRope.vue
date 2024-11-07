@@ -70,7 +70,7 @@
       <div>
         <h2>Ideation</h2>
         <p>After completing our desk research we built out a number of projects, all that focused either on social issues, interesting controllers, multiplayer interactions, or emmersive feelings. </p>
-          <div class="flex_spacing_MD">
+          <div class="flex_spacing_MD spacing_medium">
             <div style="width: 100%; max-width: 505px;">
               <img style="width: 100%; object-fit: cover;" src="../assets/project_tightrope/big_img.png">
               <p>We designed several ideas, using the opportunity to explore AI image generation and explain them to our classmates.</p>
@@ -223,7 +223,7 @@
   <sectionContainer class="green_container">
     <H1>Reflection</H1>
     <p>This project was one of my favorites. While the timeline was fast, I am proud of how the it progressed and the final product we delivered. Below are next steps and changes I would make: </p>
-    <div class="flex_spacing_SB">
+    <div class="flex_spacing_SB spacing_small">
       <div class="reflection_items" style="gap: 10px">
         <div class="circle"> 1 </div>
         <h3>Further Research</h3>
@@ -517,14 +517,14 @@ export default {
     margin: auto;
   }
 
-  .flex_spacing_FS {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 200px;
-    width: 100%;
-  }
+  // .flex_spacing_FS {
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: flex-start;
+  //   flex-wrap: wrap;
+  //   gap: 200px;
+  //   width: 100%;
+  // }
 
   .grid_template_2r {
     display: grid;
@@ -560,7 +560,6 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 10px;
     width: 100%
   }
 
@@ -569,8 +568,15 @@ export default {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 50px;
     width: 100%
+  }
+
+  .spacing_small {
+    gap: 10px;
+  }
+  
+  .spacing_medium {
+    gap: 50px;
   }
 
   .software, .hardware {
@@ -615,12 +621,18 @@ export default {
     flex-basis: 100%;
     background-color: black;
     padding: 30px 10px 30px 10px;
-    border-radius: 30px;
+    border-radius: 30px; 
   }
 
   .findings {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media(max-width: 700px) {
+      .findings {
+      grid-template-columns: 1fr;
+    }
   }
   .finding {
     width: 90%;

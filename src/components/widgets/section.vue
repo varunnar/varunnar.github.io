@@ -23,5 +23,12 @@
     margin-bottom: 5%;
     border-radius: 20px;
   }
+
+  @media (max-width: 500px) {
+    .section {
+      margin: 0px;
+      border-radius: 0px;
+    }
+  }
   </style>
   

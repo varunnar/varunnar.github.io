@@ -253,7 +253,6 @@
       let runtime;
   
       onMounted(() => {
-        console.log("loaded Now")
         runtime = new Runtime();
         runtime.module(notebook, (name) => {
           if (name === 'viewof emotion_score') return new Inspector(viewofEmotion_score.value);

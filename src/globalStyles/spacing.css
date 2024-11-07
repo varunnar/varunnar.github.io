@@ -1,0 +1,44 @@
+.flex_spacing_SB {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%
+  }
+
+  .flex_spacing_MD {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%
+  }
+
+  .flex_spacing_start {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.flex_string_icon {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+}
+
+  .spacing_small {
+    gap: 10px;
+  }
+  
+  .spacing_medium {
+    gap: 50px;
+  }
+
+  @media (max-width: 900px) {
+    .flex_spacing_start {
+        justify-content: space-around;
+    }
+}

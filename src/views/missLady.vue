@@ -9,6 +9,7 @@
                     </div>
                     <slideShow class="cheesecake_chapters"
                     folderPath="/assets/other/c_w_c/zoo_light"
+                    fileType="jpg"
                     :autoPlay="false"
                     :numberOfImages="3">
                     </slideShow>
@@ -19,6 +20,7 @@
                     </div>
                     <slideShow class="cheesecake_chapters"
                     folderPath="/assets/other/c_w_c/costume"
+                    fileType="jpg"
                     :autoPlay="false"
                     :numberOfImages="3">
                     </slideShow>
@@ -29,6 +31,7 @@
                     </div>
                     <slideShow class="cheesecake_chapters"
                     folderPath="/assets/other/c_w_c/hp_finding"
+                    fileType="jpg"
                     :autoPlay="false"
                     :showControls="false"
                     :numberOfImages="1">
@@ -40,6 +43,7 @@
                     </div>
                     <slideShow class="cheesecake_chapters"
                     folderPath="/assets/other/c_w_c/soft_launch"
+                    fileType="jpg"
                     :autoPlay="false"
                     :showControls="false"
                     :numberOfImages="1">
@@ -65,6 +69,7 @@
             <h1>Slideshows of US!</h1>
             <slideShow class="miss_lady_slides"
                 folderPath="/assets/other/album/img"
+                fileType="jpg"
                 :autoPlay="true"
                 :random="true"
                 :numberOfImages="14">
