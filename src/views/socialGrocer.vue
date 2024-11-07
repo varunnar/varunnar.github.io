@@ -315,12 +315,12 @@ import Slideshow from '@/components/widgets/slideshow.vue';
 import artboardObj from '@/components/widgets/artboardObj.vue';
 import artboardArr from '../components/artboardArrays/artboardQuestionsSG.js';
 import artboardFeatureArr from '../components/artboardArrays/artboardfeaturesSG.js'
-import pdfDownloader from '@/components/widgets/pdfDownloader.vue';
+//import pdfDownloader from '@/components/widgets/pdfDownloader.vue';
 
 
 export default {
     name: 'socialGrocer',
-    components: {sectionContainer, rowImageText, Slideshow, artboardObj, pdfDownloader},
+    components: {sectionContainer, rowImageText, Slideshow, artboardObj},
     data() {
         return {
             c_zone_i:['/assets/social_grocer/sol.png', '/assets/social_grocer/thinking.png', '/assets/social_grocer/basket.png'],
