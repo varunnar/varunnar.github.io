@@ -416,23 +416,24 @@
 }
 
 .modal-content {
-  background-color: #fff;
+  // background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  max-width: 90%;
-  max-height: 90%;
+  height: 90%;
+  width: auto;
   text-align: center;
 }
 
 .modal_relative_obj {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .modal-image {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   margin-bottom: 10px;
 }
   </style>

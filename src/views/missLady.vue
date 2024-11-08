@@ -49,6 +49,42 @@
                     :numberOfImages="1">
                     </slideShow>
                 </div>
+                <div class="grid_view_obj">
+                    <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Roadtrip.mp3`)">
+                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Soft Launch
+                    </div>
+                    <slideShow class="cheesecake_chapters"
+                    folderPath="/assets/other/c_w_c/roadtrip"
+                    fileType="jpg"
+                    :autoPlay="false"
+                    :showControls="true"
+                    :numberOfImages="2">
+                    </slideShow>
+                </div>
+                <div class="grid_view_obj">
+                    <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Fondue.mp3`)">
+                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Soft Launch
+                    </div>
+                    <slideShow class="cheesecake_chapters"
+                    folderPath="/assets/other/c_w_c/fondue"
+                    fileType="jpg"
+                    :autoPlay="false"
+                    :showControls="false"
+                    :numberOfImages="1">
+                    </slideShow>
+                </div>
+                <div class="grid_view_obj">
+                    <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Cats.mp3`)">
+                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Soft Launch
+                    </div>
+                    <slideShow class="cheesecake_chapters"
+                    folderPath="/assets/other/c_w_c/cats"
+                    fileType="jpg"
+                    :autoPlay="false"
+                    :showControls="true"
+                    :numberOfImages="3">
+                    </slideShow>
+                </div>
             </div>
         </sectionContainer>
         <sectionContainer class="dark">
@@ -72,7 +108,7 @@
                 fileType="jpg"
                 :autoPlay="true"
                 :random="true"
-                :numberOfImages="14">
+                :numberOfImages="15">
             </slideShow>
         </sectionContainer>
         <!-- Iterating over the book(s) -->
@@ -108,7 +144,7 @@ export default {
         return {
             // This array contains 17 chapters (1 book with 17 chapters)
             chapter_info: [
-                Array.from({ length: 7 }, (_, i) => i + 1) // [1, 2, 3, ..., 17]
+                Array.from({ length: 11 }, (_, i) => i + 1) // [1, 2, 3, ..., 17]
             ],
             currentAudio: null, // To keep track of the currently playing audio instance
             currentChapter: null, // To track which chapter's audio is currently playing
