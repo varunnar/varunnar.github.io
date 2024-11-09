@@ -51,7 +51,7 @@
                 </div>
                 <div class="grid_view_obj">
                     <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Roadtrip.mp3`)">
-                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Soft Launch
+                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Our First Roadtrip
                     </div>
                     <slideShow class="cheesecake_chapters"
                     folderPath="/assets/other/c_w_c/roadtrip"
@@ -63,7 +63,7 @@
                 </div>
                 <div class="grid_view_obj">
                     <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Fondue.mp3`)">
-                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Soft Launch
+                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Miss Ladies Birthday
                     </div>
                     <slideShow class="cheesecake_chapters"
                     folderPath="/assets/other/c_w_c/fondue"
@@ -75,7 +75,7 @@
                 </div>
                 <div class="grid_view_obj">
                     <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Cats.mp3`)">
-                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Soft Launch
+                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} The Arrival of the Cats
                     </div>
                     <slideShow class="cheesecake_chapters"
                     folderPath="/assets/other/c_w_c/cats"
