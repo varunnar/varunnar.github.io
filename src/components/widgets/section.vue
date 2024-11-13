@@ -17,8 +17,8 @@
     padding-right: 10%;
     padding-top: 5%;
     padding-bottom: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 5%;
     margin-bottom: 5%;
     border-radius: 20px;

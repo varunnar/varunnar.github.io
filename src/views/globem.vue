@@ -286,7 +286,9 @@
         //let canvas_object = document.getElementsByClassName('canvas.marks');
         console.log("here")
         window.dispatchEvent(new Event('resize'));
-        window.addEventListener('resize', function() { console.log("helloooooo")})
+        window.addEventListener('resize', function() { 
+          console.log("Resize found")
+        })
       });
   
       onBeforeUnmount(() => {

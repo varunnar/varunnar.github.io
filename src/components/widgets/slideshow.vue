@@ -221,8 +221,6 @@
       }
     },
     displayControlObject() {
-      console.log("HELLOOOOOO DISPLAY CONTROL")
-      console.log(this.mouseInDiv)
       if (this.mouseInDiv && this.showControls || this.showControlsAlways) {
         return true;
       } else {

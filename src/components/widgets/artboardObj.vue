@@ -15,12 +15,13 @@
             </ul>
         </div>
         <div v-else-if="paragraph" class="paragraph">
-            <p :style="`color: ${objectColor}`">{{ paragraph }}</p>
+            <p :style="`color: ${objectColor}; font-size: 30px;`">{{ paragraph }}</p>
         </div>
         <!-- Images -->
-        <div class="images">
-          <div class="image-wrapper" v-for="(image, index) in images" :key="index">
-            <img :src="image" alt="widget image" />
+        <div class="images" :style="`max-width: ${imageSize}`">
+          <div class="image-wrapper" v-for="(image, index) in images" :key="index" :style="`background-image: url(${images}); max-width: ${imageSize};
+          aspect-ratio: ${aspectRatio}; background-size: ${backgroundSize};`">
+            <!-- <img :src="image" alt="widget image" :style="`max-width: ${imageSize};`"/> -->
           </div>
         </div>
       </div>
@@ -69,6 +70,18 @@
       artboardHeight: {
         type: String,
         default: "600px"
+      },
+      imageSize: {
+        type: String,
+        default: "800px"
+      },
+      backgroundSize: {
+        type: String,
+        default: "Contain"
+      },
+      aspectRatio: {
+        type: String,
+        default: "1/1"
       }
     },
     computed: {
@@ -154,23 +167,30 @@
     display: flex;
     gap: 5px;
     flex: 2;
+    width: 100%;
     /* max-width: 50%; */
     /* max-height: 300px; */
   }
   .image-wrapper {
     flex: 1;
+    width: 100%;
+    min-width: 200px;
+    margin-left: auto; 
+    margin-right: 0;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .images img {
-    width: 100%;
+    /* width: 100%;
     height: auto;
     min-width: 200px;
-    max-width: 400px;
-    float: right;
+    float: right; */
   }
 
   .paragraph {
     max-width: 500px;
     padding: 10px;
+    flex: 2;
   }
 
   .artboard-container .paragraph p {

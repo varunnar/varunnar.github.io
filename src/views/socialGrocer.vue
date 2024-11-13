@@ -17,6 +17,27 @@
             <p>This project was my capstone project in the Human-Computer Interaction and Design.<b>(MHCI+D)</b>. It ran from April 2024 to August 2024 <b>(22 weeks)</b></p>
         </sectionContainer>
 
+
+        <h1>What is Social Grocer?</h1>
+            <div class="feature_container">
+                <div class="artboard_container" v-for="items in feature_artboard_content" :key="items">
+                    <artboardObj
+                        :header="items['header']"
+                        :paragraph="items['paragraph']"
+                        :images="items['images']"
+                        backgroundColor="#EFEFEF"
+                        artboardHeight="0px"
+                        backgroundSize="105%"
+                    ></artboardObj>
+                    <!-- <h3 v-html="items['header']"></h3>
+                    <div></div>
+                    <div>
+                        <p v-html="items['paragraph']"></p>
+                        <img :src="items['images']"/>
+                    </div> -->
+                </div>
+            </div> 
+
         <sectionContainer class="off situation">
             <h1>Situation</h1>
             <p></p>
@@ -24,9 +45,12 @@
             <p>For our capstone project we were sponsored by Building H. Building H is a nonprofit organization that looks 
                 to improve the world and environment by rating companies and informing them of areas of improvement with health, accessibility and more.
                 You can learn more about them <a href="https://www.buildingh.org/"> here.</a> </p>
-            <h2>Proposed Project</h2>
-            <p>Building H came to us with the following proposal: <em>"In a world where the online market is the new landscape for grocery delivery, how can we transform the space to make health
-                 food choices not only easier but second nature"</em></p>
+        </sectionContainer>
+
+        <sectionContainer>
+            <h1>Proposed Project</h1>
+            <p style="font-size: 30px;">Building H came to us with the following proposal: <em>"In the evolving <b>online grocery delivery marketplace</b>, how can we transform the space to make <b>healthier
+                 food choices</b> not only easier but second nature"</em></p>
         </sectionContainer>
 
         <sectionContainer class="green">
@@ -41,12 +65,13 @@
                 and how the online grocery experience differs from in-person shopping in relation to health.</p>
             <rowImageText
             :images="c_zone_i"
-            :text-files="c_zone_c">
+            :text-files="c_zone_c"
+            imageSize="200px">
             </rowImageText>
 
-            <h2>Competitive Analysis</h2>
+            <!-- <h2>Competitive Analysis</h2>
             <p>We conducted a competitive analysis of food and grocery delivery companies to understand how the current market promotes or discourages healthy habits.</p>
-            <h3></h3>
+            <h3></h3> -->
         </sectionContainer>
 
         <sectionContainer class="off">
@@ -58,7 +83,7 @@
             <h2>Participant Requirements</h2>
             <h2>Methodology</h2>
                 <p>We used a number of different methodologies we can be seen below</p>
-                <div class="flex_spacing_start spacing_medium">
+                <div class="grid_3fr_1fr">
                     <div class="method">
                         <img src="../assets/social_grocer/semi_structure_int.png"/>
                         <p style="color: yellow">1</p>
@@ -93,8 +118,11 @@
             <h1>Quantitative Research</h1>
             <p>After completing our qualitative research we wanted to verify that these results persisted for a larger demographic and on a larger scale</p>
             <h2>Methodology</h2>
-            <p>In order to do this we put out a survey for young adults who online grocery shop regularly. We receiveed a total of <b></b></p>
+            <p>In order to do this we put out a survey for young adults who online grocery shop regularly. We received a total of nearly 1000 participants, 
+                of which we filtered to 108 which fit our required demographics in terms of age range, online grocery usage and more<b></b></p>
             <h2>Visualizations</h2>
+            <h3>Interactive Visualizations</h3>
+            <div class="interactive_viz" ref="Product_inspection_split"></div>
         </sectionContainer>
 
         <sectionContainer class="off">
@@ -104,7 +132,7 @@
             <p>Each member of the team designed 40 initial ideas. Our process included the following steps</p>
             <div class="grid_4fr_2fr_1fr">
                 <div class="ideation_methods">
-                    <img src="../assets/social_grocer/putting_up_items.gif">
+                    <img src="../assets/social_grocer/ideation.gif">
                     <h3>1. Placing Ideas Down</h3>
                     <p>We placed our initial 40 ideas on the board, grouped by person</p>
                 </div>
@@ -161,7 +189,7 @@
                  Research showed that while shopping is often solitary, people value friend recommendations. 
                  Social Grocer enables users to shop online with friends and family in real-time, promoting 
                  mindfulness and accountability through healthy food suggestions and a cart health score. 
-                 This score can be shared online to celebrate nutrition-focused progress.</p>
+                 This score can be shared online to celebrat e nutrition-focused progress.</p>
                 </div>
             <div class="line-with-text"><h2> Refinement</h2></div>
             <p> Over 9 rounds of seperate refinement, ideation, and discussion we transformed Social Grocer into what is today.</p>
@@ -252,29 +280,17 @@
         <sectionContainer class="off">
             <h1>Final Version</h1>
                 <p>After 9 iterations of design we landed on the final design of Social Grocer.</p>
-            <h2>Features</h2>
-            <div class="feature_container">
-                <div class="artboard_container" v-for="items in feature_artboard_content" :key="items">
-                    <artboardObj
-                        :header="items['header']"
-                        :paragraph="items['paragraph']"
-                        :images="items['images']"
-                        backgroundColor="#EFEFEF"
-                        artboardHeight="0px"
-                    ></artboardObj>
-                </div>
-            </div>
             <h2>Final Video</h2>
             <iframe src="https://www.youtube.com/embed/fQMMDkPF3mk?si=1NNYUXY-e2iT4zjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </sectionContainer>
 
         <sectionContainer class="green">
             <h1>Final Assets</h1>
-            <h2>Final Poster</h2>
+            <!-- <h2>Final Poster</h2> -->
             <!-- #toolbar=0&navpanes=0&scrollbar=0 for removing scrollbar -->
                 <div class="pdf-container" style="width: 100%">
                     <!-- 400/750 for full pdf -->
-                    <embed src="/assets/social_grocer/Final Poster-compressed.pdf#navpanes=0" style="width: 100%; aspect-ratio: 800/600"/>
+                    <!-- <embed src="/assets/social_grocer/Final Poster-compressed.pdf#navpanes=0" style="width: 100%; aspect-ratio: 800/600"/> -->
                 </div>
             <!-- <h2>Final Documentation</h2>
             <pdfDownloader fileName="Team H_Design_Documentation.pdf" pdfString="Design Documentation" pdfUrl="/asset/socialGrocer/Team H_Design_Documentation.pdf" textColor="#FFFFFF"></pdfDownloader> -->
@@ -282,7 +298,7 @@
 
         <sectionContainer class="off">
             <h1>Reflections</h1>
-            <div class="flex_spacing_start spacing_medium">
+            <div class="grid_3fr_1fr">
             <div class="reflection_items" style="gap: 10px">
                 <div class="circle reflection_1"></div>
                 <h3>Further Research</h3>
@@ -309,6 +325,9 @@
 
 <script>
 //import slideshow from '@/components/widgets/slideshow.vue';
+import { onMounted, ref, onBeforeUnmount } from 'vue';
+import { Runtime, Inspector } from '@observablehq/runtime';
+import notebook from '4158df67e625f9c8';
 import sectionContainer from '../components/widgets/section.vue';
 import rowImageText from '../components/widgets/rowImageText.vue';
 import Slideshow from '@/components/widgets/slideshow.vue';
@@ -369,13 +388,59 @@ export default {
             ideation_artboard_content: artboardArr,
             feature_artboard_content: artboardFeatureArr
         }
-    }
+    },
+    setup() {
+      const Product_inspection_split = ref(null);
+      let runtime;
+  
+      onMounted(() => {
+        runtime = new Runtime();
+        runtime.module(notebook, (name) => {
+          if (name === 'Product_inspection_split') return new Inspector(Product_inspection_split.value);
+          return ['value_array'].includes(name);
+        });
+
+        // runtime.module(notebook2, (name) => {
+        //   if (name === 'viewof year_drop_down') return new Inspector(viewofYear_drop_down.value);
+        //   if (name === 'student_phone') return new Inspector(student_phone.value);
+        //   return ['filtered_students_year'].includes(name);
+        // });
+
+        // const firstPlotElement = first_plot.value;
+        // if (firstPlotElement) {
+        //   firstPlotElement.addEventListener('mouseover', (event) => {
+        //     console.log("Hover event on the first plot:", event);
+        //   });
+
+        //   firstPlotElement.addEventListener('click', (event) => {
+        //     console.log("Click event on the first plot:", event);
+        //   });
+        // }
+
+        //let canvas_object = document.getElementsByClassName('canvas.marks');
+        console.log("here")
+        window.dispatchEvent(new Event('resize'));
+        window.addEventListener('resize', function() { console.log("helloooooo")})
+      });
+  
+      onBeforeUnmount(() => {
+        if (runtime) runtime.dispose();
+      });
+  
+      return {
+        Product_inspection_split
+      };
+    },
 }
 </script>
 
 <style scoped>
 
 @import url('@/globalStyles/spacing.css');
+
+    .container {
+        background-color: #EFEFEF;
+    }
     .green {
         background-color: #27422C;
         color: white;
@@ -390,7 +455,8 @@ export default {
         background-image: url('../assets/social_grocer/hero.png');
         background-size: cover;
         width: 100%;
-        aspect-ratio: 2250/1520;
+        /* aspect-ratio: 2250/1520; */
+        aspect-ratio: 1032/647;
         border-radius: 10px;
     }
     iframe {
@@ -467,11 +533,12 @@ export default {
     }
 
     @media (max-width: 900px) {
-            .grid_4fr_2fr_1fr {
-                grid-template-columns: 1fr;
-            }
-            .grid_3fr_1fr {
+        .grid_4fr_2fr_1fr {
             grid-template-columns: 1fr;
+        }
+        .grid_3fr_1fr {
+            grid-template-columns: 1fr;
+            margin: auto;
         }
     }
 
@@ -484,6 +551,12 @@ export default {
 
     .emphasize_section p {
         font-size: 20px;
+    }
+    .interactive_viz {
+        padding: 10px;
+        background-color: white;
+        width: 100%;
+        border-radius: 10px;
     }
 
     .method {
