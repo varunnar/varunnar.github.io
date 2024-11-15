@@ -1,7 +1,10 @@
 <template>
     <div class="container">
+        <fadeInComponent>
         <sectionContainer class="green introduction">
-            <h1>Social Grocer</h1>
+            <div class="title_page">
+            <div class="logo_image"></div>
+            </div>
             <div class="hero_img"></div>
             <p><b>Transform grocery shopping from an ordinary task to a channel for social connection with Social Grocer. 
                 Connect with friends in real-time, make mindful food choices, and turn online shopping into an engaging, health-focused social adventure. </b></p>
@@ -11,48 +14,66 @@
                 <li><p>Ivy Tseng (Lead Designer)</p></li>
                 <li><p>Louise Lu (Lead Designer)</p></li>
                 <li><p>Stevie Lemons (Lead Researcher)</p></li>
-                <li><p> <b>Sponsor:</b> Steve Downs with Building H</p></li>
             </ul>
             <h2>Timeline</h2>
             <p>This project was my capstone project in the Human-Computer Interaction and Design.<b>(MHCI+D)</b>. It ran from April 2024 to August 2024 <b>(22 weeks)</b></p>
         </sectionContainer>
-
-
-        <h1>What is Social Grocer?</h1>
+        </fadeInComponent>
+        <fadeInComponent>
+        <sectionContainer class="off">
+            <h1>What is Social Grocer?</h1>
             <div class="feature_container">
-                <div class="artboard_container" v-for="items in feature_artboard_content" :key="items">
-                    <artboardObj
+                <!-- <div class="artboard_container" v-for="(items, index) in feature_artboard_content" :key="items"> -->
+                    <!-- <artboardObj
                         :header="items['header']"
                         :paragraph="items['paragraph']"
                         :images="items['images']"
                         backgroundColor="#EFEFEF"
                         artboardHeight="0px"
-                        backgroundSize="105%"
-                    ></artboardObj>
+                        aspectRatio="1/3"
+                        imageSize="400px"
+                    ></artboardObj> -->
+                    <div class="feature flex_sa" v-for="(items, index) in feature_artboard_content" :key="index">
+                        <div style="max-width: 500px;">
+                            <h3 v-html="items['header']"></h3>
+                            <p v-html="items['paragraph']"></p>
+                        </div>
+                        <div class="feature_img" :style="`background-image: url(${items['images']});`"></div>
+                    </div>
                     <!-- <h3 v-html="items['header']"></h3>
                     <div></div>
                     <div>
                         <p v-html="items['paragraph']"></p>
                         <img :src="items['images']"/>
                     </div> -->
-                </div>
+                <!-- </div> -->
             </div> 
-
-        <sectionContainer class="off situation">
-            <h1>Situation</h1>
-            <p></p>
-            <h2>Who is Our Sponsor: Building H?</h2>
-            <p>For our capstone project we were sponsored by Building H. Building H is a nonprofit organization that looks 
-                to improve the world and environment by rating companies and informing them of areas of improvement with health, accessibility and more.
-                You can learn more about them <a href="https://www.buildingh.org/"> here.</a> </p>
         </sectionContainer>
+        </fadeInComponent>
 
+        <fadeInComponent>
+        <sectionContainer class="green situation">
+            <div class="grid_4fr_2fr_1fr">
+                <div style="max-width: 500px">
+                    <h1>Who is Our Sponsor: Building H?</h1>
+                    <p>For our capstone project we were sponsored by Building H. Building H is a nonprofit organization that looks 
+                        to improve the world and environment by rating companies and informing them of areas of improvement with health, accessibility and more.
+                        You can learn more about them <a href="https://www.buildingh.org/"> here.</a> </p>
+                </div>
+                <div class="build_h_logo"></div>
+                </div>
+        </sectionContainer>
+        </fadeInComponent>
+
+        <fadeInComponent>
         <sectionContainer>
             <h1>Proposed Project</h1>
             <p style="font-size: 30px;">Building H came to us with the following proposal: <em>"In the evolving <b>online grocery delivery marketplace</b>, how can we transform the space to make <b>healthier
                  food choices</b> not only easier but second nature"</em></p>
         </sectionContainer>
+        </fadeInComponent>
 
+        <fadeInComponent>
         <sectionContainer class="green">
             <h1>Desk Research</h1>
             <p>With this proposal, we aimed to better understand the online grocery shopping space, starting with initial desk research.</p>
@@ -73,7 +94,9 @@
             <p>We conducted a competitive analysis of food and grocery delivery companies to understand how the current market promotes or discourages healthy habits.</p>
             <h3></h3> -->
         </sectionContainer>
+        </fadeInComponent>
 
+        <fadeInComponent>
         <sectionContainer class="off">
             <h1>Qualitative Research</h1>
                 <p>After completing our desk research, we conducted qualitative research, using the findings to refine our target population. </p>
@@ -81,6 +104,8 @@
                 <p>Our Research Question: How do young working professionals living and dining alone make decisions
                     when ordering groceries online?</p>
             <h2>Participant Requirements</h2>
+                <p>We narrowed our scope to young adults (ages 18-35) who lived alone, and shopped online at least twice a month.</p>
+            <h2>Participants and SME interviewees</h2>
             <h2>Methodology</h2>
                 <p>We used a number of different methodologies we can be seen below</p>
                 <div class="grid_3fr_1fr">
@@ -113,30 +138,74 @@
             </rowImageText>
             <div class="flex_spacing_start spacing_medium"></div>
         </sectionContainer>
+        </fadeInComponent>
 
+        <fadeInComponent>
         <sectionContainer class="green">
             <h1>Quantitative Research</h1>
-            <p>After completing our qualitative research we wanted to verify that these results persisted for a larger demographic and on a larger scale</p>
+            <p>After completing our qualitative research we wanted to verify that these results persisted for a larger demographic and on a larger scale.</p>
             <h2>Methodology</h2>
             <p>In order to do this we put out a survey for young adults who online grocery shop regularly. We received a total of nearly 1000 participants, 
-                of which we filtered to 108 which fit our required demographics in terms of age range, online grocery usage and more<b></b></p>
+                of which we filtered to 108 which fit our required demographics in terms of age range, online grocery usage and more.<b></b></p>
             <h2>Visualizations</h2>
-            <h3>Interactive Visualizations</h3>
-            <div class="interactive_viz" ref="Product_inspection_split"></div>
-        </sectionContainer>
+            <h3>Static Visualizations</h3>
+            <slideshow
+                class="visualization_slideshow"
+                folderPath="/assets/social_grocer/data_viz/viz"
+                :headerArray="data_viz_header"
+                :bodyArray="data_viz_body"
+                fileType="png"
+                :autoPlay="false"
+                :numberOfImages="3"
+                buttonColor='#000000'
+                backgroundColor='#FFFFFF'
+                textPosition="left_text">
+            </slideshow>
 
+            <h3>Interactive Visualizations</h3>
+            <p>Along with the main visualizations above I developed a number of others that can be seen below:</p>
+            <div class="grid_3fr_1fr">
+                <img src="../assets/social_grocer/data_viz/interactive_viz_0.gif" style="width: 100%; height: auto; object-fit: contain">
+                <img src="../assets/social_grocer/data_viz/interactive_viz_1.gif" style="width: 100%; height: auto; object-fit: contain">
+                <img src="../assets/social_grocer/data_viz/interactive_viz_2.gif" style="width: 100%; height: auto; object-fit: contain">
+            </div>
+            <p>You can interact with these visualizations <a href="https://observablehq.com/d/ee25442c71999d1b"> here</a> on observable.</p>
+            <!-- <div class="center_column">
+                <div>
+                    <div class="interactive_viz" ref="Product_inspection_split"></div>
+                </div>
+                <div>
+                    <div ref="viewof_age_filter"></div>
+                    <div ref="viewof_buying_status"></div>
+                    <div ref="product_inspect"></div>
+                </div>
+                <div>
+                    <div ref="viewof_radios"></div>
+                    <div ref="filter_options"></div>
+                </div>
+            </div> -->
+        </sectionContainer>
+        </fadeInComponent>
+
+        <fadeInComponent>
         <sectionContainer class="off">
             <h1>Ideation Process</h1>
             <p>With our research completed and validated, we now needed to consider how we wanted to attempt to change the space</p>
             <h2>Initial Ideation</h2>
             <p>Each member of the team designed 40 initial ideas. Our process included the following steps</p>
             <div class="grid_4fr_2fr_1fr">
-                <div class="ideation_methods">
-                    <img src="../assets/social_grocer/ideation.gif">
+                <div class="ideation_gif"></div>
+                <div>
                     <h3>1. Placing Ideas Down</h3>
                     <p>We placed our initial 40 ideas on the board, grouped by person</p>
+                    <h3>2. Grouping</h3>
+                    <p>We moved items to make larger sub-groups</p>
+                    <h3>3. Discussion</h3>
+                    <p>We discussed the merits and potential of each sub-group and specific ideas</p>
+                    <h3>4. Dot Voting</h3>
+                    <P>We Dot Votted - Each member selected their top 5 ideas</P>
                 </div>
-                <div class="ideation_methods">
+                <!-- <div class="ideation_methods">
                     <img src="../assets/social_grocer/initial_groupings.gif">
                     <h3>2. Grouping</h3>
                     <p>We moved items to make larger sub-groups</p>
@@ -150,7 +219,7 @@
                     <img src="../assets/social_grocer/dot_voting.gif">
                     <h3>4. Dot Voting</h3>
                     <P>We Dot Votted - Each member selected their top 5 ideas</P>
-                </div>
+                </div> -->
             </div>
             <div class="line-with-text"><h3> Design Principles</h3></div>
             <div class="grid_4fr_2fr_1fr">
@@ -192,18 +261,24 @@
                  This score can be shared online to celebrat e nutrition-focused progress.</p>
                 </div>
             <div class="line-with-text"><h2> Refinement</h2></div>
-            <p> Over 9 rounds of seperate refinement, ideation, and discussion we transformed Social Grocer into what is today.</p>
-
+            <p>We now looked to iterate on our designs, refining them, and improve
+                 them over time. Look below to checkout the <b>Guiding Questions</b> we used to help reconsider our design.</p>
             <h2>Guiding Questions</h2>
+            <!-- <div class="flex_sa artboard_container" v-for="items in ideation_artboard_content" :key="items" style="align-items: flex-start; margin-bottom: 200px;"> -->
+                      <!-- style="flex: 1 1 0; width: 0;" -->
+                <div class="grid_4fr_2fr_1fr">
             <div class="artboard_container" v-for="items in ideation_artboard_content" :key="items">
-                <artboardObj
-                    :header="items['header']"
-                    :focused-header="items['f_header']"
-                    :bulletPoints="items['bulletPoints']"
-                    :secondaryImage="items['secondaryImage']"
-                    :images="items['images']"
-                ></artboardObj>
+                <fadeInComponent>   
+                        <artboardObj
+                            :header="items['header']"
+                            :focused-header="items['f_header']"
+                            :bulletPoints="items['bulletPoints']"
+                            :secondaryImage="items['secondaryImage']"
+                            :images="items['images']"
+                        ></artboardObj>
+                </fadeInComponent>
             </div>
+        </div>
             <div class="line-with-text"><h2>Storyboards</h2></div>
                 <div class="grid_3fr_1fr">
                     <div class="slideShow_storyboards">
@@ -244,7 +319,9 @@
                 </div>
             </div>
         </sectionContainer>
+        </fadeInComponent>
 
+        <fadeInComponent>
         <sectionContainer class="green">
             <h1>Usability Testing</h1> 
             <p>In order validate our design we wanted to test in front of others.</p>
@@ -277,25 +354,29 @@
                 ></slideshow>
             </div>
         </sectionContainer>
+        </fadeInComponent>
+
+        <fadeInComponent>
         <sectionContainer class="off">
             <h1>Final Version</h1>
                 <p>After 9 iterations of design we landed on the final design of Social Grocer.</p>
             <h2>Final Video</h2>
             <iframe src="https://www.youtube.com/embed/fQMMDkPF3mk?si=1NNYUXY-e2iT4zjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </sectionContainer>
+        </fadeInComponent>
 
-        <sectionContainer class="green">
-            <h1>Final Assets</h1>
+        <!-- <sectionContainer class="green">
+            <h1>Final Assets</h1> -->
             <!-- <h2>Final Poster</h2> -->
             <!-- #toolbar=0&navpanes=0&scrollbar=0 for removing scrollbar -->
-                <div class="pdf-container" style="width: 100%">
+                <!-- <div class="pdf-container" style="width: 100%"> -->
                     <!-- 400/750 for full pdf -->
                     <!-- <embed src="/assets/social_grocer/Final Poster-compressed.pdf#navpanes=0" style="width: 100%; aspect-ratio: 800/600"/> -->
-                </div>
+                <!-- </div> -->
             <!-- <h2>Final Documentation</h2>
             <pdfDownloader fileName="Team H_Design_Documentation.pdf" pdfString="Design Documentation" pdfUrl="/asset/socialGrocer/Team H_Design_Documentation.pdf" textColor="#FFFFFF"></pdfDownloader> -->
-        </sectionContainer>
-
+        <!-- </sectionContainer> -->
+        <fadeInComponent>
         <sectionContainer class="off">
             <h1>Reflections</h1>
             <div class="grid_3fr_1fr">
@@ -320,26 +401,28 @@
             </div>
         </div>
         </sectionContainer>
+        </fadeInComponent>
     </div>
 </template>
 
 <script>
 //import slideshow from '@/components/widgets/slideshow.vue';
-import { onMounted, ref, onBeforeUnmount } from 'vue';
-import { Runtime, Inspector } from '@observablehq/runtime';
-import notebook from '4158df67e625f9c8';
+// import { onMounted, ref, onBeforeUnmount } from 'vue';
+// import { Runtime, Inspector } from '@observablehq/runtime';
+// import notebook from '4158df67e625f9c8';
 import sectionContainer from '../components/widgets/section.vue';
 import rowImageText from '../components/widgets/rowImageText.vue';
 import Slideshow from '@/components/widgets/slideshow.vue';
 import artboardObj from '@/components/widgets/artboardObj.vue';
 import artboardArr from '../components/artboardArrays/artboardQuestionsSG.js';
-import artboardFeatureArr from '../components/artboardArrays/artboardfeaturesSG.js'
+import artboardFeatureArr from '../components/artboardArrays/artboardfeaturesSG.js';
+import fadeInComponent from '@/components/fadeInComponent.vue';
 //import pdfDownloader from '@/components/widgets/pdfDownloader.vue';
 
 
 export default {
     name: 'socialGrocer',
-    components: {sectionContainer, rowImageText, Slideshow, artboardObj},
+    components: {sectionContainer, rowImageText, Slideshow, artboardObj, fadeInComponent},
     data() {
         return {
             c_zone_i:['/assets/social_grocer/sol.png', '/assets/social_grocer/thinking.png', '/assets/social_grocer/basket.png'],
@@ -385,58 +468,82 @@ export default {
             "Grace posts her cart, highlighting her virtual shopping trip with Kiran and their nostalgic grocery picks. Sharing this experience leaves Grace feeling refreshed and closer to her childhood friend.",
             "After receiving her grocery delivery the next day, Grace makes a healthy meal and shares a selfie. Kiran hearts it and playfully hints at scoring an invite to Seattle to taste her cooking.  Grace replies, “The kitchen’s open—just say when!”"
             ],
+            data_viz_header: ['Visualization 1', 'Visualization 2', 'Visualization 3'],
+            data_viz_body: ['This visualization shows that most participants are aged 18-25 and shop 1-2 times a month, supporting our theory that shoppers combine in-person and online grocery shopping.', 
+            'This visualizations showcases that the most important grocery aspects for participants is price, but also customer ratings and reviews, highlighting the subtly social nature of grocery shopping', 
+            "This visualization showcases the majority of grocery shoppers have at least a high trust in social media, showcases it's potential value in swaying them away and towards healthy habits"],
             ideation_artboard_content: artboardArr,
             feature_artboard_content: artboardFeatureArr
         }
     },
-    setup() {
-      const Product_inspection_split = ref(null);
-      let runtime;
+    // setup() {
+    //     const Product_inspection_split = ref(null);
+    //     const viewof_age_filter = ref(null)
+    //     const viewof_buying_status = ref(null)
+    //     const product_inspect = ref(null)
+
+
+    //     const viewof_radios = ref(null)
+    //     const filter_options = ref(null)
+
+    //     /*            <div class="interactive_viz" ref="viewof_age_filter"></div>
+    //         <div class="interactive_viz" ref="viewof_buying_status"></div>
+    //         <div class="interactive_viz" ref="product_inspect"></div>
+
+    //         <div class="interactive_viz" ref="viewof_radios"></div>
+    //         <div class="interactive_viz" ref="filter_options"></div> */
+
+    //   let runtime;
   
-      onMounted(() => {
-        runtime = new Runtime();
-        runtime.module(notebook, (name) => {
-          if (name === 'Product_inspection_split') return new Inspector(Product_inspection_split.value);
-          return ['value_array'].includes(name);
-        });
+    //   onMounted(() => {
+    //     runtime = new Runtime();
+    //     runtime.module(notebook, (name) => {
+    //       if (name === 'Product_inspection_split') return new Inspector(Product_inspection_split.value);
 
-        // runtime.module(notebook2, (name) => {
-        //   if (name === 'viewof year_drop_down') return new Inspector(viewofYear_drop_down.value);
-        //   if (name === 'student_phone') return new Inspector(student_phone.value);
-        //   return ['filtered_students_year'].includes(name);
-        // });
+    //       if (name === 'viewof age_filter') return new Inspector(viewof_age_filter.value);
+    //       if (name === 'viewof buying_status') return new Inspector(viewof_buying_status.value);
+    //       if (name === 'Breakdown_of_product_inspection') return new Inspector(product_inspect.value);
 
-        // const firstPlotElement = first_plot.value;
-        // if (firstPlotElement) {
-        //   firstPlotElement.addEventListener('mouseover', (event) => {
-        //     console.log("Hover event on the first plot:", event);
-        //   });
+    //       if (name === 'viewof radios') return new Inspector(viewof_radios.value);
+    //       if (name === 'filter_options') return new Inspector(filter_options.value);
+    //       return ['value_array', 'capstone_quant_filtered', 'Filtered_array', 'graph_meta'].includes(name);
+    //     });
 
-        //   firstPlotElement.addEventListener('click', (event) => {
-        //     console.log("Click event on the first plot:", event);
-        //   });
-        // }
-
-        //let canvas_object = document.getElementsByClassName('canvas.marks');
-        console.log("here")
-        window.dispatchEvent(new Event('resize'));
-        window.addEventListener('resize', function() { console.log("helloooooo")})
-      });
+    //     console.log("here")
+    //     window.dispatchEvent(new Event('resize'));
+    //     window.addEventListener('resize', function() { console.log("helloooooo")})
+    //   });
   
-      onBeforeUnmount(() => {
-        if (runtime) runtime.dispose();
-      });
+    //   onBeforeUnmount(() => {
+    //     if (runtime) runtime.dispose();
+    //   });
   
-      return {
-        Product_inspection_split
-      };
-    },
+    //   return {
+    //     Product_inspection_split,
+    //     viewof_age_filter,
+    //     viewof_buying_status,
+    //     product_inspect,
+    //     viewof_radios,
+    //     filter_options
+    //   };
+    // },
 }
 </script>
 
 <style scoped>
 
 @import url('@/globalStyles/spacing.css');
+    a {
+        color: #4A90E2;
+    }
+    .build_h_logo {
+        background-image: url('@/assets/social_grocer/building_h.png');
+        width: 100%;
+        aspect-ratio: 145/100;
+        background-size: contain;   
+        background-repeat: no-repeat;  
+        font-family: 'Fraunces';   
+    }
 
     .container {
         background-color: #EFEFEF;
@@ -446,6 +553,12 @@ export default {
         color: white;
         text-align: left;
     }
+    /* .white {
+        background: white;
+        border: solid black;
+        color: black;
+        text-align: left;
+    } */
     .off {
         background-color: #1E1E1E;
         color: white;
@@ -464,6 +577,13 @@ export default {
         aspect-ratio: 560/315;
     }
 
+    .flex_height_fit_items {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
     .introduction h1 {
         font-size: 50px;
     }
@@ -476,8 +596,19 @@ export default {
         color: white;
     }
 
+    .visualization_slideshow {
+        width: 100%; 
+        margin: auto;
+    }
+
     slideshow {
         background-color: white
+    }
+
+    .center_column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .grid_4fr_2fr_1fr {
@@ -497,6 +628,11 @@ export default {
     .ideation_methods img {
         width: 100%;
         min-width: 250px;
+        margin: auto;
+    }
+
+    .idea_bullets li {
+        font-size: 20px;
     }
 
     .artboard_container {
@@ -533,6 +669,9 @@ export default {
     }
 
     @media (max-width: 900px) {
+        .visualization_slideshow {
+            width: 100%;
+        }
         .grid_4fr_2fr_1fr {
             grid-template-columns: 1fr;
         }
@@ -557,6 +696,78 @@ export default {
         background-color: white;
         width: 100%;
         border-radius: 10px;
+    }
+
+    .ideation_gif {
+        background-image: url(../assets/social_grocer/ideation.gif);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+    }
+/* 
+    .ideas:nth-child(even) .idea_bullets {
+        grid-column: 2;
+    }
+
+    .ideas:nth-child(even) .artboard_container {
+        grid-column: 1;
+    }
+
+    .ideas:nth-child(odd) .idea_bullets {
+        grid-column: 1;
+    }
+
+    .ideas:nth-child(even) .artboard_container {
+        grid-column: 2;
+    } */
+
+    .flex_sa {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .flex_sa:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .feature {
+        width: 90%;
+        margin: 200px 5% 0px 5%;
+    }
+
+    .feature p {
+        font-size: 30px;
+    }
+
+    .feature h3 {
+        font-size: 30px;
+    }
+    .feature_img {
+        flex: 1;
+        width: 100%;
+        min-width: 200px;
+        background-repeat: no-repeat;
+        background-position: center;
+        max-width: 400px;
+        aspect-ratio: 1/2; 
+        background-size: contain;
+    }
+
+    @media(max-width: 900px) {
+        .flex_sa {
+            flex-direction: column;
+            align-items: center
+        }
+        .flex_sa:nth-child(even) {
+            flex-direction: column;
+            align-items: center
+        }
+        .feature p {
+            font-size: 20px;
+        }
     }
 
     .method {
@@ -604,6 +815,21 @@ export default {
         padding: 30px 10px 30px 10px;
         border-radius: 30px;
         text-align: center;
+    }
+
+    .title_page {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo_image {
+        width: 500px;
+        height: 100px;
+        background-image: url('@/assets/social_grocer/logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
     }
     
     .usability_test {

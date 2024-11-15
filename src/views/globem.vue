@@ -1,20 +1,23 @@
 <template>
     <div class="container">
       <b style="color: white">*This project is best viewed on desktop views</b>
-
-    <sectionContainer class="light">
-      <h1>Analysing Longitudinal Human Behavior</h1>
-      <div style="text-align: center; margin-bottom: 20px;">
-        <p style="margin-bottom: 5px">Visualizing Wellness: Understanding student mental health through Longitudinal data analysis</p>
-      </div>
+    
+    <fadeInComponent>
+      <sectionContainer class="light">
+        <h1>Analysing Longitudinal Human Behavior</h1>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <p style="margin-bottom: 5px">Visualizing Wellness: Understanding student mental health through Longitudinal data analysis</p>
+        </div>
   
+        <div class="main_img"></div>
+        <h2> Team</h2>
+        <p>Mars Gao, Soham Gadgil, <b>Varun Narayanswamy</b></p>
+        <h2>Timeline</h2>
+        <p>March 2024 - June 2024</p>
+      </sectionContainer>
+    </fadeInComponent>
 
-    <div class="main_img"></div>
-    <h2> Team</h2>
-    <p>Mars Gao, Soham Gadgil, <b>Varun Narayanswamy</b></p>
-    <h2>Timeline</h2>
-    <p>March 2024 - June 2024</p>
-    </sectionContainer>
+    <fadeInComponent>
     <sectionContainer class="dark situation">
       <h1>The Situation</h1>
       <p> In today's world where college students have to juggle multiple responsibilities, mental health and wellness is something that is often overlooked.</p>
@@ -48,31 +51,35 @@
         <img src="../assets/data_viz_portal/tim-gouw-stressed_student.jpg"/>
       </div>
     </sectionContainer>
+  </fadeInComponent>
 
-    <sectionContainer class="light">
-      <h1>Our Process</h1>
-      <p>After gaining access to the dataset the team began analysis. We quickly realized that we had a number of issues to deal with. </p>
-      <div class="issue_1">
-        <h3>Messy Data</h3>
-        <p>We struggled with data metrics that made no sense, potentially collected incorrectly with poor device collection or more</p>
-        <h3>Missing Data</h3>
-        <p>Many of the student data entries were empty, with students missing entries of devices failing to collect. Due to this, we were forced to look at data trends, and when possible fill in the empty data based on existing trends</p>
-        <h3>Students Variation</h3>
-        <p>Even with more data, each and every student is highly different. Looking at averages, and approaches was many times unhelpful, forcing us to consider the individuals.</p>
-      </div>
-      <p>Our approach to identifying these issues and evaluating our solutions was to create many visualizations and continually assess them.</p>
-      <div class="small_image_set">
-        <img src="../assets/data_viz_portal/old_graph_1.png">
-        <img src="../assets/data_viz_portal/old_graph_2.png">
-        <img src="../assets/data_viz_portal/old_graph_3.png">
-        <img src="../assets/data_viz_portal/old_graph_4.png">
-        <img src="../assets/data_viz_portal/old_graph_5.png">
-        <img src="../assets/data_viz_portal/old_graph_6.png">
-      </div>
-      <br/>
-      <p>Below are the <b>finalized visualizations</b> we chose to showcase. </p>
-    </sectionContainer>
+    <fadeInComponent>
+      <sectionContainer class="light">
+        <h1>Our Process</h1>
+        <p>After gaining access to the dataset the team began analysis. We quickly realized that we had a number of issues to deal with. </p>
+        <div class="issue_1">
+          <h3>Messy Data</h3>
+          <p>We struggled with data metrics that made no sense, potentially collected incorrectly with poor device collection or more</p>
+          <h3>Missing Data</h3>
+          <p>Many of the student data entries were empty, with students missing entries of devices failing to collect. Due to this, we were forced to look at data trends, and when possible fill in the empty data based on existing trends</p>
+          <h3>Students Variation</h3>
+          <p>Even with more data, each and every student is highly different. Looking at averages, and approaches was many times unhelpful, forcing us to consider the individuals.</p>
+        </div>
+        <p>Our approach to identifying these issues and evaluating our solutions was to create many visualizations and continually assess them.</p>
+        <div class="small_image_set">
+          <img src="../assets/data_viz_portal/old_graph_1.png">
+          <img src="../assets/data_viz_portal/old_graph_2.png">
+          <img src="../assets/data_viz_portal/old_graph_3.png">
+          <img src="../assets/data_viz_portal/old_graph_4.png">
+          <img src="../assets/data_viz_portal/old_graph_5.png">
+          <img src="../assets/data_viz_portal/old_graph_6.png">
+        </div>
+        <br/>
+        <p>Below are the <b>finalized visualizations</b> we chose to showcase. </p>
+      </sectionContainer>
+    </fadeInComponent>
 
+  <fadeInComponent>
     <sectionContainer class="dark" style="padding-left: 5%; padding-right: 5%;">
     <h1>Changes in mental health over weeks</h1>
     <p> We first examine weekly changes in student mental health. Hovering over a line shows trends for each student by year and metric. 
@@ -112,113 +119,120 @@
       </div>
     </div>
     </sectionContainer>
+  </fadeInComponent>
 
-    <sectionContainer class="light">
-      <h3>Analysing global trends</h3>
-      <p>We aggregate yearly data to analyze global patterns, creating a heatmap to show correlations between attributes. 
-        Each attribute is subdivided by time of day using the format {attribute_name}.{time_of_day}: "Sleep" denotes total minutes slept, 
-        <b>"Screen"</b> the phone screen time, <b>"Episodes"</b> the number of unlocks, <b>"Steps"</b> the step count, and <b>"Loc"</b> the distance covered in meters. 
-        <br><br></p>
+    <fadeInComponent>
+      <sectionContainer class="light">
+        <h3>Analysing global trends</h3>
+        <p>We aggregate yearly data to analyze global patterns, creating a heatmap to show correlations between attributes. 
+          Each attribute is subdivided by time of day using the format {attribute_name}.{time_of_day}: "Sleep" denotes total minutes slept, 
+          <b>"Screen"</b> the phone screen time, <b>"Episodes"</b> the number of unlocks, <b>"Steps"</b> the step count, and <b>"Loc"</b> the distance covered in meters. 
+          <br><br></p>
 
-        <!-- Focusing on the the mental health metrics, anxiety and depression seem to be highly correlated with each other, which is perhaps unsurprising but it is still intersting since they track two different aspects of mental health. 
-        None of anxiety, depression, or PANAS negative score seem to be correlated with the daily activities that were measured which is a bit surprising. They are slightly correlated with morning sleep, albeit it is pretty weak. PANAS positive score on the other hand seems to have a correlation with the number of steps. </p> -->
-      <img src="../assets/data_viz_portal/initial_correlation.png" style="width:100%; margin: auto; height: auto;">
-    </sectionContainer>
+          <!-- Focusing on the the mental health metrics, anxiety and depression seem to be highly correlated with each other, which is perhaps unsurprising but it is still intersting since they track two different aspects of mental health. 
+          None of anxiety, depression, or PANAS negative score seem to be correlated with the daily activities that were measured which is a bit surprising. They are slightly correlated with morning sleep, albeit it is pretty weak. PANAS positive score on the other hand seems to have a correlation with the number of steps. </p> -->
+        <img src="../assets/data_viz_portal/initial_correlation.png" style="width:100%; margin: auto; height: auto;">
+      </sectionContainer>
+    </fadeInComponent>
 
-    <sectionContainer class="dark">
-      <h3>Diving deeper into individual student behavior</h3>
-      <p>Analyzing global trends suggests a possible correlation between the PANAS positive score and step count. 
-        The visualization below explores this per student, showing weekly changes in average steps and their relation to PANAS positive scores. 
-        Selecting weeks or "All" highlights trends across students, with a linear trendline for clarity. 
-        The tooltip enables selecting specific students to observe their weekly patterns.</p>
-      <div class="graph_content">
-      <overLappingButton>
-      <!-- <template #custom-content>
-      </template> -->
-      <!-- <template #button-content>
-        <span>Click Me</span>
-      </template> -->
-      <template #extra-section>
-        <div class="graph_explanation">
-        <h2>How This Graph Works</h2>
-        <h3><a href="https://positivepsychology.com/positive-and-negative-affect-schedule-panas/">PANAS</a></h3>
-        <li>PANAS is a 10-item scale measuring positive and negative emotions a person feels separately.</li>
-          <li>A higher values indicate greater intensity. PANAS scores range from 0 to 20.</li>
-          <li>Each student filled out a survey weekly informing, so we can therefore understand how their PANAS and PHQ-4 scores changes over the quarter.</li>
-        <h3>Steps</h3>
-        <li>Each students steps are recorded thanks to a wearable device they are wearing. Each weeks steps are averaged after this.</li>
-        <h3>How to use this graph</h3>
-        <ul>
-          <li>Select a year and chose a student</li>
-          <li>Use the top graph to understand their inspect their change in weekly steps and select a week to investigate</li>
-          <li>Use the bottom graph to understand how their steps correlate with their PANAS Positive Score (how positive they are feeling) and how they compare to their peers. The selected student is highlighted in red</li>
-        </ul>
-        </div>
-      </template>
-      </overLappingButton>
-      <div class="observable_content">
-      <div class="graph_object">
-        <div ref="viewofYear_steps"></div>
-        <div ref="viewofParticipant_dropdown"></div>
-        <div id="third" ref="final_chart"></div>
-      </div>
-      </div>
-    </div>
-    </sectionContainer>
-
-    <sectionContainer class="light">
-      <h2>Expanding Selections</h2>
-      <p>
-        The visualization below enables combining multiple weeks and students. 
-        By selecting a subset of students and time periods in the dot plot, step counts are divided by times of day, showing their relationship to PANAS positive scores. 
-        Both x and y values are averaged over the selected period, allowing insights like,
-         "For students who walk a lot, how does their step count at different times of day relate to their PANAS positive score over time?"</p>
-      <div class="graph_content">
+    <fadeInComponent>
+      <sectionContainer class="dark">
+        <h3>Diving deeper into individual student behavior</h3>
+        <p>Analyzing global trends suggests a possible correlation between the PANAS positive score and step count. 
+          The visualization below explores this per student, showing weekly changes in average steps and their relation to PANAS positive scores. 
+          Selecting weeks or "All" highlights trends across students, with a linear trendline for clarity. 
+          The tooltip enables selecting specific students to observe their weekly patterns.</p>
+        <div class="graph_content">
         <overLappingButton>
-          <!-- <template #custom-content>
-          </template> -->
-          <!-- <template #button-content>
-            <span>Click Me</span>
-          </template> -->
-          <template #extra-section>
-            <div class="graph_explanation">
-            <h2>How to Read This Graph</h2>
-            <h3>Week Period</h3>
-            <li>The Week Periods represent sets of days for each week</li>
-            <h3>Time Periods</h3>
-            <p>Each day is split into 4 time Periods</p>
-            <ul>
-              <li><b>Night: </b>12:00 AM From midnight to 6:00 AM</li>
-              <li><b>Morning: </b>6:00 AM From midnight to 12:00 PM</li>
-              <li><b>Afternoon: </b>12:00 PM From midnight to 6:00 PM</li>
-              <li><b>Evening: </b>6:00 AM From midnight to 12:00 AM</li>
-            </ul>
-            <h3>Steps</h3>
-            <p>Each students steps is averaged over different time periods and displayed as a dot</p>
-            <h3>PANAS Positive Score</h3>
-            <p>An average is taken of each students PANAS Score throughout the year and displayed.
-            <b>(This is not averaged over time periods, as students take the survey at the end of each week)</b></p>
-            <h2>How to Use This Graph</h2><ul>
-            <li>Select a Year</li>
-            <li><b>Drag over</b> the top graph to select a subset of the students based on time period, number of steps or both</li>
-            <li>The bottom graphs based around daily quadrants will filter to only include their data</li>
-            <li>How does the trend line differ during different years? Different weeks? Different amount of step counts?</li></ul>
-            </div>
-          </template>
+        <!-- <template #custom-content>
+        </template> -->
+        <!-- <template #button-content>
+          <span>Click Me</span>
+        </template> -->
+        <template #extra-section>
+          <div class="graph_explanation">
+          <h2>How This Graph Works</h2>
+          <h3><a href="https://positivepsychology.com/positive-and-negative-affect-schedule-panas/">PANAS</a></h3>
+          <li>PANAS is a 10-item scale measuring positive and negative emotions a person feels separately.</li>
+            <li>A higher values indicate greater intensity. PANAS scores range from 0 to 20.</li>
+            <li>Each student filled out a survey weekly informing, so we can therefore understand how their PANAS and PHQ-4 scores changes over the quarter.</li>
+          <h3>Steps</h3>
+          <li>Each students steps are recorded thanks to a wearable device they are wearing. Each weeks steps are averaged after this.</li>
+          <h3>How to use this graph</h3>
+          <ul>
+            <li>Select a year and chose a student</li>
+            <li>Use the top graph to understand their inspect their change in weekly steps and select a week to investigate</li>
+            <li>Use the bottom graph to understand how their steps correlate with their PANAS Positive Score (how positive they are feeling) and how they compare to their peers. The selected student is highlighted in red</li>
+          </ul>
+          </div>
+        </template>
         </overLappingButton>
-          
         <div class="observable_content">
-          <div ref="viewofStep_breakdown"></div>
-          <div ref="steps_time_breakdown"></div>
+        <div class="graph_object">
+          <div ref="viewofYear_steps"></div>
+          <div ref="viewofParticipant_dropdown"></div>
+          <div id="third" ref="final_chart"></div>
         </div>
-        <!-- <h2>Our Interpretation</h2>
-        <p>This visualization provides a number of different potential conclusions.</p>
-          <li>First the week breakdown makes minimal difference to the trends, implying walking during different
-            parts of the quarter doesn't effect the PANAS score differently</li>
-          <li>Throughout students who walk different amount, </li>
-        <p></p> -->
+        </div>
       </div>
-    </sectionContainer>
+      </sectionContainer>
+    </fadeInComponent>
+
+    <fadeInComponent>
+      <sectionContainer class="light">
+        <h2>Expanding Selections</h2>
+        <p>
+          The visualization below enables combining multiple weeks and students. 
+          By selecting a subset of students and time periods in the dot plot, step counts are divided by times of day, showing their relationship to PANAS positive scores. 
+          Both x and y values are averaged over the selected period, allowing insights like,
+          "For students who walk a lot, how does their step count at different times of day relate to their PANAS positive score over time?"</p>
+        <div class="graph_content">
+          <overLappingButton>
+            <!-- <template #custom-content>
+            </template> -->
+            <!-- <template #button-content>
+              <span>Click Me</span>
+            </template> -->
+            <template #extra-section>
+              <div class="graph_explanation">
+              <h2>How to Read This Graph</h2>
+              <h3>Week Period</h3>
+              <li>The Week Periods represent sets of days for each week</li>
+              <h3>Time Periods</h3>
+              <p>Each day is split into 4 time Periods</p>
+              <ul>
+                <li><b>Night: </b>12:00 AM From midnight to 6:00 AM</li>
+                <li><b>Morning: </b>6:00 AM From midnight to 12:00 PM</li>
+                <li><b>Afternoon: </b>12:00 PM From midnight to 6:00 PM</li>
+                <li><b>Evening: </b>6:00 AM From midnight to 12:00 AM</li>
+              </ul>
+              <h3>Steps</h3>
+              <p>Each students steps is averaged over different time periods and displayed as a dot</p>
+              <h3>PANAS Positive Score</h3>
+              <p>An average is taken of each students PANAS Score throughout the year and displayed.
+              <b>(This is not averaged over time periods, as students take the survey at the end of each week)</b></p>
+              <h2>How to Use This Graph</h2><ul>
+              <li>Select a Year</li>
+              <li><b>Drag over</b> the top graph to select a subset of the students based on time period, number of steps or both</li>
+              <li>The bottom graphs based around daily quadrants will filter to only include their data</li>
+              <li>How does the trend line differ during different years? Different weeks? Different amount of step counts?</li></ul>
+              </div>
+            </template>
+          </overLappingButton>
+            
+          <div class="observable_content">
+            <div ref="viewofStep_breakdown"></div>
+            <div ref="steps_time_breakdown"></div>
+          </div>
+          <!-- <h2>Our Interpretation</h2>
+          <p>This visualization provides a number of different potential conclusions.</p>
+            <li>First the week breakdown makes minimal difference to the trends, implying walking during different
+              parts of the quarter doesn't effect the PANAS score differently</li>
+            <li>Throughout students who walk different amount, </li>
+          <p></p> -->
+        </div>
+      </sectionContainer>
+  </fadeInComponent>
 
     </div> 
   </template>
@@ -228,13 +242,18 @@
   import { Runtime, Inspector } from '@observablehq/runtime';
   import sectionContainer from '../components/widgets/section.vue';
   import overLappingButton from '../components/widgets/overLappingButton.vue';
+  import fadeInComponent from '@/components/fadeInComponent.vue';
   // Statistically import the notebook like a local module
   import notebook from 'b02a387aa7a1c933'; // Adjust the name if the package exports it differently
   // import notebook2 from '8ec2a3db467cf4aa';
+
+  //VERSION THAT WORKS
+  /*  "8ec2a3db467cf4aa": "https://api.observablehq.com/d/8ec2a3db467cf4aa.tgz?v=3",
+    "b02a387aa7a1c933": "https://api.observablehq.com/d/b02a387aa7a1c933@1704.tgz?v=3", */
   
   export default {
     name: 'Note-book',
-    components: {sectionContainer, overLappingButton},
+    components: {sectionContainer, overLappingButton, fadeInComponent},
     data() {
       return {
         clicked: false,
@@ -249,7 +268,7 @@
       const final_chart = ref(null);
       const viewofStep_breakdown = ref(null);
       const steps_time_breakdown = ref(null);
-  
+      
       let runtime;
   
       onMounted(() => {

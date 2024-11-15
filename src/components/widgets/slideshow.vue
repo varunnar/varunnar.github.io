@@ -5,10 +5,16 @@
       <div v-if="(imagePaths && imagePaths.length > 0) || (htmlUrls && htmlUrls.length > 0)" class="image-container">
         <transition :name="transitionName" mode="out-in">
           <div v-if="updateImage" class="slideshow_container" :key="imagePaths[currentIndex]" :style="`background-color: ${backgroundColor};`">
-            <img v-if="imagePaths && imagePaths.length > 0" :src="imagePaths[currentIndex]" alt="Slideshow Image" class="slideshow-image" :key="imagePaths[currentIndex]" @click="openModal"/>
-            <div v-if="htmlUrls && htmlUrls.length > 0" v-html="htmlContent" :key="htmlUrls[currentIndex]"></div>
-            <h3 v-if="headerArray" v-text="headerArray[currentIndex]" :style="`color: ${textColor}`"></h3>
-            <div v-if="bodyArray" v-text="bodyArray[currentIndex]" :style="`margin: 10px; color: ${textColor}`"></div>
+            <div :class="textPosition">
+              <div>
+                <img v-if="imagePaths && imagePaths.length > 0" :src="imagePaths[currentIndex]" alt="Slideshow Image" class="slideshow-image" :key="imagePaths[currentIndex]" @click="openModal"/>
+                <div v-if="htmlUrls && htmlUrls.length > 0" v-html="htmlContent" :key="htmlUrls[currentIndex]"></div>
+              </div>
+              <div class="slideshow_text">
+                <h3 v-if="headerArray" v-text="headerArray[currentIndex]" :style="`color: ${textColor}`"></h3>
+                <div class="bodyArray" v-if="bodyArray" v-text="bodyArray[currentIndex]" :style="`margin: 10px; color: ${textColor}`"></div>
+            </div>
+            </div>
           </div>
         </transition>
       </div>
@@ -16,12 +22,18 @@
         No images available.
       </div>
  
-      <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal">
-        <div class="modal-content">
+      <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal" >
+        <div class="modal-content" :style="`background-color: ${backgroundColor};`">
           <div class="modal_relative_obj">
-            <img :src="imagePaths[currentIndex]" alt="Full-Screen Image" class="modal-image"/>
-            <h3 v-if="headerArray" v-text="headerArray[currentIndex]" :style="`color: ${textColor}`"></h3>
-            <div v-if="bodyArray" v-text="bodyArray[currentIndex]" :style="`color: ${textColor}`"></div>
+            <div class="flex_container_for_sizing">
+            <div class="modal_image_container" :style="`background-image: url(${imagePaths[currentIndex]})` " alt="Full-Screen Image">
+              <!-- <img :src="imagePaths[currentIndex]" alt="Full-Screen Image" class="modal-image"/> -->
+            </div>
+            <div class="modal_text">
+              <h3 v-if="headerArray" v-text="headerArray[currentIndex]" :style="`color: ${textColor}`"></h3>
+              <div v-if="bodyArray" v-text="bodyArray[currentIndex]" :style="`color: ${textColor}`"></div>
+          </div>
+          </div>
             <div :class="'controls ' + controlLocation" v-if="displayControlObject()">
               <div class="button_custom" @click="clickPrev" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>&larr;</b></div>   
               <!-- &larr; -->
@@ -33,13 +45,11 @@
         </div>
       </div>
       <transition :name="transitionName" mode="out-in">
-      <div :class="'controls ' + controlLocation" v-if="displayControlObject()">
-        <div class="button_custom" @click="clickPrev" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>&larr;</b></div>   
-        <!-- &larr; -->
-         <!-- &rarr; -->
-        <div class="button_custom" v-if="autoPlay" @click="handlePauseClick" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>{{ playPauseIcon }}</b></div>
-        <div class="button_custom" @click="clickNext" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>&rarr;</b></div>
-      </div>
+        <div :class="'controls ' + controlLocation" v-if="displayControlObject()">
+          <div class="button_custom" @click="clickPrev" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>&larr;</b></div>   
+          <div class="button_custom" v-if="autoPlay" @click="handlePauseClick" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>{{ playPauseIcon }}</b></div>
+          <div class="button_custom" @click="clickNext" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>&rarr;</b></div>
+        </div>
     </transition>
     </div>
   </template>
@@ -96,6 +106,11 @@
         type: Boolean,
         required: true
       },
+      textPosition: {
+        type: String,
+        default: 'bottom'
+
+      },
       album: {
         type: String,
         required: false
@@ -142,9 +157,9 @@
       }
       
        // Start autoplay if autoPlay is true
-    if (this.autoPlay) {
-      this.startAutoPlay();
-    }
+      if (this.autoPlay) {
+        this.startAutoPlay();
+      }
     },
     computed: {
       images() {
@@ -173,7 +188,7 @@
       controlLocation() {
         let addition_class = this.bottomControls ?  'bottom_control'  : 'top_control';
         return addition_class;
-      }
+      },
     },
     methods: {
       generateNumericImagePaths(folderPath, numImages, fileType) {
@@ -325,6 +340,10 @@
   </script>
   
   <style lang="scss">
+
+  * {
+    box-sizing: border-box;
+  }
   .slideshow {
     text-align: center;
     position: relative;
@@ -394,6 +413,40 @@
   position: absolute;
   bottom: 0px;
 }
+
+.left_text {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+  text-align: left;
+  justify-content: space-around;
+}
+
+.left_text .slideshow_text {
+  max-width: 400px;
+}
+
+.left_text .bodyArray {
+  font-size: 20px;
+}
+
+@media (max-width: 900px) {
+  .left_text {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+  text-align: left;
+  justify-content: space-around;
+}
+
+.left_text .slideshow_text {
+  max-width: 100%;
+}
+
+.left_text .bodyArray {
+  font-size: 20px;
+}
+}
   
   button {
     margin: 0 5px;
@@ -414,25 +467,110 @@
 }
 
 .modal-content {
-  // background-color: #fff;
+  display: flex;
+  flex-direction: column;   
+  height: 90vh;
+  width: 90vw;
+  max-height: 100%;
+  max-width: 90vw;
   padding: 20px;
   border-radius: 8px;
-  height: 90%;
-  width: auto;
-  text-align: center;
+  background-color: #fff; /* or your `backgroundColor` variable */
+  box-sizing: border-box;
 }
 
 .modal_relative_obj {
   position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.flex_container_for_sizing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.modal_image_container {
+  flex: 1;
+  max-height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
 }
 
 .modal-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  margin-bottom: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Prevents overflow by maintaining aspect ratio */
 }
+
+.modal_text {
+  flex-shrink: 0;
+  margin-top: 10px;
+  overflow-y: auto; /* Allows text scroll if too long */
+  max-height: 50%; /* Prevents text from taking too much space */
+  text-align: center;
+}
+
+
+
+// .modal-content {
+//   // background-color: #fff;
+//   padding: 20px;
+//   border-radius: 8px;
+//   height: 90vh;
+//   max-height: 100%;
+//   width: auto;
+//   text-align: center;
+// }
+
+// .modal_relative_obj {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .flex_container_for_sizing {
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   box-sizing: border-box;
+//   overflow: hidden;
+// }
+
+// .modal_image_container {
+//   flex: 1;
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   box-sizing: border-box;
+// }
+
+// .modal-image {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: contain;
+//   margin-bottom: 10px;
+//   box-sizing: border-box;
+// }
+
+// .modal_text {
+//   flex-shrink: 0;
+//   height: auto;
+//   margin-top: 10px;
+//   box-sizing: border-box;
+//}
   </style>
   

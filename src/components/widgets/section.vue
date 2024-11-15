@@ -1,16 +1,28 @@
 <template>
     <div class="section">
       <slot></slot>
-    </div>   
+    </div>  
   </template>
   
   <script>
+  // import fadeInComponent from '../fadeInComponent.vue';
   export default {
-    name: 'SectionContainer'
+    name: 'SectionContainer',
+    // props: {
+    //   backgroundColor: {
+    //     type: String,
+    //     Required: true
+    //   },
+    //   textColor: {
+    //     type: String,
+    //     required: true
+    //   }
+    // }
+    // components: {fadeInComponent}
   }
   </script>
   
-  <style scoped>
+  <style lang="scss">
   .section {
     max-width: 100%;
     padding-left: 10%;

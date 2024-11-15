@@ -1,92 +1,96 @@
 <template>
     <div class="container">
-        <sectionContainer class="dark">
-            <h1>Chapters with Cheesecake</h1>
-            <div class="order">
-                <div class="grid_view_obj">
-                    <div class="chapter_button" @click="play_or_stop_audio(null, -4, `/assets/other/ml_audio/zoo_lights.mp3`)">
-                        {{ isPlaying && currentChapter === -4 ? 'Pause' : 'Play' }} Zoo Lights
+        <fadeInComponent>
+            <sectionContainer class="dark">
+                <h1>Chapters with Cheesecake</h1>
+                <div class="order">
+                    <div class="grid_view_obj">
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -4, `/assets/other/ml_audio/zoo_lights.mp3`)">
+                            {{ isPlaying && currentChapter === -4 ? 'Pause' : 'Play' }} Zoo Lights
+                        </div>
+                        <slideShow class="cheesecake_chapters"
+                        folderPath="/assets/other/c_w_c/zoo_light"
+                        fileType="jpg"
+                        :autoPlay="false"
+                        :numberOfImages="3">
+                        </slideShow>
                     </div>
-                    <slideShow class="cheesecake_chapters"
-                    folderPath="/assets/other/c_w_c/zoo_light"
-                    fileType="jpg"
-                    :autoPlay="false"
-                    :numberOfImages="3">
-                    </slideShow>
-                </div>
-                <div class="grid_view_obj">
-                    <div class="chapter_button" @click="play_or_stop_audio(null, -5, `/assets/other/ml_audio/costume_shopping.mp3`)">
-                        {{ isPlaying && currentChapter === -5 ? 'Pause' : 'Play' }} Costume Shopping
+                    <div class="grid_view_obj">
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -5, `/assets/other/ml_audio/costume_shopping.mp3`)">
+                            {{ isPlaying && currentChapter === -5 ? 'Pause' : 'Play' }} Costume Shopping
+                        </div>
+                        <slideShow class="cheesecake_chapters"
+                        folderPath="/assets/other/c_w_c/costume"
+                        fileType="jpg"
+                        :autoPlay="false"
+                        :numberOfImages="3">
+                        </slideShow>
                     </div>
-                    <slideShow class="cheesecake_chapters"
-                    folderPath="/assets/other/c_w_c/costume"
-                    fileType="jpg"
-                    :autoPlay="false"
-                    :numberOfImages="3">
-                    </slideShow>
-                </div>
-                <div class="grid_view_obj">
-                    <div class="chapter_button" @click="play_or_stop_audio(null, -6, `/assets/other/ml_audio/harry_potter_books.mp3`)">
-                        {{ isPlaying && currentChapter === -6 ? 'Pause' : 'Play' }} Buying HP
+                    <div class="grid_view_obj">
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -6, `/assets/other/ml_audio/harry_potter_books.mp3`)">
+                            {{ isPlaying && currentChapter === -6 ? 'Pause' : 'Play' }} Buying HP
+                        </div>
+                        <slideShow class="cheesecake_chapters"
+                        folderPath="/assets/other/c_w_c/hp_finding"
+                        fileType="jpg"
+                        :autoPlay="false"
+                        :showControls="false"
+                        :numberOfImages="1">
+                        </slideShow>
                     </div>
-                    <slideShow class="cheesecake_chapters"
-                    folderPath="/assets/other/c_w_c/hp_finding"
-                    fileType="jpg"
-                    :autoPlay="false"
-                    :showControls="false"
-                    :numberOfImages="1">
-                    </slideShow>
-                </div>
-                <div class="grid_view_obj">
-                    <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/soft_launch.mp3`)">
-                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Soft Launch
+                    <div class="grid_view_obj">
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/soft_launch.mp3`)">
+                            {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Soft Launch
+                        </div>
+                        <slideShow class="cheesecake_chapters"
+                        folderPath="/assets/other/c_w_c/soft_launch"
+                        fileType="jpg"
+                        :autoPlay="false"
+                        :showControls="false"
+                        :numberOfImages="1">
+                        </slideShow>
                     </div>
-                    <slideShow class="cheesecake_chapters"
-                    folderPath="/assets/other/c_w_c/soft_launch"
-                    fileType="jpg"
-                    :autoPlay="false"
-                    :showControls="false"
-                    :numberOfImages="1">
-                    </slideShow>
-                </div>
-                <div class="grid_view_obj">
-                    <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Roadtrip.mp3`)">
-                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Our First Roadtrip
+                    <div class="grid_view_obj">
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Roadtrip.mp3`)">
+                            {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Our First Roadtrip
+                        </div>
+                        <slideShow class="cheesecake_chapters"
+                        folderPath="/assets/other/c_w_c/roadtrip"
+                        fileType="jpg"
+                        :autoPlay="false"
+                        :showControls="true"
+                        :numberOfImages="2">
+                        </slideShow>
                     </div>
-                    <slideShow class="cheesecake_chapters"
-                    folderPath="/assets/other/c_w_c/roadtrip"
-                    fileType="jpg"
-                    :autoPlay="false"
-                    :showControls="true"
-                    :numberOfImages="2">
-                    </slideShow>
-                </div>
-                <div class="grid_view_obj">
-                    <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Fondue.mp3`)">
-                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Miss Ladies Birthday
+                    <div class="grid_view_obj">
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Fondue.mp3`)">
+                            {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Miss Ladies Birthday
+                        </div>
+                        <slideShow class="cheesecake_chapters"
+                        folderPath="/assets/other/c_w_c/fondue"
+                        fileType="jpg"
+                        :autoPlay="false"
+                        :showControls="false"
+                        :numberOfImages="1">
+                        </slideShow>
                     </div>
-                    <slideShow class="cheesecake_chapters"
-                    folderPath="/assets/other/c_w_c/fondue"
-                    fileType="jpg"
-                    :autoPlay="false"
-                    :showControls="false"
-                    :numberOfImages="1">
-                    </slideShow>
-                </div>
-                <div class="grid_view_obj">
-                    <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Cats.mp3`)">
-                        {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} The Arrival of the Cats
+                    <div class="grid_view_obj">
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Cats.mp3`)">
+                            {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} The Arrival of the Cats
+                        </div>
+                        <slideShow class="cheesecake_chapters"
+                        folderPath="/assets/other/c_w_c/cats"
+                        fileType="jpg"
+                        :autoPlay="false"
+                        :showControls="true"
+                        :numberOfImages="3">
+                        </slideShow>
                     </div>
-                    <slideShow class="cheesecake_chapters"
-                    folderPath="/assets/other/c_w_c/cats"
-                    fileType="jpg"
-                    :autoPlay="false"
-                    :showControls="true"
-                    :numberOfImages="3">
-                    </slideShow>
                 </div>
-            </div>
-        </sectionContainer>
+            </sectionContainer>
+        </fadeInComponent>
+
+        <fadeInComponent>
         <sectionContainer class="dark">
             <h1>Miss Lady Support Recordings!</h1>
             <div class="order">
@@ -101,17 +105,22 @@
                 </div>
             </div>
         </sectionContainer>
-        <sectionContainer class="dark slideContainer">
-            <h1>Slideshows of US!</h1>
-            <slideShow class="miss_lady_slides"
-                folderPath="/assets/other/album/img"
-                fileType="jpg"
-                :autoPlay="true"
-                :random="true"
-                :numberOfImages="15">
-            </slideShow>
-        </sectionContainer>
+        </fadeInComponent>
+
+        <fadeInComponent>
+            <sectionContainer class="dark slideContainer">
+                <h1>Slideshows of US!</h1>
+                <slideShow class="miss_lady_slides"
+                    folderPath="/assets/other/album/img"
+                    fileType="jpg"
+                    :autoPlay="true"
+                    :random="true"
+                    :numberOfImages="15">
+                </slideShow>
+            </sectionContainer>
+         </fadeInComponent>
         <!-- Iterating over the book(s) -->
+         <fadeInComponent>
             <div class="book" v-for="(book, bookIndex) in chapter_info" :key="'book_' + bookIndex" :id="'book_' + bookIndex">
                 <sectionContainer class="dark">
                 <h1>Harry Potter and the Philosopher's Stone</h1>
@@ -131,15 +140,17 @@
                 </div>
                 </sectionContainer>
             </div>
+        </fadeInComponent>
     </div>    
 </template>
 
 <script>
 import slideShow from '@/components/widgets/slideshow.vue';
 import sectionContainer from '../components/widgets/section.vue'; 
+import fadeInComponent from '@/components/fadeInComponent.vue';
 export default {
     name: 'MissLady',
-    components: {sectionContainer, slideShow },
+    components: {sectionContainer, slideShow, fadeInComponent },
     data() {
         return {
             // This array contains 17 chapters (1 book with 17 chapters)

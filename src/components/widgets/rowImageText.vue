@@ -7,7 +7,7 @@
           :key="index" 
           :src="image" 
           @click="handleContentFetch(index)" 
-          class="image"
+          :class="['image', { unclicked: unclickedState[index] }]"
           :alt="'Image ' + index"
           :style="`max-width: ${imageSize}; width: 20%; flex: 1;`"
         />
@@ -61,12 +61,15 @@
     data() {
       return {
         content: '', // Holds the HTML content to be displayed
-        showContent: true
+        showContent: true,
+        unclickedState: this.images.map(() => true),
       };
     },
     mounted() {
       this.fetchContent(0);
+      this.unclickedState[0] = false;
     },
+
     methods: {
       async fetchContent(index) {
         if (this.textFiles[index]) {
@@ -84,11 +87,16 @@
         }
       },
       handleContentFetch(index) {
+          this.toggleInvert(index);
           this.fetchContent(index);
           this.showContent = false; // Hide content first to re-trigger v-if
           this.$nextTick(() => {
             this.showContent = true; // Show content after content is fetched
         });
+      },
+      toggleInvert(index) {
+        this.unclickedState = this.unclickedState.map(() => true);
+        this.unclickedState[index] = false;
       },
     },
   };
@@ -122,12 +130,16 @@
   }
 
   .image:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    filter: brightness(1);
   }
 
   .image:active {
     background-color: rgba(0, 0, 0, 1);
     box-shadow: white;
+  }
+
+  .unclicked {
+    filter: brightness(0.4);
   }
   
   .content-display {
@@ -139,17 +151,17 @@
   }
 
   .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
+    transition: all 0.3s ease-out;
+  }
 
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
+  .slide-fade-leave-active {
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  }
 
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateY(-20px);
-  opacity: 0;
-}
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
   </style>
   

@@ -160,7 +160,7 @@
 
   li {
     color: black;
-    font-size: 16px;
+    font-size: 20px;
   }
   
   .images {
@@ -174,7 +174,7 @@
   .image-wrapper {
     flex: 1;
     width: 100%;
-    min-width: 200px;
+    /* min-width: 200px; */
     margin-left: auto; 
     margin-right: 0;
     background-repeat: no-repeat;
