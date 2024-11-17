@@ -88,7 +88,7 @@ const routes = [
   },
   {
     path: '/socialGrocer',
-    name: 'socialGrocer',
+    name: 'individual-project/socialGrocer',
     component: () => import('../views/socialGrocer.vue')
   }
 ]

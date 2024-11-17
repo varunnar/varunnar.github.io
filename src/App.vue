@@ -31,11 +31,36 @@ body {
   height: 100vh;
 }
 
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
 p {
   font-size: 20px;
 }
-h3 {
-  text-transform: uppercase;
+
+@media(max-width: 900px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+      font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
 }
 
 nav a {

@@ -62,7 +62,7 @@
             We designed a controller where the main player uses a balancing board and rod to dodge obstacles, 
             simulating the physical and mental experience of anxiety. The following are the key tenants we utilized in our design</p>
             <slideshow
-              style="width: 50%; margin: auto;"
+              class="initial_research_slideshow"
               :autoPlay="false"
               :imageUrls="ideation_images"
               :headerArray="['The Importance of Physicality', 'The use of Metaphors and Abstraction', 'The role of Haptic Feedback']"
@@ -461,6 +461,17 @@ export default {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .initial_research_slideshow {
+    width: 50%;
+    margin: auto;
+  }
+
+  @media(max-width: 400px) {
+    .initial_research_slideshow {
+      width: 100%;
+    }
   }
 
   // .reflection_item {

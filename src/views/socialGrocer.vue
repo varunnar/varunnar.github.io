@@ -23,16 +23,6 @@
         <sectionContainer class="off">
             <h1>What is Social Grocer?</h1>
             <div class="feature_container">
-                <!-- <div class="artboard_container" v-for="(items, index) in feature_artboard_content" :key="items"> -->
-                    <!-- <artboardObj
-                        :header="items['header']"
-                        :paragraph="items['paragraph']"
-                        :images="items['images']"
-                        backgroundColor="#EFEFEF"
-                        artboardHeight="0px"
-                        aspectRatio="1/3"
-                        imageSize="400px"
-                    ></artboardObj> -->
                     <div class="feature flex_sa" v-for="(items, index) in feature_artboard_content" :key="index">
                         <div style="max-width: 500px;">
                             <h3 v-html="items['header']"></h3>
@@ -40,13 +30,6 @@
                         </div>
                         <div class="feature_img" :style="`background-image: url(${items['images']});`"></div>
                     </div>
-                    <!-- <h3 v-html="items['header']"></h3>
-                    <div></div>
-                    <div>
-                        <p v-html="items['paragraph']"></p>
-                        <img :src="items['images']"/>
-                    </div> -->
-                <!-- </div> -->
             </div> 
         </sectionContainer>
         </fadeInComponent>
@@ -69,7 +52,7 @@
         <sectionContainer>
             <h1>Proposed Project</h1>
             <p style="font-size: 30px;">Building H came to us with the following proposal: <em>"In the evolving <b>online grocery delivery marketplace</b>, how can we transform the space to make <b>healthier
-                 food choices</b> not only easier but second nature"</em></p>
+                 food choices</b> not only easier but second nature?"</em></p>
         </sectionContainer>
         </fadeInComponent>
 
@@ -89,30 +72,147 @@
             :text-files="c_zone_c"
             imageSize="200px">
             </rowImageText>
-
-            <!-- <h2>Competitive Analysis</h2>
-            <p>We conducted a competitive analysis of food and grocery delivery companies to understand how the current market promotes or discourages healthy habits.</p>
-            <h3></h3> -->
+                <div>
+                    <h2>Competitive Analysis</h2>
+                    <p>We conducted a competitive analysis of food and grocery delivery companies to understand how the current market promotes or discourages healthy habits.</p>
+                    <h3>Key Takeways</h3>
+                    <p>Conducting our competitive analysis culminated in the following takeaways:</p>
+                </div>
+                    <ul>
+                        <li style="fontSize: 20px">Lack of digestible nutrition information and food ratings</li>
+                        <li style="fontSize: 20px">Lack of information visibility and way-finding</li>
+                        <li style="fontSize: 20px">Transparency regarding seasonality and quality of ingredients</li>
+                        <li style="fontSize: 20px">Pursuit of pure profit over consumer’s health and wellbeing</li>
+                    </ul>
+<!-- 
+                    <div class="grid_6fr_1fr">
+                        <div class="competitive_item">
+                            <h3>Company</h3>
+                            <h3>Strength</h3>
+                            <h3>Weakness</h3>
+                        </div>
+                        <div class="competitive_item">
+                            <img src="../assets/competitive_analysis/amazon_fresh.png"/>
+                            <div>
+                                <ul>
+                                    <li>Niche Offering</li>
+                                    <li>Covers a Range of Issues</li>
+                                    <li>Targeted Programs</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Delivery Charge</li>
+                                    <li>Only available in Canada and the US</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="competitive_item">
+                            <img src="../assets/competitive_analysis/amazon_fresh.png"/>
+                            <div>
+                                <ul>
+                                    <li>Niche Offering</li>
+                                    <li>Covers a Range of Issues</li>
+                                    <li>Targeted Programs</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Delivery Charge</li>
+                                    <li>Only available in Canada and the US</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="competitive_item">
+                            <img src="../assets/competitive_analysis/amazon_fresh.png"/>
+                            <div>
+                                <ul>
+                                    <li>Niche Offering</li>
+                                    <li>Covers a Range of Issues</li>
+                                    <li>Targeted Programs</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Delivery Charge</li>
+                                    <li>Only available in Canada and the US</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="competitive_item">
+                            <img src="../assets/competitive_analysis/amazon_fresh.png"/>
+                            <div>
+                                <ul>
+                                    <li>Niche Offering</li>
+                                    <li>Covers a Range of Issues</li>
+                                    <li>Targeted Programs</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Delivery Charge</li>
+                                    <li>Only available in Canada and the US</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="competitive_item">
+                            <img src="../assets/competitive_analysis/amazon_fresh.png"/>
+                            <div>
+                                <ul>
+                                    <li>Niche Offering</li>
+                                    <li>Covers a Range of Issues</li>
+                                    <li>Targeted Programs</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Delivery Charge</li>
+                                    <li>Only available in Canada and the US</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                <div class="competitive_analysis"></div>
         </sectionContainer>
         </fadeInComponent>
 
         <fadeInComponent>
         <sectionContainer class="off">
-            <h1>Qualitative Research</h1>
+                <h1>Qualitative Research</h1>
                 <p>After completing our desk research, we conducted qualitative research, using the findings to refine our target population. </p>
-            <h2>Research Question</h2>    
-                <p>Our Research Question: How do young working professionals living and dining alone make decisions
-                    when ordering groceries online?</p>
-            <h2>Participant Requirements</h2>
-                <p>We narrowed our scope to young adults (ages 18-35) who lived alone, and shopped online at least twice a month.</p>
-            <h2>Participants and SME interviewees</h2>
+                <div>
+                    <h2>Research Question</h2>    
+                    <p><b>Our Research Question:</b> <em>How do young working professionals living and dining alone make decisions
+                            when ordering groceries online?</em></p>
+                </div>
+                <div class="grid_4fr_2fr_1fr">
+                    <div style="max-width: 450px;">
+                        <h2>Participant Requirements</h2>
+                        <p>We Interviewed <b>8 participants</b> with the following criteria:</p>
+                        <div class="flex_height_fit_items">
+                            <img class="carbon_people" src="@/assets/social_grocer/carbon_people.png"/>
+                            <ol class="target_population">
+                                <li>young adults (ages 18-35)</li>
+                                <li>Make individual food choices</li>
+                                <li>grocery shop once at least twice a month</li>
+                                <li>shop both online and in person</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>SME interviewes</h2>
+                        <p> We conducted quantitative studies and consulted regularly with experts from <b>DoorDash</b>, <b>Uber Eats</b>, <b>The Food Compass</b>, and <b>UW Research</b>.</p>
+
+                        <img src="@/assets/social_grocer/SME.png" style="max-width: 400px; width: 100%; height: auto;">
+                    </div>
+                </div>
             <h2>Methodology</h2>
-                <p>We used a number of different methodologies we can be seen below</p>
+                <p>For our interview with the <b>8 participants mentioned above</b> we conducted a 2 hour continuous study using the  methodologies below:</p>
                 <div class="grid_3fr_1fr">
                     <div class="method">
                         <img src="../assets/social_grocer/semi_structure_int.png"/>
                         <p style="color: yellow">1</p>
-                        <h3>Semi-Structed Interview + Concept Map</h3>
+                        <h3>Semi-Structured Interview + Concept Map</h3>
                         <p>Focused on online grocery shopping</p>
                     </div>
                     <div class="method">
@@ -134,7 +234,7 @@
             <rowImageText
                 :images="qual_findings_i"
                 :text-files="qual_findings"
-                imageSize="75px">
+                imageSize="150px">
             </rowImageText>
             <div class="flex_spacing_start spacing_medium"></div>
         </sectionContainer>
@@ -145,10 +245,11 @@
             <h1>Quantitative Research</h1>
             <p>After completing our qualitative research we wanted to verify that these results persisted for a larger demographic and on a larger scale.</p>
             <h2>Methodology</h2>
-            <p>In order to do this we put out a survey for young adults who online grocery shop regularly. We received a total of nearly 1000 participants, 
-                of which we filtered to 108 which fit our required demographics in terms of age range, online grocery usage and more.<b></b></p>
+            <p>We surveyed young adults who shop for groceries online, designing questions based on our research goals. From nearly 1,000 responses, we filtered 108 participants matching our target demographics.</p>
             <h2>Visualizations</h2>
+            <p>After completing our quantitative data collection, I then was tasked in making sense of the wide arrange of data I had. I developed a number of visualizations, using the Javascript framework, <b>Vegalite</b>.</p>
             <h3>Static Visualizations</h3>
+            <p>Below are included the key visualizations which helped to validate our project as we continued.</p>
             <slideshow
                 class="visualization_slideshow"
                 folderPath="/assets/social_grocer/data_viz/viz"
@@ -169,57 +270,36 @@
                 <img src="../assets/social_grocer/data_viz/interactive_viz_1.gif" style="width: 100%; height: auto; object-fit: contain">
                 <img src="../assets/social_grocer/data_viz/interactive_viz_2.gif" style="width: 100%; height: auto; object-fit: contain">
             </div>
-            <p>You can interact with these visualizations <a href="https://observablehq.com/d/ee25442c71999d1b"> here</a> on observable.</p>
-            <!-- <div class="center_column">
-                <div>
-                    <div class="interactive_viz" ref="Product_inspection_split"></div>
-                </div>
-                <div>
-                    <div ref="viewof_age_filter"></div>
-                    <div ref="viewof_buying_status"></div>
-                    <div ref="product_inspect"></div>
-                </div>
-                <div>
-                    <div ref="viewof_radios"></div>
-                    <div ref="filter_options"></div>
-                </div>
-            </div> -->
+            <p>You can interact with these visualizations <a href="https://observablehq.com/d/ee25442c71999d1b"> here</a> on ObservableHQ.</p>
         </sectionContainer>
         </fadeInComponent>
 
         <fadeInComponent>
         <sectionContainer class="off">
             <h1>Ideation Process</h1>
-            <p>With our research completed and validated, we now needed to consider how we wanted to attempt to change the space</p>
+            <p>With our research completed and validated, we now needed to consider how we wanted to attempt to change the space.</p>
             <h2>Initial Ideation</h2>
-            <p>Each member of the team designed 40 initial ideas. Our process included the following steps</p>
-            <div class="grid_4fr_2fr_1fr">
+            <p>Each member of the team designed 40 initial ideas. Our process included the following steps.</p>
+            <div class="flex_height_fit_items" style="margin-top: 50px; min-height: 500px; gap: 50px">
+                <div class="ideation_content">
+                    <div>
+                        <h3 style="margin: 0px">1. Placing Ideas Down</h3>
+                        <p style="margin: 0px">We placed our initial 40 ideas on the board, grouped by person.</p>
+                    </div>
+                    <div>
+                        <h3>2. Grouping</h3>
+                        <p>We moved items to make larger sub-groups.</p>
+                    </div>
+                    <div>
+                        <h3>3. Discussion</h3>
+                        <p>We discussed the merits and potential of each sub-group and specific ideas.</p>
+                    </div>
+                    <div>
+                        <h3>4. Dot Voting</h3>
+                        <p>We Dot Votted - Each member selected their top 5 ideas.</p>
+                    </div>
+                </div>
                 <div class="ideation_gif"></div>
-                <div>
-                    <h3>1. Placing Ideas Down</h3>
-                    <p>We placed our initial 40 ideas on the board, grouped by person</p>
-                    <h3>2. Grouping</h3>
-                    <p>We moved items to make larger sub-groups</p>
-                    <h3>3. Discussion</h3>
-                    <p>We discussed the merits and potential of each sub-group and specific ideas</p>
-                    <h3>4. Dot Voting</h3>
-                    <P>We Dot Votted - Each member selected their top 5 ideas</P>
-                </div>
-                <!-- <div class="ideation_methods">
-                    <img src="../assets/social_grocer/initial_groupings.gif">
-                    <h3>2. Grouping</h3>
-                    <p>We moved items to make larger sub-groups</p>
-                </div>
-                <div class="ideation_methods">
-                    <img src="../assets/social_grocer/discussion_on_each_topic.gif">
-                    <h3>3. Discussion</h3>
-                    <p>We discussed the merits and potential of each sub-group and specific ideas</p>
-                </div>
-                <div class="ideation_methods">
-                    <img src="../assets/social_grocer/dot_voting.gif">
-                    <h3>4. Dot Voting</h3>
-                    <P>We Dot Votted - Each member selected their top 5 ideas</P>
-                </div> -->
             </div>
             <div class="line-with-text"><h3> Design Principles</h3></div>
             <div class="grid_4fr_2fr_1fr">
@@ -228,28 +308,28 @@
                         <img src="@/assets/social_grocer/connects.png" style="max-width: 50px; aspect-ratio: 1/1"/>
                         <p><b>Respect the User</b></p>
                     </div>
-                    <p>Ensuring users have agency in what they purchase</p>
+                    <p>Ensuring users have agency in what they purchase.</p>
                 </div>
                 <div class="design_p">
                     <div class="flex_string_icon spacing_small">
                         <img src="@/assets/social_grocer/nutrition.png" style="max-width: 50px; aspect-ratio: 1/1"/>
                         <p><b>Nutrition Education</b></p>
                     </div>
-                    <p>Presenting nutritional information in a manageable way</p>
+                    <p>Presenting nutritional information in a manageable way.</p>
                 </div>
                 <div class="design_p">
                     <div class="flex_string_icon spacing_small">
                         <img src="@/assets/social_grocer/habits.png" style="max-width: 50px; aspect-ratio: 1/1"/>
-                        <p><b>Support Users Toward Healthier Habits</b></p>
+                        <p><b>Support Users Toward Healthier Habits.</b></p>
                     </div>
-                    <p>Building an environment where shoppers are encouraged to engage in healthy behavioral change</p>
+                    <p>Building an environment where shoppers are encouraged to engage in healthy behavioral change.</p>
                 </div>
                 <div class="design_p">
                     <div class="flex_string_icon spacing_small">
                         <img src="@/assets/social_grocer/respect.png" style="max-width: 50px; aspect-ratio: 1/1"/>
                         <p><b>Foster Social Connection</b></p>
                     </div>
-                    <p>Creating a platform that celebrates and shares the joy of food within a community</p>
+                    <p>Creating a platform that celebrates and shares the joy of food within a community.</p>
                 </div>
             </div>
             <div class="line-with-text"><h2>Initial Idea</h2></div>
@@ -326,8 +406,8 @@
             <h1>Usability Testing</h1> 
             <p>In order validate our design we wanted to test in front of others.</p>
             <h2>Methodology</h2>
-            <p>We tested with 6 participants, completing 3 rounds of rapid iterative
-                testing after each 2 tests. We tested a number of different features throughout</p>
+            <p>We tested with <b>6 new participants</b>, completing <b>3 rounds of rapid iterative
+                testing</b> after each 2 tests. We tested a number of different features throughout.</p>
                 <div class="line-with-text"><h2>Feature Updates</h2></div>
             <div class="usability_test">
                 <h2>Product Page</h2>
@@ -360,22 +440,47 @@
         <sectionContainer class="off">
             <h1>Final Version</h1>
                 <p>After 9 iterations of design we landed on the final design of Social Grocer.</p>
-            <h2>Final Video</h2>
+                <div class="line-with-text"><h2>Final Video</h2></div>
             <iframe src="https://www.youtube.com/embed/fQMMDkPF3mk?si=1NNYUXY-e2iT4zjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="line-with-text"><h2>Design Mappings</h2></div>
+            <p>I was responsible for developing, designing and refining our variety of design maps. This includes the apps information architecture, screen flows, and specific task flows.</p>
+            <div class="grid_3fr_1fr">
+                <div>
+                    <h3>Information Architecture</h3>
+                    <slideshow
+                        folderPath="/assets/social_grocer/flows/IA"
+                        fileType="png"
+                        numberOfImages="3"
+                        buttonColor="#27422C"
+                    ></slideshow>
+                </div>
+                <div>
+                    <h3>Screen Flows</h3>
+                    <slideshow
+                        folderPath="/assets/social_grocer/flows/screen_flow"
+                        fileType="png"
+                        numberOfImages="6"
+                    ></slideshow>
+                </div>
+                <div>
+                    <h3>Task Flow</h3>
+                    <slideshow
+                        folderPath="/assets/social_grocer/flows/task_flow"
+                        fileType="png"
+                        numberOfImages="4"
+                        buttonColor="#27422C"
+                    ></slideshow>
+                </div>
+            </div>
+            <h3>Tech Stack Document</h3>
+            <p>After finalizing the design, I planned the application's functionality, including the frontend, backend, external APIs, and databases. 
+                I opted for a <b>microservice model</b> to better organize the code and ensure the application remains functional even if individual microservices fail.
+                Below includes the full technology stack breakdown, and descriptions of each component.</p>
+
+            <img src="/assets/social_grocer/flows/Tech_flow_0.png" style="width: 100%; height: auto"/>
         </sectionContainer>
         </fadeInComponent>
 
-        <!-- <sectionContainer class="green">
-            <h1>Final Assets</h1> -->
-            <!-- <h2>Final Poster</h2> -->
-            <!-- #toolbar=0&navpanes=0&scrollbar=0 for removing scrollbar -->
-                <!-- <div class="pdf-container" style="width: 100%"> -->
-                    <!-- 400/750 for full pdf -->
-                    <!-- <embed src="/assets/social_grocer/Final Poster-compressed.pdf#navpanes=0" style="width: 100%; aspect-ratio: 800/600"/> -->
-                <!-- </div> -->
-            <!-- <h2>Final Documentation</h2>
-            <pdfDownloader fileName="Team H_Design_Documentation.pdf" pdfString="Design Documentation" pdfUrl="/asset/socialGrocer/Team H_Design_Documentation.pdf" textColor="#FFFFFF"></pdfDownloader> -->
-        <!-- </sectionContainer> -->
         <fadeInComponent>
         <sectionContainer class="off">
             <h1>Reflections</h1>
@@ -476,57 +581,6 @@ export default {
             feature_artboard_content: artboardFeatureArr
         }
     },
-    // setup() {
-    //     const Product_inspection_split = ref(null);
-    //     const viewof_age_filter = ref(null)
-    //     const viewof_buying_status = ref(null)
-    //     const product_inspect = ref(null)
-
-
-    //     const viewof_radios = ref(null)
-    //     const filter_options = ref(null)
-
-    //     /*            <div class="interactive_viz" ref="viewof_age_filter"></div>
-    //         <div class="interactive_viz" ref="viewof_buying_status"></div>
-    //         <div class="interactive_viz" ref="product_inspect"></div>
-
-    //         <div class="interactive_viz" ref="viewof_radios"></div>
-    //         <div class="interactive_viz" ref="filter_options"></div> */
-
-    //   let runtime;
-  
-    //   onMounted(() => {
-    //     runtime = new Runtime();
-    //     runtime.module(notebook, (name) => {
-    //       if (name === 'Product_inspection_split') return new Inspector(Product_inspection_split.value);
-
-    //       if (name === 'viewof age_filter') return new Inspector(viewof_age_filter.value);
-    //       if (name === 'viewof buying_status') return new Inspector(viewof_buying_status.value);
-    //       if (name === 'Breakdown_of_product_inspection') return new Inspector(product_inspect.value);
-
-    //       if (name === 'viewof radios') return new Inspector(viewof_radios.value);
-    //       if (name === 'filter_options') return new Inspector(filter_options.value);
-    //       return ['value_array', 'capstone_quant_filtered', 'Filtered_array', 'graph_meta'].includes(name);
-    //     });
-
-    //     console.log("here")
-    //     window.dispatchEvent(new Event('resize'));
-    //     window.addEventListener('resize', function() { console.log("helloooooo")})
-    //   });
-  
-    //   onBeforeUnmount(() => {
-    //     if (runtime) runtime.dispose();
-    //   });
-  
-    //   return {
-    //     Product_inspection_split,
-    //     viewof_age_filter,
-    //     viewof_buying_status,
-    //     product_inspect,
-    //     viewof_radios,
-    //     filter_options
-    //   };
-    // },
 }
 </script>
 
@@ -545,8 +599,28 @@ export default {
         font-family: 'Fraunces';   
     }
 
+    .competitive_analysis {
+        background-image: url('../assets/social_grocer/competitive_analysis.png');
+        width: 100%;
+        aspect-ratio: 1920/1080;
+        /* margin-left: 10%;
+        margin-right: 10%; */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: black;
+        border-radius: 10px;
+    }
+
+    .competitive_item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
     .container {
-        background-color: #EFEFEF;
+        background-color: #fbf8f0;
     }
     .green {
         background-color: #27422C;
@@ -576,17 +650,6 @@ export default {
         width: 100%;
         aspect-ratio: 560/315;
     }
-
-    .flex_height_fit_items {
-        display: flex;
-        width: 100%;
-        justify-content: flex-start;
-        align-items: stretch;
-    }
-
-    .introduction h1 {
-        font-size: 50px;
-    }
         
     .introduction, .situation{
         text-align: left;
@@ -609,20 +672,6 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .grid_4fr_2fr_1fr {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-        gap: 50px;
-    }
-    
-    .grid_3fr_1fr {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        width: 100%;
-        gap: 50px;
     }
 
     .ideation_methods img {
@@ -668,19 +717,6 @@ export default {
         background-image: url('@/assets/social_grocer/rating.png');
     }
 
-    @media (max-width: 900px) {
-        .visualization_slideshow {
-            width: 100%;
-        }
-        .grid_4fr_2fr_1fr {
-            grid-template-columns: 1fr;
-        }
-        .grid_3fr_1fr {
-            grid-template-columns: 1fr;
-            margin: auto;
-        }
-    }
-
     .emphasize_section {
         padding: 10px;
         background-color: white;
@@ -700,10 +736,17 @@ export default {
 
     .ideation_gif {
         background-image: url(../assets/social_grocer/ideation.gif);
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         width: 100%;
+        aspect-ratio: 16/9;
+    }
+    .ideation_content {
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
     }
 /* 
     .ideas:nth-child(even) .idea_bullets {
@@ -756,20 +799,6 @@ export default {
         background-size: contain;
     }
 
-    @media(max-width: 900px) {
-        .flex_sa {
-            flex-direction: column;
-            align-items: center
-        }
-        .flex_sa:nth-child(even) {
-            flex-direction: column;
-            align-items: center
-        }
-        .feature p {
-            font-size: 20px;
-        }
-    }
-
     .method {
         max-width: 300px;
         min-width: 200px;
@@ -817,6 +846,19 @@ export default {
         text-align: center;
     }
 
+    .target_population {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .carbon_people {
+        max-width: 400px;
+        width: 50%;
+        height: auto;
+    }
+
     .title_page {
         display: flex;
         justify-content: flex-start;
@@ -834,5 +876,28 @@ export default {
     
     .usability_test {
         margin-bottom: 60px;
+    }
+
+    @media(max-width: 900px) {
+        .flex_sa {
+            flex-direction: column;
+            align-items: center
+        }
+        .flex_sa:nth-child(even) {
+            flex-direction: column;
+            align-items: center
+        }
+        .feature p {
+            font-size: 20px;
+        }
+        .target_population {
+            width: 100%;
+        }
+        .visualization_slideshow {
+            width: 100%;
+        }
+        .carbon_people { 
+            width: 100%;
+        }
     }
 </style>

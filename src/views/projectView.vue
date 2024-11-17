@@ -52,8 +52,8 @@
     },
     computed: {
         objects() {
-            let all_proj = [project_tightrope, data_visualization, storyglow, munchmaps, heartbeat_checker, 
-            map_visualization, alpaca, fractal, capstone_mhcid];
+            let all_proj = [capstone_mhcid, project_tightrope, data_visualization, storyglow, munchmaps, heartbeat_checker, 
+            map_visualization, alpaca, fractal];
             if (this.filter_array.length == 0) {
               return all_proj;
             } else {
@@ -103,7 +103,7 @@
   }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
     .fade-enter-from {
       opacity: 0;
     }
@@ -301,10 +301,12 @@
       background-color: rgb(255, 235, 235);
     }
 
-    .capstoneMHCID {
-      background-image: url("../assets/project-imgs/coming_soon.png");
+    .socialGrocer {
+      background-image: url("../assets/social_grocer/project_image.png");
       background-size: cover;
+      background-position: center;
       border-color: #014a39;
       border-width: 10px;
+      background-color: #FCFBF9;
     }
 </style>

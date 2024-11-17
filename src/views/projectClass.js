@@ -46,7 +46,8 @@ const project_tags = {
     'math':'Math',
     'game': 'Game',
     'hardware': 'Hardware',
-    'MHCI+D': "MHCI+D"
+    'MHCI+D': "MHCI+D",
+    'case_study': 'Cast Study'
 
 }
 
@@ -67,7 +68,7 @@ const fractal = new projectClass('fractal', 'Music Visualization', [project_tags
 
 const project_tightrope = new projectClass('projectTightrope', 'Project Tightrope', [project_tags.game, project_tags.prototype, project_tags.hardware, project_tags["MHCI+D"]])
 
-const capstone_mhcid = new projectClass('capstoneMHCID', 'MHCID Capstone', [project_tags.health, project_tags.prototype, project_tags["MHCI+D"] ])
+const capstone_mhcid = new projectClass('socialGrocer', 'Social Grocer', [project_tags.health, project_tags.prototype, project_tags.data_visualization, project_tags["MHCI+D"] ])
 
 const data_visualization = new projectClass('DataViz', 'Health Data Visualization', [project_tags.health, project_tags.data_visualization, project_tags["MHCI+D"], project_tags.data_visualization])
 
