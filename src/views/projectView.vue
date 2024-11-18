@@ -120,9 +120,6 @@
     .project-obj:hover, .text_info:hover {
       filter: brightness(100%);
     }
-    .project-obj:hover, .text_info:hover {
-      filter: brightness(100%);
-    }
     .project-object-set {
       margin-bottom: 20px;
       text-align: center;

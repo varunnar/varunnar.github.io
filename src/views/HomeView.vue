@@ -1,54 +1,46 @@
 <template>
   <div class="home">
     <transition name="fade" appear>
-    <div class="pic_paragraph">
-      <div>
-        <h1>Welcome</h1>
-        <p>Hello, my name is Varun Narayanswamy. I am a <em>Software Developer</em> and a <em>Designer</em></p>
-        <div class="img_div">
-          <img src="../assets/linkedin_photo-removebg.png" alt="Varun profile photo">
+      <div class="content">
+        <div class="pic_paragraph">
+          <div>
+            <h1>Welcome</h1>
+            <p>Hello, my name is Varun Narayanswamy. I am a <em>Software Developer</em> and a <em>Designer</em></p>
+            <div class="img_div">
+              <img src="../assets/linkedin_photo-removebg.png" alt="Varun profile photo">
+            </div>
+          </div>
+        </div>
+        <div class="grid_3fr_1fr project_set">
+          <div v-for="object in projectArray" class="project-object-set" :key="object.getProjectName()">
+            <div :class="'home-project-obj ' + object.getProjectName()" :key="object.getProjectName()" @click="navigateToPage(object.getProjectName())"></div>
+          </div>  
         </div>
       </div>
-    </div>
-        <!--- <div class="profile_picture"> </div> -->
-        <!---<img src="../assets/linkedin_photo.jpg" alt="Varun profile photo">-->
-        <!-- <h2>Who is Varun Narayanswamy?</h2>
-        <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am an alumnus of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p>  -->
-        <!-- <div class="social_media_icons">
-          <button class="sm github" id="github" @click="social_media_click"></button>
-          <button class="sm linkedin" id="linkedin" @click="social_media_click"></button>
-          <button class="sm instagram" id="instagram" @click="social_media_click"></button>
-        </div>  -->
-    <!---<div class="pic_paragraph">
-      <h1>Welcome</h1>
-      <div class="paragraph">
-        <div class="profile_picture"> </div>
-        <img src="../assets/linkedin_photo.jpg" alt="Varun profile photo">
-        <img src="../assets/linkedin_photo-removebg.png" alt="Varun profile photo">
-        <h2>Who is Varun Narayanswamy?</h2>
-        <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am an alumnus of the University of Colorado where I got my bachelors in Creative Technology and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games and making bad jokes. </p> 
-        <div class="social_media_icons">
-          <button class="sm github" id="github" @click="social_media_click"></button>
-          <button class="sm linkedin" id="linkedin" @click="social_media_click"></button>
-          <button class="sm instagram" id="instagram" @click="social_media_click"></button>
-        </div> 
-      </div>
-    </div> -->
     </transition>
   </div>
 </template>
 
 <script>
-  export default {
+
+import {project_tightrope, capstone_mhcid, data_visualization} from './projectClass.js'
+
+export default {
   name: 'HomeView',
+  data() {
+    return {
+      show: false,
+      project: []
+    }
+  },
+  mounted() {
+    console.log(project_tightrope)
+    this.show = true;
+  },
   methods: {
-    data() {
-      return {
-        show: false
-      }
-    },
-    mounted() {
-      this.show = true;
+    navigateToPage: function(object) {
+      let individual_project = 'individual-project/' + object;
+      this.$router.push({name: individual_project}); 
     },
     social_media_click: function(event) {
       if (event.target.id == "github") {
@@ -62,9 +54,16 @@
       }
     },
   },
+  computed: {
+    projectArray() {
+      let array = [project_tightrope, capstone_mhcid, data_visualization]
+      return array;
+    }
+  },
 }
 </script>
 <style scoped>
+  @import url('@/globalStyles/spacing.css');
   .fade-enter-from {
     opacity: 0;
   }
@@ -113,6 +112,53 @@
   img {
     max-width: 50%;
   }
+  .project_set {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .home-project-obj {
+    aspect-ratio: 3/2;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-size: cover;
+    background-position: center;
+    opacity: 30%;
+    mask-image: linear-gradient(rgb(0 0 0 / 100%), 50%, transparent);
+    border-radius: 10px;
+  }
+
+  .home-project-obj:hover {
+    opacity: 100%;
+    mask-image: none;
+  }
+  .projectTightrope {
+    background-image: url("../../public/assets/tv_screen.png");
+    background-size: cover;
+  }
+
+  .projectTightrope:hover {
+    border: solid 1px rgba(70, 121, 105, 20);
+  }
+
+  .DataViz {
+    background-image: url("../assets/data_viz_portal/pink_background.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 235, 235);
+  }
+
+  .socialGrocer {
+    background-image: url("../assets/social_grocer/project_image.png");
+    /* border-color: #014a39; */
+    border-width: 10px;
+    background-color: #FCFBF9;
+  }
+
+  .socialGrocer:hover {
+    border: solid 1px rgba(70, 121, 105, 50%);
+  }
+
   h1 {
     font-size: 5em;
     margin: 0;
