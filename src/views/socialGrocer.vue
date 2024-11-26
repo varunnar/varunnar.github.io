@@ -113,7 +113,8 @@
                     </div>
                     <div>
                         <h2>SME interviewes</h2>
-                        <p> We conducted quantitative studies and consulted regularly with experts from <b>DoorDash</b>, <b>Uber Eats</b>, <b>The Food Compass</b>, and <b>UW Research</b>.</p>
+                        <p> We conducted quantitative studies and consulted regularly with experts from <b>DoorDash</b>, <b>Uber Eats</b>, 
+                            Tufts researchers who design the <b>Food Compass</b> Nutrition Rating System, and <b>UW Research</b>.</p>
 
                         <img src="@/assets/social_grocer/SME.png" style="max-width: 400px; width: 100%; height: auto;">
                     </div>
@@ -272,33 +273,38 @@
             </div>
         </div>
             <div class="line-with-text"><h2>Storyboards</h2></div>
+            <div class="grid_3fr_1fr" v-if="!smallSize">
+                <h3>Initial Storyboard</h3>
+                <h3>Refined Concept</h3>
+                <h3>Pre Video</h3>
+            </div>
                 <div class="grid_3fr_1fr">
                     <div class="slideShow_storyboards">
-                    <h3>Initial Storyboard</h3>
+                    <h3 v-if="smallSize">Initial Storyboard</h3>
                     <slideshow
                         folderPath="/assets/social_grocer/storyboard/Storyboard_1"
                         fileType="png"
                         :autoPlay="false"
                         :bodyArray="storyboard_1_body"
+                        :numberOfImages="11"
+                        buttonColor='#4A6846'
+                        backgroundColor='#D3D3D3'>
+                    </slideshow>
+                </div>
+                <div class="slideShow_storyboards">
+                    <h3 v-if="smallSize">Refined Concept</h3>
+                    <slideshow
+                        folderPath="/assets/social_grocer/storyboard1/sg_storyboard"
+                        fileType="png"
+                        :autoPlay="false"
+                        :bodyArray="storyboard_2_body"
                         :numberOfImages="13"
                         buttonColor='#4A6846'
                         backgroundColor='#D3D3D3'>
                     </slideshow>
                 </div>
                 <div class="slideShow_storyboards">
-                    <h3>Refined Concept</h3>
-                    <slideshow
-                        folderPath="/assets/social_grocer/storyboard/Storyboard_2"
-                        fileType="png"
-                        :autoPlay="false"
-                        :bodyArray="storyboard_2_body"
-                        :numberOfImages="15"
-                        buttonColor='#4A6846'
-                        backgroundColor='#D3D3D3'>
-                    </slideshow>
-                </div>
-                <div class="slideShow_storyboards">
-                    <h3>Pre Video</h3>
+                    <h3 v-if="smallSize">Pre Video</h3>
                     <slideshow
                         folderPath="/assets/social_grocer/storyboard2/Storyboard"
                         fileType="png"
@@ -356,9 +362,14 @@
             <iframe src="https://www.youtube.com/embed/fQMMDkPF3mk?si=1NNYUXY-e2iT4zjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="line-with-text"><h2>Design Mappings</h2></div>
             <p>I was responsible for developing, designing and refining our variety of design maps. This includes the apps information architecture, screen flows, and specific task flows.</p>
+            <div class="grid_3fr_1fr" v-if="!smallSize">
+                <h3>Information Architecture</h3>
+                <h3>Screen Flows</h3>
+                <h3>Task Flow</h3>
+            </div>
             <div class="grid_3fr_1fr">
                 <div>
-                    <h3>Information Architecture</h3>
+                    <h3 v-if="smallSize">Information Architecture</h3>
                     <slideshow
                         folderPath="/assets/social_grocer/flows/IA"
                         fileType="png"
@@ -367,7 +378,7 @@
                     ></slideshow>
                 </div>
                 <div>
-                    <h3>Screen Flows</h3>
+                    <h3 v-if="smallSize">Screen Flows</h3> 
                     <slideshow
                         folderPath="/assets/social_grocer/flows/screen_flow"
                         fileType="png"
@@ -375,7 +386,7 @@
                     ></slideshow>
                 </div>
                 <div>
-                    <h3>Task Flow</h3>
+                    <h3 v-if=" smallSize">Task Flow</h3>
                     <slideshow
                         folderPath="/assets/social_grocer/flows/task_flow"
                         fileType="png"
@@ -493,6 +504,16 @@ export default {
             feature_artboard_content: artboardFeatureArr
         }
     },
+    computed: {
+        smallSize() {
+            const viewportWidth = window.innerWidth;
+            if (viewportWidth < 900) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 }
 </script>
 

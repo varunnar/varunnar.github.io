@@ -114,8 +114,8 @@ export default {
   }
   .project_set {
     width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 5% 10% 5% 10%;
+
   }
   .home-project-obj {
     aspect-ratio: 3/2;
