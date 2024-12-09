@@ -51,7 +51,7 @@
                         </slideShow>
                     </div>
                     <div class="grid_view_obj">
-                        <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Roadtrip.mp3`)">
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -8, `/assets/other/ml_audio/Roadtrip.mp3`)">
                             {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Our First Roadtrip
                         </div>
                         <slideShow class="cheesecake_chapters"
@@ -63,7 +63,7 @@
                         </slideShow>
                     </div>
                     <div class="grid_view_obj">
-                        <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Fondue.mp3`)">
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -9, `/assets/other/ml_audio/Fondue.mp3`)">
                             {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Miss Ladies Birthday
                         </div>
                         <slideShow class="cheesecake_chapters"
@@ -75,12 +75,24 @@
                         </slideShow>
                     </div>
                     <div class="grid_view_obj">
-                        <div class="chapter_button" @click="play_or_stop_audio(null, -7, `/assets/other/ml_audio/Cats.mp3`)">
-                            {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} The Arrival of the Cats
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -10, `/assets/other/ml_audio/Routine.mp3`)">
+                            {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Getting into Routine
                         </div>
                         <slideShow class="cheesecake_chapters"
-                        folderPath="/assets/other/c_w_c/cats"
-                        fileType="jpg"
+                        folderPath="/assets/other/c_w_c/routine"
+                        fileType="png"
+                        :autoPlay="false"
+                        :showControls="true"
+                        :numberOfImages="4">
+                        </slideShow>
+                    </div>
+                    <div class="grid_view_obj">
+                        <div class="chapter_button" @click="play_or_stop_audio(null, -11, `/assets/other/ml_audio/my_first_birthday.mp3`)">
+                            {{ isPlaying && currentChapter === -7 ? 'Pause' : 'Play' }} Varun's first birthday
+                        </div>
+                        <slideShow class="cheesecake_chapters"
+                        folderPath="/assets/other/c_w_c/varun_bday"
+                        fileType="png"
                         :autoPlay="false"
                         :showControls="true"
                         :numberOfImages="3">
@@ -155,12 +167,12 @@ export default {
         return {
             // This array contains 17 chapters (1 book with 17 chapters)
             chapter_info: [
-                Array.from({ length: 11 }, (_, i) => i + 1) // [1, 2, 3, ..., 17]
+                Array.from({ length: 17 }, (_, i) => i + 1), Array.from({ length: 2 }, (_, i) => i + 1) // [1, 2, 3, ..., 17]
             ],
             currentAudio: null, // To keep track of the currently playing audio instance
             currentChapter: null, // To track which chapter's audio is currently playing
             isPlaying: false, // Boolean to track if audio is currently playing,
-            books_img: ['/assets/other/hp_1.jpg']
+            books_img: ['/assets/other/hp_1.jpg', '/assets/other/hp_2.jpg']
         };
     },
     computed: {

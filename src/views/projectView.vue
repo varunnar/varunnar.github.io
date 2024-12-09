@@ -82,7 +82,7 @@
     },
     methods: {
         navigateToPage: function(object) {
-          let individual_project = 'individual-project/' + object
+          let individual_project = 'individual-project/' + object;
           this.$router.push({name: individual_project}); 
         },
 
@@ -95,8 +95,6 @@
           }
         },
         isSelected(tag) {
-          console.log("hello")
-          console.log(tag)
           return this.filter_array.includes(tag);
         }
     }

@@ -65,6 +65,7 @@
               class="initial_research_slideshow"
               :autoPlay="false"
               :imageUrls="ideation_images"
+              :numberOfImages="3"
               :headerArray="['The Importance of Physicality', 'The use of Metaphors and Abstraction', 'The role of Haptic Feedback']"
               :bodyArray="['The Feeling Pressured activity at Exploratorium SF simulates pressure from anxiety and health challenges using a vacuum-sealed bag. The project inspired us to consider using physical simulation to convey our message when designing our game.',
                 'spiritfarer uses anthropomorphized animals to explore loss, relationships, regrets, and acceptance of death. Its art style, abstract narratives, and metaphors make the heavy topic of grief more lighthearted and approachable. We aimed to apply similar techniques in our work to convey important messages without triggering players.',
@@ -228,7 +229,7 @@
         </div>
 
         <div>
-        <H2> Final Video</H2>
+        <h2> Final Video</h2>
         <p>We concluded our project by putting together a final video that explain our concept, approach and implementation.</p>
         <iframe src="https://www.youtube.com/embed/AU4bc2cfOug?si=Va65FkhBQWWL5tHL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen  style="margin: auto"></iframe>
         </div>
@@ -237,7 +238,7 @@
 
     <fadeInComponent>
       <sectionContainer class="green_container">
-        <H1>Reflection</H1>
+        <h1>Reflection</h1>
         <p>This project was one of my favorites. While the timeline was fast, I am proud of how the it progressed and the final product we delivered. Below are next steps and changes I would make: </p>
         <div class="flex_spacing_SB spacing_small">
           <div class="reflection_items" style="gap: 10px">

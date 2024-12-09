@@ -330,7 +330,7 @@
             <div class="usability_test">
                 <h2>Product Page</h2>
                 <slideshow
-                    bottomControls="true"
+                    :bottomControls="true"
                     :htmlUrls="['/htmlWidgets/social_grocer/product_page_1.html', '/htmlWidgets/social_grocer/product_page_2.html', '/htmlWidgets/social_grocer/product_page_3.html']"
                     :numberOfImages="3"
                 ></slideshow>
@@ -338,7 +338,7 @@
             <div class="usability_test">
                 <h2>Cart Health Score</h2>
                 <slideshow
-                    bottomControls="true"
+                    :bottomControls="true"
                     :htmlUrls="['/htmlWidgets/social_grocer/c_health_s_1.html', '/htmlWidgets/social_grocer/c_health_s_2.html']"
                     :numberOfImages="2"
                 ></slideshow>
@@ -346,7 +346,7 @@
             <div class="usability_test">
                 <h2>End Screens</h2>
                 <slideshow
-                    bottomControls="true"
+                    :bottomControls="true"
                     :htmlUrls="['/htmlWidgets/social_grocer/ending_1.html', '/htmlWidgets/social_grocer/ending_2.html']"
                     :numberOfImages="2"
                 ></slideshow>
@@ -373,7 +373,7 @@
                     <slideshow
                         folderPath="/assets/social_grocer/flows/IA"
                         fileType="png"
-                        numberOfImages="3"
+                        :numberOfImages="3"
                         buttonColor="#27422C"
                     ></slideshow>
                 </div>
@@ -382,7 +382,7 @@
                     <slideshow
                         folderPath="/assets/social_grocer/flows/screen_flow"
                         fileType="png"
-                        numberOfImages="6"
+                        :numberOfImages="6"
                     ></slideshow>
                 </div>
                 <div>
@@ -390,7 +390,7 @@
                     <slideshow
                         folderPath="/assets/social_grocer/flows/task_flow"
                         fileType="png"
-                        numberOfImages="4"
+                        :numberOfImages="4"
                         buttonColor="#27422C"
                     ></slideshow>
                 </div>

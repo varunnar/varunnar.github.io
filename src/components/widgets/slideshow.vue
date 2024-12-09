@@ -71,7 +71,7 @@
         required: false
       },
       htmlUrls: {
-        type: String,
+        type: Array,
         required: false
       },
       bodyArray: {
@@ -104,7 +104,7 @@
       },
       bottomControls: {
         type: Boolean,
-        required: true
+        default: true
       },
       textPosition: {
         type: String,
