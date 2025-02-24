@@ -48,7 +48,7 @@
         // let url =  window.location.href;
         // let page_name = url.split('window.location.origin');
         return page_name[1];
-      },
+    },
       title_current_name() {
         var project_name = this.current_name;
         if (project_name == "fractal") {

@@ -90,7 +90,22 @@ const routes = [
     path: '/socialGrocer',
     name: 'individual-project/socialGrocer',
     component: () => import('../views/socialGrocer.vue')
-  }
+  },
+  {
+    path: '/blogs',
+    name: 'blogView',
+    component: () => import('../views/blogPostList.vue')
+  },
+  {
+    path: '/blog/:id',
+    name: 'blog-post',
+    component: () => import('../views/blogTemplate.vue'),
+    props: (route) => ({
+      id: route.params.id,
+      title: route.query.title,
+      content: route.query.content || '[]'
+    }),
+  },
 ]
 
   /* eslint-disable */

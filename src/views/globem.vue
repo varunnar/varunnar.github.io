@@ -250,6 +250,10 @@
   //VERSION THAT WORKS
   /*  "8ec2a3db467cf4aa": "https://api.observablehq.com/d/8ec2a3db467cf4aa.tgz?v=3",
     "b02a387aa7a1c933": "https://api.observablehq.com/d/b02a387aa7a1c933@1704.tgz?v=3", */
+
+
+    ///MARS WEBPAGE - https://observablehq.com/d/329b9ec10c9f546f
+    
   
   export default {
     name: 'Note-book',
@@ -473,11 +477,6 @@
     width: 100%;
     margin-top: 10%;
     text-align: center;
-  }
-
-  #first {
-    /* border: 2px solid black;
-    width: 770px; */
   }
 
 /* Adds dark mode */
