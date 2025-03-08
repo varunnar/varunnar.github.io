@@ -47,7 +47,8 @@ const project_tags = {
     'game': 'Game',
     'hardware': 'Hardware',
     'MHCI+D': "MHCI+D",
-    'case_study': 'Cast Study'
+    'case_study': 'Cast Study',
+    'frontend': 'Frontend'
 
 }
 
@@ -70,7 +71,9 @@ const project_tightrope = new projectClass('projectTightrope', 'Project Tightrop
 
 const capstone_mhcid = new projectClass('socialGrocer', 'Social Grocer', [project_tags.health, project_tags.prototype, project_tags.data_visualization, project_tags["MHCI+D"] ])
 
-const data_visualization = new projectClass('DataViz', 'Health Data Visualization', [project_tags.health, project_tags.data_visualization, project_tags["MHCI+D"], project_tags.data_visualization])
+const data_visualization = new projectClass('DataViz', 'Health Data Visualization', [project_tags.health, project_tags.data_visualization, project_tags["MHCI+D"], project_tags.data_visualization, project_tags.frontend])
+
+const youtubeData = new projectClass('youtubeData', 'Youtube Data Visualization', [project_tags.data_visualization, project_tags.case_study, project_tags.frontend])
 
 export { 
     storyglow,
@@ -81,5 +84,6 @@ export {
     fractal,
     project_tightrope,
     capstone_mhcid,
-    data_visualization
+    data_visualization,
+    youtubeData
 }

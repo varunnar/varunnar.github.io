@@ -92,6 +92,11 @@ const routes = [
     component: () => import('../views/socialGrocer.vue')
   },
   {
+    path: '/youtubeData',
+    name: 'individual-project/youtubeData',
+    component: () => import('../views/youtubeDataAnalysis.vue')
+  },
+  {
     path: '/blogs',
     name: 'blogView',
     component: () => import('../views/blogPostList.vue')

@@ -21,6 +21,7 @@ export default{
 
 
 <style>
+@import url('@/globalStyles/colors.css');
 body {
   margin: 0px;
   margin-top: 0px;

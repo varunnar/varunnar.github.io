@@ -41,7 +41,7 @@
 
 <script>
   import storyglowText from 'raw-loader!./projects/storyglow.txt'
-  import {storyglow, munchmaps, heartbeat_checker, map_visualization, alpaca, fractal, project_tightrope, capstone_mhcid, data_visualization} from './projectClass.js'
+  import {youtubeData, storyglow, munchmaps, heartbeat_checker, map_visualization, alpaca, fractal, project_tightrope, capstone_mhcid, data_visualization} from './projectClass.js'
   export default {
     name: 'projectView',
     data() {
@@ -53,7 +53,7 @@
     computed: {
         objects() {
             let all_proj = [capstone_mhcid, project_tightrope, data_visualization, storyglow, munchmaps, heartbeat_checker, 
-            map_visualization, alpaca, fractal];
+            map_visualization, alpaca, fractal, youtubeData];
             if (this.filter_array.length == 0) {
               return all_proj;
             } else {
@@ -82,8 +82,10 @@
     },
     methods: {
         navigateToPage: function(object) {
-          let individual_project = 'individual-project/' + object;
-          this.$router.push({name: individual_project}); 
+          if (object != 'youtubeData') {
+            let individual_project = 'individual-project/' + object;
+            this.$router.push({name: individual_project})
+          }
         },
 
         addTag: function(tag) {
@@ -303,5 +305,12 @@
       border-color: #014a39;
       border-width: 10px;
       background-color: #FCFBF9;
+    }
+
+    .youtubeData {
+      background-image: url("../assets/project-imgs/coming_soon.png");
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
     }
 </style>
