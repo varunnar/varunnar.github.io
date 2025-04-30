@@ -6,6 +6,15 @@
     width: 100%
   }
 
+  .flex_spacing_SA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+  }
+
   .flex_spacing_MD {
     display: flex;
     flex-direction: row;
@@ -48,6 +57,16 @@
     grid-template-columns: 1fr 1fr;
     width: 100%;
     gap: 50px;
+  }
+
+  .fit_rows {
+    flex: 1;
+  }
+
+  .center_spacing_rows {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
 
   .grid_3fr_1fr {

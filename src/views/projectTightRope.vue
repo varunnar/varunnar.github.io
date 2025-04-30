@@ -240,7 +240,7 @@
       <sectionContainer class="green_container">
         <h1>Reflection</h1>
         <p>This project was one of my favorites. While the timeline was fast, I am proud of how the it progressed and the final product we delivered. Below are next steps and changes I would make: </p>
-        <div class="flex_spacing_SB spacing_small">
+        <div class="grid_3fr_1fr">
           <div class="reflection_items" style="gap: 10px">
             <div class="circle"> 1 </div>
             <h3>Further Research</h3>
@@ -274,12 +274,8 @@
 import woz_text_1 from 'raw-loader!../assets/project_tightrope/code_files/woz_1.txt';
 import woz_text_2 from 'raw-loader!../assets/project_tightrope/code_files/woz_2.txt';
 import woz_text_3 from 'raw-loader!../assets/project_tightrope/code_files/woz_3.txt';
-import slideshow from '../components/widgets/slideshow.vue';
-import sectionContainer from '../components/widgets/section.vue';
-import fadeInComponent from '@/components/fadeInComponent.vue';
 export default {
   name: 'projectTightRope',
-  components: { slideshow, sectionContainer, fadeInComponent },
   data() {
       return {
         width_val: window.innerWidth,
@@ -651,7 +647,7 @@ export default {
     display: flex;
     align-items: space;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 600px;
     flex-basis: 100%;
     background-color: black;
     padding: 30px 10px 30px 10px;

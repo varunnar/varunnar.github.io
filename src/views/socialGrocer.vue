@@ -434,23 +434,19 @@
 </template>
 
 <script>
-//import slideshow from '@/components/widgets/slideshow.vue';
 // import { onMounted, ref, onBeforeUnmount } from 'vue';
 // import { Runtime, Inspector } from '@observablehq/runtime';
 // import notebook from '4158df67e625f9c8';
-import sectionContainer from '../components/widgets/section.vue';
 import rowImageText from '../components/widgets/rowImageText.vue';
-import Slideshow from '@/components/widgets/slideshow.vue';
 import artboardObj from '@/components/widgets/artboardObj.vue';
 import artboardArr from '../components/artboardArrays/artboardQuestionsSG.js';
 import artboardFeatureArr from '../components/artboardArrays/artboardfeaturesSG.js';
-import fadeInComponent from '@/components/fadeInComponent.vue';
 //import pdfDownloader from '@/components/widgets/pdfDownloader.vue';
 
 
 export default {
     name: 'socialGrocer',
-    components: {sectionContainer, rowImageText, Slideshow, artboardObj, fadeInComponent},
+    components: { rowImageText, artboardObj },
     data() {
         return {
             c_zone_i:['/assets/social_grocer/sol.png', '/assets/social_grocer/thinking.png', '/assets/social_grocer/basket.png'],
@@ -771,7 +767,7 @@ export default {
         display: flex;
         align-items: space;
         flex-direction: column;
-        max-width: 300px;
+        max-width: 600px;
         flex-basis: 100%;
         background-color: #27422C;
         padding: 30px 10px 30px 10px;

@@ -8,6 +8,14 @@
     color: rgb(255, 126, 126);
 }
 
+.red_off_section p {
+    color: rgb(255, 255, 255);
+}
+
+.red_off_section p b {
+    color: rgb(255, 126, 126);
+}
+
 .white_section {
     background-color: white;
     color: black;

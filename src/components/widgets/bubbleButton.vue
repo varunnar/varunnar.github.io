@@ -1,7 +1,7 @@
 <template>
   <!--<div class="bubble-icon" :style="styleObj">-->
     <div v-if="isButton" class="button-text">
-      <router-link v-if="!isResume" :to="navigationUrl"> {{navigationName}} </router-link>
+      <router-link tabindex="0" v-if="!isResume" :to="navigationUrl" role="button"> {{navigationName}} </router-link>
       <a v-else href="resume.pdf">Resume</a>
     </div>
     <div v-else class="button-text">

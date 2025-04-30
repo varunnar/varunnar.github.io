@@ -5,7 +5,6 @@
   </template>
   
   <script>
-  // import fadeInComponent from '../fadeInComponent.vue';
   export default {
     name: 'SectionContainer',
     // props: {
@@ -18,15 +17,14 @@
     //     required: true
     //   }
     // }
-    // components: {fadeInComponent}
   }
   </script>
   
   <style lang="scss">
   .section {
     max-width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 5%;
     padding-bottom: 5%;
     margin-left: 5%;

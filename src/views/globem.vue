@@ -240,9 +240,7 @@
   <script>
   import { onMounted, ref, onBeforeUnmount } from 'vue';
   import { Runtime, Inspector } from '@observablehq/runtime';
-  import sectionContainer from '../components/widgets/section.vue';
   import overLappingButton from '../components/widgets/overLappingButton.vue';
-  import fadeInComponent from '@/components/fadeInComponent.vue';
   // Statistically import the notebook like a local module
   import notebook from 'b02a387aa7a1c933'; // Adjust the name if the package exports it differently
   // import notebook2 from '8ec2a3db467cf4aa';
@@ -257,7 +255,7 @@
   
   export default {
     name: 'Note-book',
-    components: {sectionContainer, overLappingButton, fadeInComponent},
+    components: { overLappingButton },
     data() {
       return {
         clicked: false,
