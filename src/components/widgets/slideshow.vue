@@ -5,7 +5,7 @@
       <div v-if="(imagePaths && imagePaths.length > 0) || (htmlUrls && htmlUrls.length > 0)" class="image-container">
         <transition :name="transitionName" mode="out-in">
           <div v-if="updateImage" class="slideshow_container" :key="imagePaths[currentIndex]" :style="`background-color: ${backgroundColor};`">
-            <div :class="textPosition">
+            <div :class="textLocation">
               <div>
                 <img v-if="imagePaths && imagePaths.length > 0" :src="imagePaths[currentIndex]" alt="Slideshow Image" class="slideshow-image" :key="imagePaths[currentIndex]" @click="openModal"/>
                 <div v-if="htmlUrls && htmlUrls.length > 0" v-html="htmlContent" :key="htmlUrls[currentIndex]"></div>
@@ -32,7 +32,7 @@
             <div class="modal_text">
               <h3 v-if="headerArray" v-text="headerArray[currentIndex]" :style="`color: ${textColor}`"></h3>
               <div v-if="bodyArray" v-text="bodyArray[currentIndex]" :style="`color: ${textColor}`"></div>
-          </div>
+            </div>
           </div>
             <div :class="'controls ' + controlLocation" v-if="displayControlObject()">
               <div class="button_custom" @click="clickPrev" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>&larr;</b></div>   
@@ -106,10 +106,9 @@
         type: Boolean,
         default: true
       },
-      textPosition: {
-        type: String,
-        default: 'bottom'
-
+      textBottom: {
+        type: Boolean,
+        default: true
       },
       album: {
         type: String,
@@ -189,6 +188,10 @@
         let addition_class = this.bottomControls ?  'bottom_control'  : 'top_control';
         return addition_class;
       },
+      textLocation() {
+        let text_class = this.textBottom ? 'bottom_text' : 'top_text';
+        return text_class;
+      }
     },
     methods: {
       generateNumericImagePaths(folderPath, numImages, fileType) {
@@ -430,22 +433,32 @@
   font-size: 20px;
 }
 
-@media (max-width: 900px) {
-  .left_text {
+.bottom_text {
+  display: flex;
+  flex-direction: column;
+}
+
+.top_text {
   display: flex;
   flex-direction: column-reverse;
-  gap: 20px;
-  text-align: left;
-  justify-content: space-around;
 }
 
-.left_text .slideshow_text {
-  max-width: 100%;
-}
+@media (max-width: 900px) {
+  .left_text {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    text-align: left;
+    justify-content: space-around;
+  }
 
-.left_text .bodyArray {
-  font-size: 20px;
-}
+  .left_text .slideshow_text {
+    max-width: 100%;
+  }
+
+  .left_text .bodyArray {
+    font-size: 20px;
+  }
 }
   
   button {

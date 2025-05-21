@@ -4,9 +4,9 @@
             <h1>Youtube Stats Analyzer</h1>
             <p>A passion project that providers users with visualizations of their youtube usage data</p>
             <div class="youtube_analysis_hero_img"></div>
-            <p>Youtube Stats Analyzer is a project that aims to provide users with a visual representation of their youtube usage data.
-                 The project will analyze the user's youtube data and provide them with insights on their usage patterns. 
-                 The project also providers users with an A.I. generated list of recommendations based on the youtubers they watch.</p>
+            <p>YouTube Stats Analyzer is a project that provides users with a visual representation of their YouTube usage data. 
+   It analyzes this data to deliver insights into viewing patterns and offers an AI-generated list of recommendations based on the channels they watch.</p>
+
         </sectionContainer>
     </fadeInComponent>
 
@@ -38,16 +38,16 @@
     <fadeInComponent>
         <sectionContainer class="red_off_section youtubeData">
             <h2>Investigating Google Youtube Data API</h2>
-            <p>My first step in building out my webpage was finding the core of any visualization - <b>Data!</b> 
-                Finding interesting and usable data to build off of was key to my visualizations. 
-                I wanted data that was <b>personal</b> to each person, so as to make a more engaging experience. 
-                After some time I chose to collect data from Google's Youtube API - building in code to allow the 
-                user to login themselves and recieve custom visualizations based on their data.</p>
+            <div class="grid_4fr_2fr_1fr" style="margin-bottom: 50px;">
+            <p>The first step in building my webpage was finding the core of any visualization — <b>Data!</b> 
+                I wanted something <b>personal</b> to each user for a more engaging experience. 
+                I chose to use Google’s YouTube API, allowing users to log in and receive custom visualizations. 
+                As a regular YouTube user, I believed my own data would reflect patterns others could relate to.</p>
             <img src="../assets/youtube_data_analysis/youtubeGoogleCloud.png" style="width: 100%; height: auto; border-radius: 5px;"/>
-            <p>After familiarizing myself with the platform, I needed to understand <b>How to collect my data.</b> What data I actually had access 
-                to would determine what types of visualization I could do. The following are the routes I used to collect my data</p>
-            <img src="../assets/youtube_data_analysis/youtubeAPIRoutes.png" style="width: 100%; height: auto; border-radius: 5px;"/>
-            <p>This process provided me with data on the users <b>most recent subscriptions</b> (people they had subscribed to), and their <b>liked recent videos.</b></p>
+            </div>
+\                <p>After familiarizing myself with the platform, I needed to understand <b>how to collect my data.</b> The data I had access to would determine the types of 
+                visualizations I could create. I used the following API routes to collect two different data samples to build the visualizations - the users <b>most recent subscriptions</b> (people they had subscribed to), and their <b>liked recent videos.</b></p>
+                <img src="../assets/youtube_data_analysis/youtubeAPIRoutes.png" style="width: 100%; height: auto; border-radius: 5px;"/>
         </sectionContainer>
     </fadeInComponent>
 
@@ -55,31 +55,33 @@
     <fadeInComponent>
         <sectionContainer class="red_section D3">
             <div class="grid_4fr_2fr_1fr">
-            <div style="margin-top: auto; margin-bottom: auto;">
-            <h2>Utilizing D3.js</h2>
-            <p>D3.js was my choice of visualization language. I have previously
-                explored languages such as Vegalite.js heavily but wanted to work with a more robust language</p>
-            <p>My approach was to initially build the visualizations in Observable, 
-                an online coding notebook that includes large amounts of the D3 documentation. 
-                After completing the visualizations I would move them to my personal code and shift the code to React.js code.</p>
+                <div style="margin-top: auto; margin-bottom: auto;">
+                <h2>Utilizing D3.js</h2>
+                <p>D3.js was my choice of visualization language. I have previously
+                    explored languages such as Vegalite.js heavily but wanted to work with a more something more robust that provided new form factors for visualizations and more control.</p>
+                <p>My approach was to initially build the visualizations in <b>ObservableHQ</b>, 
+                    an online coding notebook that includes large amounts of the D3 documentation. 
+                    After completing the visualizations I would move them to my personal code and shift the code to React.js code.</p>
+                <a href="https://observablehq.com/d/0c68fa0ca8d0ba94" style="color: pink;"><p>Link to Observable</p></a>
+                </div>
+                <img src="../assets/youtube_data_analysis/observableHQ.png" width="100%" height="100%">
+                <!-- <div role="image" class="observableHQ" alt="Image of observableHQ world map visualization and code alongside it."></div> -->
             </div>
-            <img src="../assets/youtube_data_analysis/observableHQ.png" width="100%" height="100%">
-            <!-- <div role="image" class="observableHQ" alt="Image of observableHQ world map visualization and code alongside it."></div> -->
-        </div>
         </sectionContainer>
     </fadeInComponent>
 
     <fadeInComponent>
         <sectionContainer class="red_off_section react">
             <h2>React.js D3 integration</h2>
-            <p>After completing the visualizations within observable, it is important to integrate them into react. The following were steps that were needed to take.</p>
+            <p>After completing the visualizations within observable, I needed to make sure they worked with a react webpage. The following were steps that were needed to take.</p>
             <slideshow
                 folderPath="/assets/youtubeDataViz/code"
                 fileType="png"
                 :numberOfImages="3"
                 :autoPlay="false"
                 :headerArray="['Code to Initialize Google Sign In', 'Functions for Fetching Youtube Information', 'Components for each Visualization']"
-                :bottomControls="true"
+                :bottomControls="false"
+                :textBottom="false"
             ></slideshow>
         </sectionContainer>
     </fadeInComponent>
@@ -94,8 +96,16 @@
                     folderPath="/assets/youtubeDataViz/viz"
                     fileType="png"
                     :numberOfImages="5"
-                    :autoPlay="false"
-                >
+                    buttonColor="#5B0000"
+                    :headerArray="['Subscribed Channel Tag Bubble Chart', 'Subscribed Channel Tag Chord Graph', 'Subscribed Channel World Map', 'Liked Video Categories over Time', 'Most liked channels']"
+                    :bodyArray="[
+                        'A bubble chart shows the most common tags across the top 50 subscribed channels, with color indicating frequency.',
+                        'This graph links top channels by shared tags to highlight connections between your subscriptions.',
+                        'A world map displays where your most subscribed channels are located, with zoomable clusters for clarity.',
+                        'This timeline groups your liked videos by category to show how your interests have changed over time.',
+                        'A block chart highlights your most liked channels, using size and color to represent preference.'
+                        ]"
+                    >
                 </slideshow> 
             </div>
             <!-- <div class="flex_spacing_SA" style="gap: 20">
@@ -123,18 +133,26 @@
         <sectionContainer class="red_section next_steps">
             <h2>Next Steps</h2>
             <div class="grid_3fr_1fr">
-                <div class="center_spacing_rows">
-                    <h3>Youtube History Inclusion</h3>
-                    <p>Using liked videos and subscriptions is valuable, but for more casual youtube users, historical video visualizations is more interesting and relevent. The Google Cloud API does not provide an endpoint for this, but I hope to investigate it more </p>
-                </div>
-                <div class="center_spacing_rows">
-                    <h3>Backend Microservices</h3>
-                    <p> The current frontend collects both the youtube and AI data directly. However, in traditional use cases, this task would instead be completed by a backend. I hope to create two microservices, one for AI and one for google cloud.  </p>
-                </div>
-                <div class="center_spacing_rows">
-                    <h3>Publish Webpage Officially</h3>
-                    <p>After collecting the necessary data, and further building out the architecture, I hope to publish this webpage. This would include <b>defining a domain for the frontend and backend, allow all emails on Google Cloud API</b> and <b>considering more robust token usage.</b></p>
-                </div>
+                <ReflectionItem
+                    title="Youtube History Inclusion"
+                    description="Using liked videos and subscriptions is valuable, but for more casual youtube users, historical video visualizations is more interesting and relevent. The Google Cloud API does not provide an endpoint for this, but I hope to investigate it more"
+                    icon="/assets/youtubeDataViz/ref_1.png"
+                    backgroundColor="#000000"
+                ></ReflectionItem>
+
+                <ReflectionItem
+                    title="Backend Microservices"
+                    description="The current frontend collects both the YouTube and AI data directly. However, in traditional use cases, this task would instead be completed by a backend. I hope to create two microservices, one for AI and one for Google Cloud."
+                    icon="/assets/youtubeDataViz/ref_2.png"
+                    backgroundColor="#000000"
+                ></ReflectionItem>
+
+                <ReflectionItem
+                    title="Publish Webpage Officially"
+                    description="After collecting the necessary data, and further building out the architecture, I hope to publish this webpage. This would include defining a domain for the frontend and backend, allowing all emails on Google Cloud API, and considering more robust token usage."
+                    icon="/assets/youtubeDataViz/ref_3.png"
+                    backgroundColor="#000000"
+                ></ReflectionItem>
             </div>
         </sectionContainer>
     </fadeInComponent>
@@ -143,10 +161,10 @@
 
 <script>
 import slideshow from '@/components/widgets/slideshow.vue'
-
+import ReflectionItem from '@/components/widgets/reflectionItem.vue';
 
 export default {
-  components: { slideshow },
+  components: { slideshow, ReflectionItem },
    name: 'YoutubeDataAnalysis',
    data() {
      return {

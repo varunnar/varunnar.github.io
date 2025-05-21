@@ -52,8 +52,8 @@
     },
     computed: {
         objects() {
-            let all_proj = [capstone_mhcid, project_tightrope, data_visualization, storyglow, munchmaps, heartbeat_checker, 
-            map_visualization, alpaca, fractal, youtubeData];
+            let all_proj = [capstone_mhcid, project_tightrope, youtubeData, data_visualization, storyglow, munchmaps, heartbeat_checker, 
+            map_visualization, alpaca, fractal];
             if (this.filter_array.length == 0) {
               return all_proj;
             } else {
@@ -82,10 +82,10 @@
     },
     methods: {
         navigateToPage: function(object) {
-          if (object != 'youtubeData') {
+          // if (object != 'youtubeData') {
             let individual_project = 'individual-project/' + object;
             this.$router.push({name: individual_project})
-          }
+          //}
         },
 
         addTag: function(tag) {
@@ -308,9 +308,13 @@
     }
 
     .youtubeData {
-      background-image: url("../assets/project-imgs/coming_soon.png");
+      background-image: url("../assets/youtube_data_analysis/data_viz_hero_img.png");
       background-size: cover;
       background-position: center;
       border-radius: 20px;
+      background-color: #000000;
+      background-size: contain;
+      background-repeat: no-repeat; 
+      background-size: 80%; /* Added to ensure no repetition of background image */
     }
 </style>
