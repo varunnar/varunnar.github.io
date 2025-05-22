@@ -33,8 +33,9 @@ body {
   text-align: center;
   color: #014a39;
   background-color: #fbf8f0;
-  overflow: auto;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {

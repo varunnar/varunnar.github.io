@@ -408,26 +408,25 @@
         <sectionContainer class="off">
             <h1>Reflections</h1>
             <div class="grid_3fr_1fr">
-            <div class="reflection_items" style="gap: 10px">
-                <div class="circle reflection_1"></div>
-                <h3>Further Research</h3>
-                <p>Our groups constantly discussed many areas such as the impacts of social 
-                    media in a sensitive space such as food health, or how to approach privacy with groceries. 
-                    I would like to conduct further development </p>
+                <ReflectionItem
+                    title="Further Research"
+                    description="Our groups constantly discussed many areas such as the impacts of social media in a sensitive space such as food health, or how to approach privacy with groceries. I would like to conduct further development"
+                    backgroundColor="#27422C"
+                    :number="1"
+                />
+                <ReflectionItem
+                    title="Coded Prototype"
+                    description="After further testing, I would like to refine the idea with a coded prototype. This could also us to test with existing APIs and refine interactions that are impossible with Figma."
+                    backgroundColor="#27422C"
+                    :number="2"
+                />
+                <ReflectionItem
+                    title="Nutrition Research"
+                    description="During our project, we aimed to define a Cart Health Score Nutrition system. However, lacking nutrition expertise, we identified the need for further research and consultation with experts, like creators of existing nutrition rating systems."
+                    backgroundColor="#27422C"
+                    :number="3"
+                />
             </div>
-            <div class="reflection_items" style="gap: 10px">
-                <div class="circle reflection_2"> </div>
-                <h3>Coded Prototype</h3>
-                <p> After further testing, I would like to refine the idea with a coded prototype.
-                     This could also us to test with existing APIs and refine interactions that are impossible with Figma.</p>
-            </div>
-            <div class="reflection_items" style="gap: 10px">
-                <div class="circle reflection_3"></div>
-                <h3>Nutrition Research</h3>
-                <p>During our project, we aimed to define a Cart Health Score Nutrition system. However, lacking nutrition expertise,
-                     we identified the need for further research and consultation with experts, like creators of existing nutrition rating systems.</p>
-            </div>
-        </div>
         </sectionContainer>
         </fadeInComponent>
     </div>
@@ -441,12 +440,13 @@ import rowImageText from '../components/widgets/rowImageText.vue';
 import artboardObj from '@/components/widgets/artboardObj.vue';
 import artboardArr from '../components/artboardArrays/artboardQuestionsSG.js';
 import artboardFeatureArr from '../components/artboardArrays/artboardfeaturesSG.js';
+import ReflectionItem from '@/components/widgets/reflectionItem.vue';
 //import pdfDownloader from '@/components/widgets/pdfDownloader.vue';
 
 
 export default {
     name: 'socialGrocer',
-    components: { rowImageText, artboardObj },
+    components: { rowImageText, artboardObj, ReflectionItem },
     data() {
         return {
             c_zone_i:['/assets/social_grocer/sol.png', '/assets/social_grocer/thinking.png', '/assets/social_grocer/basket.png'],
@@ -828,5 +828,11 @@ export default {
         .carbon_people { 
             width: 100%;
         }
+    }
+
+    .grid_3fr_1fr {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
     }
 </style>

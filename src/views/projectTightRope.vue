@@ -241,21 +241,24 @@
         <h1>Reflection</h1>
         <p>This project was one of my favorites. While the timeline was fast, I am proud of how the it progressed and the final product we delivered. Below are next steps and changes I would make: </p>
         <div class="grid_3fr_1fr">
-          <div class="reflection_items" style="gap: 10px">
-            <div class="circle"> 1 </div>
-            <h3>Further Research</h3>
-            <p>With the focus of this project being on mental health, we wished to conduct further research to see how our projects messaging aligned with players mental models.</p>
-          </div>
-          <div class="reflection_items" style="gap: 10px">
-            <div class="circle"> 2 </div>
-            <h3>Showing not Telling</h3>
-            <p>We refined the narrative, but the current version with two friends discussing mental health felt too direct. If research supports it, I’d consider revising to show rather than tell.</p>
-          </div>
-          <div class="reflection_items" style="gap: 10px">
-            <div class="circle"> 3 </div>
-            <h3>Using A Gaming Platform</h3>
-            <p>Using P5.js was fun for building the game, but its lack of structure limited us given the timeline. In the future, I'd consider converting it to a gaming engine like Unity.</p>
-          </div>
+          <ReflectionItem
+            title="Further Research"
+            description="With the focus of this project being on mental health, we wished to conduct further research to see how our projects messaging aligned with players mental models."
+            backgroundColor="black"
+            :number="1"
+          />
+          <ReflectionItem
+            title="Showing not Telling"
+            description="We refined the narrative, but the current version with two friends discussing mental health felt too direct. If research supports it, I'd consider revising to show rather than tell."
+            backgroundColor="black"
+            :number="2"
+          />
+          <ReflectionItem
+            title="Using A Gaming Platform"
+            description="Using P5.js was fun for building the game, but its lack of structure limited us given the timeline. In the future, I'd consider converting it to a gaming engine like Unity."
+            backgroundColor="black"
+            :number="3"
+          />
         </div>
       </sectionContainer>
     </fadeInComponent>
@@ -274,8 +277,12 @@
 import woz_text_1 from 'raw-loader!../assets/project_tightrope/code_files/woz_1.txt';
 import woz_text_2 from 'raw-loader!../assets/project_tightrope/code_files/woz_2.txt';
 import woz_text_3 from 'raw-loader!../assets/project_tightrope/code_files/woz_3.txt';
+import ReflectionItem from '@/components/widgets/reflectionItem.vue';
 export default {
   name: 'projectTightRope',
+  components: {
+    ReflectionItem,
+  },
   data() {
       return {
         width_val: window.innerWidth,

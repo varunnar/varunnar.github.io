@@ -10,14 +10,19 @@
         </div>
         <div class="projects">
           <div class="projects-obj">
-            <div v-for="object in objects" class="project-object-set" :key="object.getProjectName()">
-              <div :class="'project-obj ' + object.getProjectName()" :key="object.getProjectName()" :objectinfo="object.getProjectName()" @click="navigateToPage(object.getProjectName())"></div>
-              <div class="text_info" v-text="object.getProjectTitle()" @click="navigateToPage(object.getProjectName())"></div>
-              <div class="tags_object">
-              <div class="tags" :class="{active: isSelected(tag)}" v-for="tag in object.getTags()" @click="addTag(tag)" :key="object + ': ' + tag" v-text="tag"></div>
-            </div>
+            <transition-group name="project-fade">
+              <div v-for="object in visibleProjects" class="project-object-set" :key="object.getProjectName()">
+                <div :class="'project-obj ' + object.getProjectName()" :key="object.getProjectName()" :objectinfo="object.getProjectName()" @click="navigateToPage(object.getProjectName())"></div>
+                <div class="text_info" v-text="object.getProjectTitle()" @click="navigateToPage(object.getProjectName())"></div>
+                <div class="tags_object">
+                  <div class="tags" :class="{active: isSelected(tag)}" v-for="tag in object.getTags()" @click="addTag(tag)" :key="object + ': ' + tag" v-text="tag"></div>
+                </div>
+              </div>
+            </transition-group>
           </div>
-         </div>
+        </div>
+        <div class="toggle-button-container">
+          <button class="toggle-button" @click="toggleShowAll">{{ showAll ? 'Show Main 6' : 'See More' }}</button>
         </div>
         <!-- <div class="header_title">
           <div>Experience</div> -->
@@ -47,7 +52,8 @@
     data() {
       return {
         storyglowText: storyglowText,
-        filter_array: []
+        filter_array: [],
+        showAll: false
       }
     },
     computed: {
@@ -79,13 +85,16 @@
         //   }
         //   return false;
         // }
+        visibleProjects() {
+          return this.showAll ? this.objects : this.objects.slice(0, 6);
+        }
     },
     methods: {
         navigateToPage: function(object) {
-          // if (object != 'youtubeData') {
-            let individual_project = 'individual-project/' + object;
-            this.$router.push({name: individual_project})
-          //}
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+          let individual_project = 'individual-project/' + object;
+          this.$router.push({name: individual_project});
         },
 
         addTag: function(tag) {
@@ -98,6 +107,9 @@
         },
         isSelected(tag) {
           return this.filter_array.includes(tag);
+        },
+        toggleShowAll() {
+          this.showAll = !this.showAll;
         }
     }
   }
@@ -164,7 +176,7 @@
       font-size: 25px;
     }
     .tags_object {
-      width: 100%;
+      width: 90%;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -315,6 +327,50 @@
       background-color: #000000;
       background-size: contain;
       background-repeat: no-repeat; 
-      background-size: 80%; /* Added to ensure no repetition of background image */
+      background-size: 80%;
+    }
+
+    .toggle-button-container {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .toggle-button {
+      background-color: #014a39;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-button:hover {
+      background-color: #013528;
+      transform: translateY(-2px);
+    }
+
+    /* Project fade animation */
+    .project-fade-enter-active,
+    .project-fade-leave-active {
+      transition: all 0.5s ease;
+      position: relative;
+    }
+
+    .project-fade-enter-from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .project-fade-leave-to {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .project-fade-move {
+      transition: transform 0.5s ease;
     }
 </style>

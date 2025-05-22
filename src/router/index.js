@@ -67,7 +67,7 @@ const routes = [
   },
 
   {
-    path: '/dataVizPortal',
+    path: '/studentDataVisualization',
     name: 'individual-project/DataViz',
     component: () => import( '../views/globem.vue'),
   },
@@ -75,6 +75,7 @@ const routes = [
     path: '/seagate',
     name: 'individual-project/seagate',
     component: () => import( '../views/individualProject.vue'),
+    //component: () => import( '../views/seagate.vue'),
   },
   {
     path: '/mhcid',
@@ -118,10 +119,26 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  scrollBehavior (to, from, savedPosition) {
-    console.log("router to: ", to)
-    return { x: 0, y: 0 }
+  scrollBehavior(to, from, savedPosition) {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    return { top: 0 }
   }
 })
+
+// Global navigation guard
+router.beforeEach((to, from, next) => {
+  // This will be called before any route change
+  if (to.name && to.name.startsWith('individual-project')) {
+    next();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'  // Use 'instant' instead of 'smooth'
+    });
+  } else {
+    next();
+  }
+});
 
 export default router
