@@ -359,6 +359,7 @@
                         <ReflectionItem
                             title="The Value of a Test First Approach"
                             description="While working on Lyve Pilot, I was able to see the value of a test first approach, ensuring high quality code from the beginning and reducing the amount of bugs in the codebase."
+                            backgroundColor="#E7EDE8"
                             :number="3"
                         />
                         <ReflectionItem
