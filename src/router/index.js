@@ -74,8 +74,8 @@ const routes = [
   {
     path: '/seagate',
     name: 'individual-project/seagate',
-    component: () => import( '../views/individualProject.vue'),
-    //component: () => import( '../views/seagate.vue'),
+    //component: () => import( '../views/individualProject.vue'),
+    component: () => import( '../views/seagate.vue'),
   },
   {
     path: '/mhcid',

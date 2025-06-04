@@ -38,7 +38,7 @@
     <fadeInComponent>
         <sectionContainer class="red_off_section youtubeData">
             <h2>Investigating Google Youtube Data API</h2>
-            <div class="grid_4fr_2fr_1fr" style="margin-bottom: 50px;">
+            <div class="grid_2fr_1fr" style="margin-bottom: 50px;">
             <p>The first step in building my webpage was finding the core of any visualization — <b>Data!</b> 
                 I wanted something <b>personal</b> to each user for a more engaging experience. 
                 I chose to use Google’s YouTube API, allowing users to log in and receive custom visualizations. 
@@ -54,7 +54,7 @@
 
     <fadeInComponent>
         <sectionContainer class="red_section D3">
-            <div class="grid_4fr_2fr_1fr">
+            <div class="grid_2fr_1fr">
                 <div style="margin-top: auto; margin-bottom: auto;">
                 <h2>Utilizing D3.js</h2>
                 <p>D3.js was my choice of visualization language. I have previously

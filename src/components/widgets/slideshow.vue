@@ -7,7 +7,7 @@
           <div v-if="updateImage" class="slideshow_container" :key="imagePaths[currentIndex]" :style="`background-color: ${backgroundColor};`">
             <div :class="textLocation">
               <div>
-                <img v-if="imagePaths && imagePaths.length > 0" :src="imagePaths[currentIndex]" alt="Slideshow Image" class="slideshow-image" :key="imagePaths[currentIndex]" @click="openModal"/>
+                <img v-if="imagePaths && imagePaths.length > 0" :src="imagePaths[currentIndex]" alt="Slideshow Image" class="slideshow-image" :key="imagePaths[currentIndex]" @click="openModal" style="margin: auto;"/>
                 <div v-if="htmlUrls && htmlUrls.length > 0" v-html="htmlContent" :key="htmlUrls[currentIndex]"></div>
               </div>
               <div class="slideshow_text">
@@ -110,6 +110,10 @@
         type: Boolean,
         default: true
       },
+      textLeft: {
+        type: Boolean,
+        default: false
+      },
       album: {
         type: String,
         required: false
@@ -189,8 +193,10 @@
         return addition_class;
       },
       textLocation() {
-        let text_class = this.textBottom ? 'bottom_text' : 'top_text';
-        return text_class;
+        if (this.textLeft) {
+          return 'left_text';
+        }
+        return this.textBottom ? 'bottom_text' : 'top_text';
       }
     },
     methods: {
@@ -423,10 +429,13 @@
   gap: 20px;
   text-align: left;
   justify-content: space-around;
+  align-items: center;
 }
 
 .left_text .slideshow_text {
+  min-width: 30%;
   max-width: 400px;
+  flex-shrink: 0;
 }
 
 .left_text .bodyArray {
@@ -454,6 +463,7 @@
 
   .left_text .slideshow_text {
     max-width: 100%;
+    min-width: 100%;
   }
 
   .left_text .bodyArray {

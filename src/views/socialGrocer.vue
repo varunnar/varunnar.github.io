@@ -36,7 +36,7 @@
 
         <fadeInComponent>
         <sectionContainer class="green situation">
-            <div class="grid_4fr_2fr_1fr">
+            <div class="grid_2fr_1fr">
                 <div style="max-width: 500px">
                     <h1>Who is Our Sponsor: Building H?</h1>
                     <p>For our capstone project we were sponsored by Building H. Building H is a nonprofit organization that looks 
@@ -97,7 +97,7 @@
                     <p><b>Our Research Question:</b> <em>How do young working professionals living and dining alone make decisions
                             when ordering groceries online?</em></p>
                 </div>
-                <div class="grid_4fr_2fr_1fr">
+                <div class="grid_2fr_1fr">
                     <div style="max-width: 450px;">
                         <h2>Participant Requirements</h2>
                         <p>We Interviewed <b>8 participants</b> with the following criteria:</p>
@@ -215,7 +215,7 @@
                 <div class="ideation_gif"></div>
             </div>
             <div class="line-with-text"><h3> Design Principles</h3></div>
-            <div class="grid_4fr_2fr_1fr">
+            <div class="grid_2fr_1fr">
                 <div class="design_p">
                     <div class="flex_string_icon spacing_small">
                         <img src="@/assets/social_grocer/connects.png" style="max-width: 50px; aspect-ratio: 1/1"/>
@@ -259,7 +259,7 @@
             <h2>Guiding Questions</h2>
             <!-- <div class="flex_sa artboard_container" v-for="items in ideation_artboard_content" :key="items" style="align-items: flex-start; margin-bottom: 200px;"> -->
                       <!-- style="flex: 1 1 0; width: 0;" -->
-                <div class="grid_4fr_2fr_1fr">
+                <div class="grid_2fr_1fr">
             <div class="artboard_container" v-for="items in ideation_artboard_content" :key="items">
                 <fadeInComponent>   
                         <artboardObj

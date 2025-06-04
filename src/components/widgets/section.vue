@@ -1,5 +1,5 @@
 <template>
-    <div class="section">
+    <div class="sectionContainer">
       <slot></slot>
     </div>  
   </template>
@@ -21,7 +21,7 @@
   </script>
   
   <style lang="scss">
-  .section {
+  .sectionContainer {
     max-width: 100%;
     padding-left: 5%;
     padding-right: 5%;
@@ -33,6 +33,16 @@
     margin-bottom: 5%;
     border-radius: 20px;
   }
+
+  .sectionContainer > p {
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .sectionContainer > p {
+        width: 100%;
+    }
+}
 
   @media (max-width: 500px) {
     .section {

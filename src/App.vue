@@ -51,6 +51,10 @@ h3 {
   text-transform: uppercase;
 }
 
+h4 {
+  font-size: 20px;
+}
+
 p {
   font-size: 20px;
 }
