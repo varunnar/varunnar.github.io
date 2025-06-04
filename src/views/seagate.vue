@@ -345,21 +345,20 @@
                     </p>
                     <div class="grid_4fr_2fr_1fr">
                         <ReflectionItem
-                            title="Enterprise-Scale Development"
-                            description="Building solutions for petabyte-scale data movement taught me the importance of performance optimization, error handling, and system reliability at enterprise scale."
+                            title="Splitting Tasks Appropriately"
+                            description="Work on Lyve Pilot, I was talk the value of splitting tasks appropriately and making incremental progress in order to avoid interference with other engineers."
                             backgroundColor="#E7EDE8"
                             :number="1"
                         />
                         <ReflectionItem
-                            title="Microservices Architecture"
-                            description="Designing and maintaining microservices taught me the value of service isolation, clear API contracts, and the importance of robust inter-service communication patterns."
+                            title="Fullstack Experience"
+                            description="This project added backend experience to my skillset, allowing me to work across the stack and understand the full picture of a project."
                             backgroundColor="#E7EDE8"
                             :number="2"
                         />
                         <ReflectionItem
-                            title="Test Automation"
-                            description="Implementing Selenium testing frameworks showed me how crucial automated testing is for maintaining quality in large-scale applications and ensuring reliable deployments."
-                            backgroundColor="#E7EDE8"
+                            title="The Value of a Test First Approach"
+                            description="While working on Lyve Pilot, I was able to see the value of a test first approach, ensuring high quality code from the beginning and reducing the amount of bugs in the codebase."
                             :number="3"
                         />
                         <ReflectionItem
