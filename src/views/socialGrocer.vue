@@ -6,9 +6,18 @@
             <div class="logo_image"></div>
             </div>
             <div class="hero_img"></div>
-            <p><b>Transform grocery shopping from an ordinary task to a channel for social connection with Social Grocer. 
+            <p style="width: 100%"><b>Transform grocery shopping from an ordinary task to a channel for social connection with Social Grocer. 
                 Connect with friends in real-time, make mindful food choices, and turn online shopping into an engaging, health-focused social adventure. </b></p>
-            <h2>Members</h2>
+
+            <projectDetails
+                :members="['Varun Narayanswamy', 'Ivy Tseng', 'Louise Lu', 'Stevie Lemons']"
+                role="Lead Developer, Lead Engineer, Lead Researcher"
+                :timelineNumber="22"
+                timelineUnit="weeks"
+                style="margin-top: 20px;"
+                backgroundColor="#FFFFFF"
+            />
+            <!-- <h2>Members</h2>
             <ul>
                 <li><p><b>Varun Narayanswamy (Designer, Lead Developer)</b></p></li>
                 <li><p>Ivy Tseng (Lead Designer)</p></li>
@@ -16,7 +25,7 @@
                 <li><p>Stevie Lemons (Lead Researcher)</p></li>
             </ul>
             <h2>Timeline</h2>
-            <p>This project was my capstone project in the Human-Computer Interaction and Design.<b>(MHCI+D)</b>. It ran from April 2024 to August 2024 <b>(22 weeks)</b></p>
+            <p>This project was my capstone project in the Human-Computer Interaction and Design.<b>(MHCI+D)</b>. It ran from April 2024 to August 2024 <b>(22 weeks)</b></p> -->
         </sectionContainer>
         </fadeInComponent>
         <fadeInComponent>

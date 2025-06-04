@@ -2,11 +2,17 @@
     <fadeInComponent>
         <sectionContainer class="red_off_section introduction">
             <h1>Youtube Stats Analyzer</h1>
-            <p>A passion project that providers users with visualizations of their youtube usage data</p>
             <div class="youtube_analysis_hero_img"></div>
-            <p>YouTube Stats Analyzer is a project that provides users with a visual representation of their YouTube usage data. 
+            <p style="width: 100%; text-align: left;">YouTube Stats Analyzer is a project that provides users with a visual representation of their YouTube usage data. 
    It analyzes this data to deliver insights into viewing patterns and offers an AI-generated list of recommendations based on the channels they watch.</p>
-
+            <projectDetails
+                :members="['Varun Narayanswamy']"
+                role="Lead Developer"
+                :timelineNumber="6"
+                timelineUnit="weeks"
+                style="margin-top: 20px;"
+                backgroundColor="#FFFFFF"
+            />
         </sectionContainer>
     </fadeInComponent>
 

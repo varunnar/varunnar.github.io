@@ -48,7 +48,10 @@ const project_tags = {
     'MHCI+D': "MHCI+D",
     'case_study': 'Case Study',
     'frontend': 'Frontend',
-
+    'backend': 'Backend',
+    'fullstack': 'Fullstack',
+    'test': 'Test',
+    'work_experience': 'Work Experience'
 }
 
 const storyglow = new projectClass("storyglow","Storyglow", 
@@ -72,7 +75,9 @@ const capstone_mhcid = new projectClass('socialGrocer', 'Social Grocer', [projec
 
 const data_visualization = new projectClass('DataViz', 'Health Data Visualization', [project_tags.health, project_tags.data_visualization, project_tags["MHCI+D"], project_tags.data_visualization, project_tags.frontend, project_tags.case_study ])
 
-const youtubeData = new projectClass('youtubeData', 'Youtube Data Visualization', [project_tags.data_visualization, project_tags.case_study, project_tags.frontend])
+const youtubeData = new projectClass('youtubeData', 'Youtube Data Visualization', [project_tags.data_visualization, project_tags.case_study, project_tags.frontend]);
+
+const seagate = new projectClass('seagate', 'Lyve Pilot', [project_tags.case_study, project_tags.frontend, project_tags.backend, project_tags.work_experience]);
 
 export { 
     storyglow,
@@ -84,5 +89,6 @@ export {
     project_tightrope,
     capstone_mhcid,
     data_visualization,
-    youtubeData
+    youtubeData,
+    seagate
 }

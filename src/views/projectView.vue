@@ -21,7 +21,7 @@
             </transition-group>
           </div>
         </div>
-        <div class="toggle-button-container">
+        <div class="toggle-button-container" v-if="objects.length > 6">
           <button class="toggle-button" @click="toggleShowAll">{{ showAll ? 'Show Main 6' : 'See More' }}</button>
         </div>
         <!-- <div class="header_title">
@@ -46,7 +46,7 @@
 
 <script>
   import storyglowText from 'raw-loader!./projects/storyglow.txt'
-  import {youtubeData, storyglow, munchmaps, heartbeat_checker, map_visualization, alpaca, fractal, project_tightrope, capstone_mhcid, data_visualization} from './projectClass.js'
+  import {youtubeData, storyglow, munchmaps, heartbeat_checker, map_visualization, alpaca, fractal, project_tightrope, capstone_mhcid, data_visualization, seagate} from './projectClass.js'
   export default {
     name: 'projectView',
     data() {
@@ -58,7 +58,7 @@
     },
     computed: {
         objects() {
-            let all_proj = [capstone_mhcid, project_tightrope, youtubeData, data_visualization, storyglow, munchmaps, heartbeat_checker, 
+            let all_proj = [capstone_mhcid, project_tightrope, youtubeData, data_visualization, seagate, storyglow, munchmaps, heartbeat_checker, 
             map_visualization, alpaca, fractal];
             if (this.filter_array.length == 0) {
               return all_proj;
@@ -328,6 +328,14 @@
       background-size: contain;
       background-repeat: no-repeat; 
       background-size: 80%;
+    }
+
+    .seagate {
+      background-image: url("../assets/seagate/computer_1.png");
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #091C00;
     }
 
     .toggle-button-container {

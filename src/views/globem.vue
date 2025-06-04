@@ -10,10 +10,18 @@
         </div>
   
         <div class="main_img"></div>
-        <h2> Team</h2>
+        <projectDetails
+          :members="['Mars Gao', 'Soham Gadgil', 'Varun Narayanswamy']"
+          role="Lead Visualization Developer"
+          :timelineNumber="4"
+          timelineUnit="months"
+          style="margin-top: 20px;"
+          backgroundColor="#FFFFFF"
+        />
+        <!-- <h2> Team</h2>
         <p>Mars Gao, Soham Gadgil, <b>Varun Narayanswamy</b></p>
         <h2>Timeline</h2>
-        <p>March 2024 - June 2024</p>
+        <p>March 2024 - June 2024</p> -->
       </sectionContainer>
     </fadeInComponent>
 

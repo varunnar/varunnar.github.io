@@ -6,6 +6,7 @@ import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 import imageObject from './components/imageObject.vue';
 import slideshow from '@/components/widgets/slideshow.vue';
 import sectionContainer from '@/components/widgets/section.vue';
+import projectDetails from '@/components/widgets/projectDetails.vue';
 import fadeInComponent from '@/components/fadeInComponent.vue';
 
 
@@ -14,5 +15,6 @@ app
     .component('imageObject', imageObject)
     .component('slideshow', slideshow)
     .component('sectionContainer', sectionContainer)
+    .component('projectDetails', projectDetails)
     .component('fadeInComponent', fadeInComponent);
 app.use(store).use(router).use(autoAnimatePlugin).mount('#app');

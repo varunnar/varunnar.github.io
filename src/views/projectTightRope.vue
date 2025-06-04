@@ -10,7 +10,13 @@
           :autoPlay="true">
         </slideshow>
         <div class="header_text"> A walk-up-and-play style multiplayer videogame, that teaches players about the physical/mental experience of anxiety and display the importance of community support. </div>
-        <div style="text-align: left; align-self: left;">
+        <projectDetails
+          :members="['Varun Narayanswamy', 'Samantha Ting', 'Annie Song', 'Husna Tabbassun']"
+          :role="'Lead Game Developer and Designer'"
+          :timelineNumber="11"
+          :timelineUnit="'weeks'"
+        />
+        <!-- <div style="text-align: left; align-self: left;">
         <h2>Members</h2>
         <ul>
           <li><b>Varun Narayanswamy</b></li>
@@ -20,7 +26,7 @@
         </ul>
         <h2>Timeline</h2>
         <p>This project originated from the Prototyping Studio course in the Master's program for Human-Computer Interaction and Design.<b>(MHCI+D)</b>. It ran from January 2024 to March 2024 <b>(11 weeks)</b></p>
-        </div>
+        </div> -->
       </sectionContainer>
     </fadeInComponent> 
 
