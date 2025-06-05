@@ -243,28 +243,28 @@
                             description="The Portal-Device is the service that manages the devices that are connected to the system. It is built with Node.js and Express."
                             icon="/assets/seagate/microservices_1.png"
                             headerSize="20px"
-                            backgroundColor=""
+                            backgroundColor="#ffffff"
                         ></reflection-item>
                         <reflection-item
                             title="Portal-API"
                             description="The Portal-API is the service that provides the API for the frontend. It is built with Node.js and Express."
                             icon="/assets/seagate/microservices_2.png"
                             headerSize="20px"
-                            backgroundColor=""
+                            backgroundColor="#ffffff"
                         ></reflection-item>
                         <reflection-item
                             title="Portal-Monitor"
                             description="The Portal-Monitor is the service that monitors the other microservices. It is built with Node.js and Express."
                             icon="/assets/seagate/microservices_3.png"
                             headerSize="20px"
-                            backgroundColor=""
+                            backgroundColor="#ffffff"
                         ></reflection-item>
                         <reflection-item
                             title="MongoDB Database"
                             description="The MongoDB Database is the database that stores the data for the microservices. It is built with MongoDB."
                             icon="/assets/seagate/microservices_6.png"
                             headerSize="20px"
-                            backgroundColor=""
+                            backgroundColor="#ffffff"
                         ></reflection-item>
                     </div>
 <!-- 
@@ -357,7 +357,7 @@
                             :number="2"
                         />
                         <ReflectionItem
-                            title="The Value of a Test First Approach"
+                            title="Test First Approach"
                             description="While working on Lyve Pilot, I was able to see the value of a test first approach, ensuring high quality code from the beginning and reducing the amount of bugs in the codebase."
                             backgroundColor="#E7EDE8"
                             :number="3"
