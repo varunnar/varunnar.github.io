@@ -248,13 +248,13 @@ export default {
         //     document.body.appendChild(script);
         // },
 
-        handlePickerCallback(data) {
-            if (data.action === google.picker.Action.PICKED) {
-                const selectedFiles = data.docs;
-                console.log('Selected files:', selectedFiles);
-                // Handle the selected files here
-            }
-        }
+        // handlePickerCallback(data) {
+        //     if (data.action === google.picker.Action.PICKED) {
+        //         const selectedFiles = data.docs;
+        //         console.log('Selected files:', selectedFiles);
+        //         // Handle the selected files here
+        //     }
+        // }
     }
 }
 </script>
