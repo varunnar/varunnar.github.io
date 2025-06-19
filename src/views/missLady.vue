@@ -229,24 +229,24 @@ export default {
         },
 
 
-        collectPhotosFromGooglePicker() {
-            // Load the Google Picker API script
-            const script = document.createElement('script');
-            script.src = 'https://apis.google.com/js/api.js';
-            script.onload = () => {
-                gapi.load('picker', () => {
-                    // Initialize the picker with the API key from .env
-                    const picker = new google.picker.PickerBuilder()
-                        .addView(google.picker.ViewId.PHOTOS)
-                        .setOAuthToken(process.env.VUE_APP_GOOGLE_API_KEY)
-                        .setDeveloperKey(process.env.VUE_APP_GOOGLE_API_KEY)
-                        .setCallback(this.handlePickerCallback)
-                        .build();
-                    picker.setVisible(true);
-                });
-            };
-            document.body.appendChild(script);
-        },
+        // collectPhotosFromGooglePicker() {
+        //     // Load the Google Picker API script
+        //     const script = document.createElement('script');
+        //     script.src = 'https://apis.google.com/js/api.js';
+        //     script.onload = () => {
+        //         gapi.load('picker', () => {
+        //             // Initialize the picker with the API key from .env
+        //             const picker = new google.picker.PickerBuilder()
+        //                 .addView(google.picker.ViewId.PHOTOS)
+        //                 .setOAuthToken(process.env.VUE_APP_GOOGLE_API_KEY)
+        //                 .setDeveloperKey(process.env.VUE_APP_GOOGLE_API_KEY)
+        //                 .setCallback(this.handlePickerCallback)
+        //                 .build();
+        //             picker.setVisible(true);
+        //         });
+        //     };
+        //     document.body.appendChild(script);
+        // },
 
         handlePickerCallback(data) {
             if (data.action === google.picker.Action.PICKED) {
