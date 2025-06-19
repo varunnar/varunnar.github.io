@@ -153,6 +153,13 @@
                 </sectionContainer>
             </div>
         </fadeInComponent>
+        <!-- New button to trigger Google Picker -->
+        <!-- <fadeInComponent>
+            <sectionContainer class="dark">
+                <h1>Collect Images from Google Drive</h1>
+                <button @click="collectPhotosFromGooglePicker" class="chapter_button">Open Google Picker</button>
+            </sectionContainer>
+        </fadeInComponent> -->
     </div>    
 </template>
 
@@ -218,6 +225,34 @@ export default {
                     .catch(error => {
                         console.error('Audio playback failed:', error);
                     });
+            }
+        },
+
+
+        collectPhotosFromGooglePicker() {
+            // Load the Google Picker API script
+            const script = document.createElement('script');
+            script.src = 'https://apis.google.com/js/api.js';
+            script.onload = () => {
+                gapi.load('picker', () => {
+                    // Initialize the picker with the API key from .env
+                    const picker = new google.picker.PickerBuilder()
+                        .addView(google.picker.ViewId.PHOTOS)
+                        .setOAuthToken(process.env.VUE_APP_GOOGLE_API_KEY)
+                        .setDeveloperKey(process.env.VUE_APP_GOOGLE_API_KEY)
+                        .setCallback(this.handlePickerCallback)
+                        .build();
+                    picker.setVisible(true);
+                });
+            };
+            document.body.appendChild(script);
+        },
+
+        handlePickerCallback(data) {
+            if (data.action === google.picker.Action.PICKED) {
+                const selectedFiles = data.docs;
+                console.log('Selected files:', selectedFiles);
+                // Handle the selected files here
             }
         }
     }
@@ -301,7 +336,4 @@ export default {
     .chapter_button:hover {
         background-color: rgb(255,255,224);
     }
-
-
-
 </style>

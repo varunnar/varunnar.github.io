@@ -22,12 +22,12 @@ const artboardFeatureArr = [
     {
         header: "Customize the Experience",
         paragraph: "Users select between Nudge Mode, which prioritizes social experiences with minimal health data, and Nutrition Mode, which displays Cart Health Scores and progress graphs to track dietary choices.",
-        images: ['/assets/social_grocer/artboard/social_grocer_cart_sharing_with_AI_posting.gif']
+        images: ['/assets/social_grocer/artboard/social_grocer_customized_final_screens.gif']
     },
     {
         header: "Share your Cart Using GenAI",
         paragraph: "Our Generative AI model instantly transforms cart contents into shareable, visually appealing knolling images, allowing friends and family to see what shoppers have purchased.",
-        images: ['/assets/social_grocer/artboard/social_grocer_customized_final_screens.gif']
+        images: ['/assets/social_grocer/artboard/social_grocer_cart_sharing_with_AI_posting.gif']
     },
     {
         header: "Add Images To Your Post",
