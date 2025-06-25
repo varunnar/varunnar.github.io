@@ -144,6 +144,7 @@
                     description="Using liked videos and subscriptions is valuable, but for more casual youtube users, historical video visualizations is more interesting and relevent. The Google Cloud API does not provide an endpoint for this, but I hope to investigate it more"
                     icon="/assets/youtubeDataViz/ref_1.png"
                     backgroundColor="#000000"
+                    textColor="#FFFFFF"
                 ></ReflectionItem>
 
                 <ReflectionItem
@@ -151,6 +152,7 @@
                     description="The current frontend collects both the YouTube and AI data directly. However, in traditional use cases, this task would instead be completed by a backend. I hope to create two microservices, one for AI and one for Google Cloud."
                     icon="/assets/youtubeDataViz/ref_2.png"
                     backgroundColor="#000000"
+                    textColor="#FFFFFF"
                 ></ReflectionItem>
 
                 <ReflectionItem
@@ -158,6 +160,7 @@
                     description="After collecting the necessary data, and further building out the architecture, I hope to publish this webpage. This would include defining a domain for the frontend and backend, allowing all emails on Google Cloud API, and considering more robust token usage."
                     icon="/assets/youtubeDataViz/ref_3.png"
                     backgroundColor="#000000"
+                    textColor="#FFFFFF"
                 ></ReflectionItem>
             </div>
         </sectionContainer>
