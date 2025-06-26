@@ -1,7 +1,7 @@
 <template>
     <div :class="`reflection_items ${addAnimation}`" :style="{ backgroundColor: backgroundColor}">
         <div v-if="icon && !noCircle" class="circle" :style="{'background-image': computedBackgroundImage, 'border-color': textColor, marginBottom: '5px'}"></div>
-        <div v-if="icon && noCircle && borderAdded" class="icon_no_circle" :style="{'background-image': computedBackgroundImage, marginBottom: '5px'}"></div>
+        <div v-if="icon && noCircle" class="icon_no_circle" :style="{'background-image': computedBackgroundImage, marginBottom: '5px'}"></div>
         <div v-else-if="number > 0" class="circle number-circle && borderAdded" :style="{'background-color': textColor, color: backgroundColor, 'border-color': textColor, marginBottom: '5px'}">{{ number }}</div>
         <h3 :style="{ fontSize: headerSize, color: textColor, textAlign: alignText, marginTop: '5px', marginBottom: '5px' }">{{ title }}</h3>
         <p :style="{ color: textColor, textAlign: alignText, marginTop:'5px', marginBottom:'5px' }" v-html="formattedDescription"></p>
@@ -33,10 +33,6 @@ export default {
         textColor: {
             type: String,
             default: "#000000"
-        },
-        borderBool: {
-            type: Boolean,
-            default: false
         },
         number: {
             type: Number,
@@ -75,9 +71,6 @@ export default {
         },
         addAnimation(){
             return this.animationBool ? 'addAnimation' : '';
-        },
-        borderAdded() {
-            return this.borderBool ? 'borderAdded' : '';
         },
         alignText() {
             return this.leftAlignText ? 'left' : 'center';

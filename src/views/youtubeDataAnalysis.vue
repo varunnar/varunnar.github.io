@@ -145,6 +145,7 @@
                     icon="/assets/youtubeDataViz/ref_1.png"
                     backgroundColor="#000000"
                     textColor="#FFFFFF"
+                    noCircle="true"
                 ></ReflectionItem>
 
                 <ReflectionItem
@@ -153,6 +154,7 @@
                     icon="/assets/youtubeDataViz/ref_2.png"
                     backgroundColor="#000000"
                     textColor="#FFFFFF"
+                    noCircle="true"
                 ></ReflectionItem>
 
                 <ReflectionItem
@@ -161,6 +163,7 @@
                     icon="/assets/youtubeDataViz/ref_3.png"
                     backgroundColor="#000000"
                     textColor="#FFFFFF"
+                    noCircle="true"
                 ></ReflectionItem>
             </div>
         </sectionContainer>

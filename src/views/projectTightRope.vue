@@ -251,18 +251,21 @@
             title="Further Research"
             description="With the focus of this project being on mental health, we wished to conduct further research to see how our projects messaging aligned with players mental models."
             backgroundColor="black"
+            textColor="white"
             :number="1"
           />
           <ReflectionItem
             title="Showing not Telling"
             description="We refined the narrative, but the current version with two friends discussing mental health felt too direct. If research supports it, I'd consider revising to show rather than tell."
             backgroundColor="black"
+            textColor="white"
             :number="2"
           />
           <ReflectionItem
             title="Using A Gaming Platform"
             description="Using P5.js was fun for building the game, but its lack of structure limited us given the timeline. In the future, I'd consider converting it to a gaming engine like Unity."
             backgroundColor="black"
+            textColor="white"
             :number="3"
           />
         </div>

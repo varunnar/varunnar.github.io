@@ -242,26 +242,31 @@
       </sectionContainer>
   </fadeInComponent>
 
-    <div class="grid_3fr_1fr">
+  <fadeInComponent>
+    <sectionContainer class="dark">
+      <h1>Reflection</h1>
+      <div class="grid_3fr_1fr">
         <ReflectionItem
             title="Further Research"
             description="I would like to conduct further research into how to best visualize the data. While the current visualization is effective, I believe there could be better ways to show the relationships between different metrics."
-            backgroundColor="#27422C"
+            backgroundColor="#A1C0E2"
             :number="1"
         />
         <ReflectionItem
             title="Update Visualization Model"
             description="While vegalite provided us with a quick and easy way to test correlations and build graphics, using D3.js would allow us to have more control over the final product, and allow for more complex interactions."
-            backgroundColor="#27422C"
+            backgroundColor="#A1C0E2"
             :number="2"
         />
         <ReflectionItem
             title="Further Data Transformations"
             description="Much of the data still felt messy, and we were forced to make a number of assumptions. I would like to explore more transformations to the data to see if we can get a better understanding of the data."
-            backgroundColor="#27422C"
+            backgroundColor="#A1C0E2"
             :number="3"
         />
     </div>
+    </sectionContainer>
+  </fadeInComponent>
 
     </div> 
   </template>
@@ -270,6 +275,8 @@
   import { onMounted, ref, onBeforeUnmount } from 'vue';
   import { Runtime, Inspector } from '@observablehq/runtime';
   import overLappingButton from '../components/widgets/overLappingButton.vue';
+  import ReflectionItem from '@/components/widgets/reflectionItem.vue';
+
   // Statistically import the notebook like a local module
   import notebook from 'b02a387aa7a1c933'; // Adjust the name if the package exports it differently
   // import notebook2 from '8ec2a3db467cf4aa';
@@ -284,7 +291,7 @@
   
   export default {
     name: 'Note-book',
-    components: { overLappingButton },
+    components: { overLappingButton, ReflectionItem },
     data() {
       return {
         clicked: false,
