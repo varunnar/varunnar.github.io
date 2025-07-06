@@ -1,0 +1,44 @@
+<div class="iteration_chs">
+    <div class="grid_iteration">
+        <div class="header">
+            <div class="header_bubble">
+                <h3>01 Iteration</h3>
+            </div>
+            <ul>
+                <li><p>Incorporated a visually distinct Cart Health Score to the cart page for easy reference before check-out</p></li>
+            </ul>
+        </div>
+        <div class="it_1 screen screen_1"></div>
+        <div class="header">
+            <div class="header_bubble">
+                <h3>02 Iteration</h3>
+            </div>
+            <ul>
+                <li><p>Included information icon to explain Cart Health Score</p></li>
+                <li><p>Added Cart Health Score to the top bar for easy access while shopping</p></li>
+            </ul>
+        </div>
+        <div class="it_2 screen screen_1"></div>
+    </div> 
+</div>
+
+<style scoped>
+   @import url('/htmlWidgets/social_grocer/iterations.css');
+    @media (max-width: 1300px) {
+        .iteration_chs .grid_iteration {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .iteration_chs .grid_iteration {
+            grid-template-columns: 1fr;
+        }
+}
+   .iteration_chs .it_1.screen_1 {
+        background-image: url("../../assets/social_grocer/iterations/iteration_1_c_h_s.png");
+    }
+    .iteration_chs .it_2.screen_1 {
+        background-image: url("../../assets/social_grocer/iterations/iteration_2_c_h_s.png");
+    }
+</style>
