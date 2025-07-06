@@ -11,9 +11,9 @@
 
             <projectDetails
                 :members="['Varun Narayanswamy', 'Ivy Tseng', 'Louise Lu', 'Stevie Lemons']"
-                role="Lead Developer, Lead Engineer, Lead Researcher"
-                :timelineNumber="22"
-                timelineUnit="weeks"
+                role="Lead Developer, Data Visualization Developer, Designer, Lead Researcher"
+                :timelineNumber="6"
+                timelineUnit="months"
                 style="margin-top: 20px;"
                 backgroundColor="#FFFFFF"
             />
@@ -37,30 +37,16 @@
                             <h3 v-html="items['header']"></h3>
                             <p v-html="items['paragraph']"></p>
                         </div>
-                        <div class="feature_img" :style="`background-image: url(${items['images']});`"></div>
+                        <div class="feature_img" :style="`background-image: url(${items['images']}); max-height: 500px`"></div>
                     </div>
             </div> 
         </sectionContainer>
         </fadeInComponent>
 
         <fadeInComponent>
-        <sectionContainer class="green situation">
-            <div class="grid_2fr_1fr">
-                <div style="max-width: 500px">
-                    <h1>Who is Our Sponsor: Building H?</h1>
-                    <p>For our capstone project we were sponsored by Building H. Building H is a nonprofit organization that looks 
-                        to improve the world and environment by rating companies and informing them of areas of improvement with health, accessibility and more.
-                        You can learn more about them <a href="https://www.buildingh.org/"> here.</a> </p>
-                </div>
-                <div class="build_h_logo"></div>
-                </div>
-        </sectionContainer>
-        </fadeInComponent>
-
-        <fadeInComponent>
         <sectionContainer>
             <h1>Proposed Project</h1>
-            <p style="font-size: 30px;">Building H came to us with the following proposal: <em>"In the evolving <b>online grocery delivery marketplace</b>, how can we transform the space to make <b>healthier
+            <p style="font-size: 30px; width: 100%; text-align: left">Building H came to us with the following proposal: <em>"In the evolving <b>online grocery delivery marketplace</b>, how can we transform the space to make <b>healthier
                  food choices</b> not only easier but second nature?"</em></p>
         </sectionContainer>
         </fadeInComponent>
@@ -106,22 +92,22 @@
                     <p><b>Our Research Question:</b> <em>How do young working professionals living and dining alone make decisions
                             when ordering groceries online?</em></p>
                 </div>
-                <div class="grid_2fr_1fr">
+                <div class="grid_2fr_1fr" style="gap: 0px">
+                    <h2>Participant Requirements</h2>
+                    <h2>SME interviewes</h2>
                     <div style="max-width: 450px;">
-                        <h2>Participant Requirements</h2>
-                        <p>We Interviewed <b>8 participants</b> with the following criteria:</p>
+                        <p>We interviewed <b>8 participants</b> with the following criteria:</p>
                         <div class="flex_height_fit_items">
                             <img class="carbon_people" src="@/assets/social_grocer/carbon_people.png"/>
                             <ol class="target_population">
-                                <li>young adults (ages 18-35)</li>
+                                <li>Young adults (ages 18-35)</li>
                                 <li>Make individual food choices</li>
-                                <li>grocery shop once at least twice a month</li>
-                                <li>shop both online and in person</li>
+                                <li>Grocery shop once at least twice a month</li>
+                                <li>Shop both online and in person</li>
                             </ol>
                         </div>
                     </div>
                     <div>
-                        <h2>SME interviewes</h2>
                         <p> We conducted quantitative studies and consulted regularly with experts from <b>DoorDash</b>, <b>Uber Eats</b>, 
                             Tufts researchers who design the <b>Food Compass</b> Nutrition Rating System, and <b>UW Research</b>.</p>
 
@@ -414,6 +400,20 @@
         </fadeInComponent>
 
         <fadeInComponent>
+        <sectionContainer class="green situation">
+            <div class="grid_2fr_1fr">
+                <div style="max-width: 500px">
+                    <h1>Who is Our Sponsor: Building H?</h1>
+                    <p>For our capstone project we were sponsored by Building H. Building H is a nonprofit organization that looks 
+                        to improve the world and environment by rating companies and informing them of areas of improvement with health, accessibility and more.
+                        You can learn more about them <a href="https://www.buildingh.org/"> here.</a> </p>
+                </div>
+                <div class="build_h_logo"></div>
+                </div>
+        </sectionContainer>
+        </fadeInComponent>
+
+        <fadeInComponent>
         <sectionContainer class="off">
             <h1>Reflections</h1>
             <div class="grid_3fr_1fr">
@@ -421,18 +421,21 @@
                     title="Further Research"
                     description="Our groups constantly discussed many areas such as the impacts of social media in a sensitive space such as food health, or how to approach privacy with groceries. I would like to conduct further development"
                     backgroundColor="#27422C"
+                    textColor="#FFFFFF"
                     :number="1"
                 />
                 <ReflectionItem
                     title="Coded Prototype"
                     description="After further testing, I would like to refine the idea with a coded prototype. This could also us to test with existing APIs and refine interactions that are impossible with Figma."
                     backgroundColor="#27422C"
+                    textColor="#FFFFFF"
                     :number="2"
                 />
                 <ReflectionItem
                     title="Nutrition Research"
                     description="During our project, we aimed to define a Cart Health Score Nutrition system. However, lacking nutrition expertise, we identified the need for further research and consultation with experts, like creators of existing nutrition rating systems."
                     backgroundColor="#27422C"
+                    textColor="#FFFFFF"
                     :number="3"
                 />
             </div>

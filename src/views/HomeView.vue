@@ -7,7 +7,7 @@
             <h1>Welcome</h1>
             <p>Hello, my name is Varun Narayanswamy. I am a <em>Software Developer</em> and a <em>Designer</em></p>
             <div class="img_div">
-              <img src="../assets/linkedin_photo-removebg.png" alt="Varun profile photo">
+              <img alt="LinkedIn Photo" src="/assets/linkedin_photo-removebg.png">
             </div>
           </div>
         </div>
@@ -34,24 +34,12 @@ export default {
     }
   },
   mounted() {
-    console.log(project_tightrope)
     this.show = true;
   },
   methods: {
     navigateToPage: function(object) {
       let individual_project = 'individual-project/' + object;
       this.$router.push({name: individual_project}); 
-    },
-    social_media_click: function(event) {
-      if (event.target.id == "github") {
-        window.location.assign("https://github.com/varunnar");
-      } else if (event.target.id == "linkedin") {
-        window.location.assign("https://www.linkedin.com/in/varun-narayanswamy");
-      } else if (event.target.id == "instagram"){ 
-        window.location.assign("https://www.instagram.com/varun.narayanswamy/?hl=en");
-      } else {
-        console.log("invalid url");
-      }
     },
   },
   computed: {

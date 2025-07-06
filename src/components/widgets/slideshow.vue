@@ -5,6 +5,11 @@
       <div v-if="(imagePaths && imagePaths.length > 0) || (htmlUrls && htmlUrls.length > 0)" class="image-container">
         <transition :name="transitionName" mode="out-in">
           <div v-if="updateImage" class="slideshow_container" :key="imagePaths[currentIndex]" :style="`background-color: ${backgroundColor};`">
+            <div class="fullscreen-button" @click="openModal" :style="`color: ${textColor};`">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+              </svg>
+            </div>
             <div :class="textLocation">
               <div>
                 <img v-if="imagePaths && imagePaths.length > 0" :src="imagePaths[currentIndex]" alt="Slideshow Image" class="slideshow-image" :key="imagePaths[currentIndex]" @click="openModal" style="margin: auto;"/>
@@ -354,7 +359,6 @@
     box-sizing: border-box;
   }
   .slideshow {
-    text-align: center;
     position: relative;
     // display: flex;
     // flex-direction: column;
@@ -436,6 +440,7 @@
   min-width: 30%;
   max-width: 400px;
   flex-shrink: 0;
+  text-align: left;
 }
 
 .left_text .bodyArray {
@@ -541,10 +546,34 @@
   margin-top: 10px;
   overflow-y: auto; /* Allows text scroll if too long */
   max-height: 50%; /* Prevents text from taking too much space */
-  text-align: center;
+  text-align: left;
 }
 
+.fullscreen-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
 
+.fullscreen-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.fullscreen-button svg {
+  width: 20px;
+  height: 20px;
+}
 
 // .modal-content {
 //   // background-color: #fff;

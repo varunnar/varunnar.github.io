@@ -13,8 +13,8 @@
         <projectDetails
           :members="['Varun Narayanswamy', 'Samantha Ting', 'Annie Song', 'Husna Tabbassun']"
           :role="'Lead Game Developer and Designer'"
-          :timelineNumber="11"
-          :timelineUnit="'weeks'"
+          :timelineNumber="3"
+          :timelineUnit="'months'"
         />
         <!-- <div style="text-align: left; align-self: left;">
         <h2>Members</h2>
@@ -185,7 +185,7 @@
         <div class="software">
           <h2>Software Features</h2>
           <p>A large load of the work done next was within the software elements of the code. The finalized p5.js software code can be found <a href="https://editor.p5js.org/varunk.narayanswamy-round/sketches/F_rfpgcrT">here.</a></p>
-          <div class="grid_template">
+          <div class="grid_3fr_1fr">
             <div class="software_update" id="initial_story">
               <h3>Inital Story</h3>
               <img src="../assets/project_tightrope/storytelling_quick.gif" style="border-radius: 20px; width: 90%">
@@ -198,7 +198,7 @@
             </div>
             <div class="software_update" id="audio_input">
               <h3>Custom Audio Input</h3>
-              <iframe src="https://www.youtube.com/embed/OXjUl4lk9WI?si=CncVk3WJ-tt5TAjz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/OXjUl4lk9WI?si=CncVk3WJ-tt5TAjz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 90%"></iframe>
               <p>Using P5's built-in mic, player 1 recorded sound effects for positive and negative orb hits,
                 making the gameplay more personal.</p>
               <!-- <video  width= "400" style="border-radius: 20px">
@@ -227,18 +227,15 @@
     
     <fadeInComponent>
       <sectionContainer class="white_container showcase">
-          <h1>Showcase and Final Video</h1>
-          <div>
-          <h2>Showcase</h2>
-          <p>After completing our project we held a public showcase, where we could demo Project Tightrope. The follow is video content that displays that experience</p>
+        <h1>Showcase and Final Video</h1>
+        <div class="grid_2fr_1fr" style="gap: 10px">
+            <h3 style="margin: 5px">Showcase</h3>
+            <h3 style="margin: 5px"> Final Video</h3>
+            <p style="margin: 5px">We concluded our project by putting together a final video that explain our concept, approach and implementation.</p>
+            <p style="margin: 5px">After completing our project we held a public showcase, where we could demo Project Tightrope. The follow is video content that displays that experience</p>
           <iframe src="https://www.youtube.com/embed/DoGYisWcmu8?si=PPjT6fK4Aat2n2zx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin: auto"></iframe>
-        </div>
-
-        <div>
-        <h2> Final Video</h2>
-        <p>We concluded our project by putting together a final video that explain our concept, approach and implementation.</p>
-        <iframe src="https://www.youtube.com/embed/AU4bc2cfOug?si=Va65FkhBQWWL5tHL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen  style="margin: auto"></iframe>
-        </div>
+          <iframe src="https://www.youtube.com/embed/AU4bc2cfOug?si=Va65FkhBQWWL5tHL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen  style="margin: auto"></iframe>
+      </div>
       </sectionContainer>
   </fadeInComponent>
 
@@ -372,6 +369,7 @@ export default {
   .header_text {
     font-size: 30px;
     font-weight: bold;
+    text-align: left;
   }
 
   .hero_img_set{

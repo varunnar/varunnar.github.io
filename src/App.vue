@@ -8,14 +8,16 @@
     <component :is="Component" />
   </transition>
 </router-view>
+  <ScrollIndicator />
 </template>
 
 <script>
 import navigation from './components/navigation.vue';
+import ScrollIndicator from './components/ScrollIndicator.vue';
 
 export default{
   name: 'App',
-  components: { navigation }
+  components: { navigation, ScrollIndicator }
 }
 </script>
 

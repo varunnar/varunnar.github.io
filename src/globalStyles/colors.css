@@ -30,6 +30,11 @@
     background-color: #fbf8f0;
 }
 
+:root {
+    --customgreen: #014a39;
+    --offwhite: #fbf8f0;
+  }
+
 nav a.router-link-exact-active {
     color: #19945d;
   }
@@ -37,3 +42,6 @@ nav a.router-link-exact-active {
     /* color: #fceab7; */
     color: #000101;
   }
+
+
+  

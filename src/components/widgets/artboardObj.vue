@@ -69,7 +69,7 @@
       },
       artboardHeight: {
         type: String,
-        default: "600px"
+        default: "300px"
       },
       imageSize: {
         type: String,
@@ -120,7 +120,6 @@
   <style scoped>
   .artboard-container {
     position: relative;
-    height: 100%;
     width: 100%;
     border-radius: 20px;
     padding: 20px;
