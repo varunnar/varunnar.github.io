@@ -1,8 +1,5 @@
 <template>
   <h1>Who is Varun Narayanswamy?</h1>
-  <!-- <div class="img_div">
-    <img alt="LinkedIn Photo" src="/assets/linkedin_photo-removebg.png">
-  </div> -->
   <div class="paragraph">
     <div class="grid_2fr_1fr">
       <slideshow 
@@ -23,7 +20,7 @@
       </div>
   </div>
   </div>
-  <div style="text-align: left;">
+  <div style="text-align: left; width: 90%; margin: auto;">
     <h2>What am I interested in right now?</h2>
     <div class="grid_3fr_1fr" style="margin-bottom: 40px; width: 100%;">
       <reflection-item
