@@ -1,9 +1,0 @@
-The fractal project is a musical data visualization project developed for a Markov Chain Project. *
-
-This project takes in a song and evaluates a number of different aspects such as current volume, frequency, and rhythm. These factors make an impact on the size of the fractal design, the speed of the fractal's rotation, and the colors of the branches. *
-
-The project was developed in Processing, using Java and Python. This application uses the Fast Fourier Transformation Matrix to analyzing an MP3 of music, and builds the fractal tree with a variety of different design determined by the sound waves the matrix interprets. *
-
-FRAME #### https://www.youtube-nocookie.com/embed/o_1kU06HWPE #### 800px #### 450px *
-
-LINK ####  Github Link #### https://github.com/jackspicer1229/music_generated_fractals

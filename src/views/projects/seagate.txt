@@ -1,6 +1,0 @@
-After graduating I moved on to work for Seagate Technology. Here I joined a team known as Lyve Pilot. 
-Lyve Pilot worked on creating a platform where customers could securely move and manipulate data across devices and the cloud.*
-IMAGE ####seagateGroupPhoto.png*
-As a software engineering I was exposed to a number of different planning, coding and processing techniques and many new softwares. I worked on fullstack coding, databases, SAAS deployment, and UI and API testing.
-Below are a list of technologies I used while at Seagate *
-LIST #### Vue.js #### Selenium #### VSCode #### Node.js #### Express.js #### Typescript #### Javascript #### Python #### MongoDB #### Scale Agile Framework #### Kubernetes #### Jira #### Sharepoint #### Teams #### RabbitMQ #### S3 #### Jenkins #### DockerAzure #### Redis #### SonarQube

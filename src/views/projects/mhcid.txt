@@ -1,5 +1,0 @@
-In 2023, I was accepted in the University of Washington's Master's for Human Computer Interaction and Design. *
-This multidisciplinary program includes faculty from 4 programs at the University of Washington. These include the departments are Computer Science and Engineering, Human Centered Design and Engineering, the Information School, and the Division of Design in the School of Art + Art History + Design.*
-The program utilizes a cohort model, and over the course of 11 months, teaches it's students about a multitude of different design skills.*
-
-LIST #### Figma #### Physical Computation #### P5 #### javascript #### 3D printing #### User Research Skills #### Design Skills
