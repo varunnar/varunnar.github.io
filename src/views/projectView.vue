@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="toggle-button-container" v-if="objects.length > 6">
-          <button class="toggle-button" @click="toggleShowAll">{{ showAll ? 'Show Main 6' : 'See More' }}</button>
+          <button class="toggle-button" @click="toggleShowAll">{{ showAll ? 'Show Less' : 'Show More' }}</button>
         </div>
         <!-- <div class="header_title">
           <div>Experience</div> -->
@@ -126,7 +126,6 @@
       transition: all 2s ease;
     }
     .project-obj, .text_info {
-      filter: brightness(20%);
       margin-bottom: 10px;
     }
     .project-obj:hover, .text_info:hover {
@@ -161,6 +160,7 @@
       margin-right: 2%;
       margin-top: 2%;
       margin-bottom: 2%;
+      text-align: left;
     }
     @media (max-width: 960px) {
       .projects_page {
@@ -276,7 +276,7 @@
       background-image: url("../assets/project-imgs/D3.png");
       background-size: 100%;
       background-color: white;
-      border-width: 2px;
+      border-width: 1px;
       border-color: #014a39;
       border-style: solid;
     }
@@ -284,7 +284,7 @@
       background-image: url("../assets/project-imgs/heartbeatChecker.png");
       background-size: 65%;
       background-color: white;
-      border-width: 2px;
+      border-width: 1px;
       border-color: #014a39;
       border-style: solid;
     }
@@ -308,6 +308,7 @@
       background-size: contain;
       background-size: 80%;
       background-color: rgb(255, 235, 235);
+      border: 1px solid #000000;
     }
 
     .socialGrocer {
@@ -315,8 +316,8 @@
       background-size: cover;
       background-position: center;
       border-color: #014a39;
-      border-width: 10px;
       background-color: #FCFBF9;
+      border: 1px solid #014a39;
     }
 
     .youtubeData {

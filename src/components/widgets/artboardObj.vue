@@ -19,9 +19,12 @@
         </div>
         <!-- Images -->
         <div class="images" :style="`max-width: ${imageSize}`">
-          <div class="image-wrapper" v-for="(image, index) in images" :key="index" :style="`background-image: url(${images}); max-width: ${imageSize};
-          aspect-ratio: ${aspectRatio}; background-size: ${backgroundSize};`">
-            <!-- <img :src="image" alt="widget image" :style="`max-width: ${imageSize};`"/> -->
+          <div class="image-wrapper" v-for="(image, index) in images" :key="index">
+            <CustomImage
+              :src="image"
+              :alt="header ? header : 'artboard image'"
+              :fullscreenEnabled="true"
+            />
           </div>
         </div>
       </div>
@@ -221,7 +224,7 @@
     justify-content: space-between;
     margin-top: 30px;
     gap: 20px;
-    align-items: center;
+    align-items: top;
   }
 
   @media (max-width: 850px) {

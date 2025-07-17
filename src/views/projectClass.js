@@ -55,13 +55,13 @@ const project_tags = {
 }
 
 const storyglow = new projectClass("storyglow","Storyglow", 
-    [project_tags.mobile_app, project_tags.storytelling, project_tags.iOS, project_tags.prototype]);
+    [project_tags.mobile_app, project_tags.storytelling, project_tags.iOS]);
 
  const munchmaps = new projectClass("munchmaps","MunchMaps", 
     [project_tags.mobile_app, project_tags.iOS, project_tags.prototype]);
 
 const heartbeat_checker = new projectClass("heartbeatChecker","HeartbeatChecker Mobile App", 
-[project_tags.mobile_app, project_tags.health, project_tags.iOS, project_tags.prototype]);
+[project_tags.mobile_app, project_tags.health, project_tags.iOS]);
 
 const map_visualization = new projectClass('D3', 'Map Visualization', [project_tags.data_visualization, project_tags.map]);
 
@@ -69,15 +69,15 @@ const alpaca = new projectClass('alpaca', 'AlpacaML', [project_tags.mobile_app, 
 
 const fractal = new projectClass('fractal', 'Music Visualization', [project_tags.data_visualization, project_tags.music, project_tags.math]);
 
-const project_tightrope = new projectClass('projectTightrope', 'Project Tightrope', [project_tags.game, project_tags.prototype, project_tags.hardware, project_tags["MHCI+D"], project_tags.case_study])
+const project_tightrope = new projectClass('projectTightrope', 'Project Tightrope', [project_tags.game, project_tags.prototype, project_tags["MHCI+D"]])
 
-const capstone_mhcid = new projectClass('socialGrocer', 'Social Grocer', [project_tags.health, project_tags.prototype, project_tags.data_visualization, project_tags["MHCI+D"], project_tags.case_study])
+const capstone_mhcid = new projectClass('socialGrocer', 'Social Grocer', [project_tags.health, project_tags.prototype, project_tags.data_visualization, project_tags["MHCI+D"]])
 
-const data_visualization = new projectClass('DataViz', 'Health Data Visualization', [project_tags.health, project_tags.data_visualization, project_tags["MHCI+D"], project_tags.data_visualization, project_tags.frontend, project_tags.case_study ])
+const data_visualization = new projectClass('DataViz', 'Health Data Visualization', [project_tags.health, project_tags["MHCI+D"], project_tags.data_visualization, project_tags.frontend ])
 
-const youtubeData = new projectClass('youtubeData', 'Youtube Data Visualization', [project_tags.data_visualization, project_tags.case_study, project_tags.frontend]);
+const youtubeData = new projectClass('youtubeData', 'Youtube Data Visualization', [project_tags.data_visualization, project_tags.frontend]);
 
-const seagate = new projectClass('seagate', 'Lyve Pilot', [project_tags.case_study, project_tags.frontend, project_tags.backend, project_tags.work_experience]);
+const seagate = new projectClass('seagate', 'Lyve Pilot', [project_tags.frontend, project_tags.backend, project_tags.work_experience]);
 
 export { 
     storyglow,

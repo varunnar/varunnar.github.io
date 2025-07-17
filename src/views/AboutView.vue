@@ -1,6 +1,6 @@
 <template>
-  <h1>Who is Varun Narayanswamy?</h1>
   <div class="paragraph">
+    <h1>Who is Varun Narayanswamy?</h1>
     <div class="grid_2fr_1fr">
       <slideshow 
         style="width: 100%; margin: auto; max-height: 800px;"
@@ -18,9 +18,7 @@
         <p class="general_info"> Hi there! My name is Varun Narayanswamy. I am a software engineer with 3+ years of fullstack engineering and a recent graduate of the University of Washington's Master's for Human Computer Interaction and Design. I am born and raised in Boulder, Colorado and love spending time in the mountains, hanging with friends, playing video games, and making bad jokes. </p>
         <div></div>
       </div>
-  </div>
-  </div>
-  <div style="text-align: left; width: 90%; margin: auto;">
+    </div>
     <h2>What am I interested in right now?</h2>
     <div class="grid_3fr_1fr" style="margin-bottom: 40px; width: 100%;">
       <reflection-item
@@ -34,7 +32,7 @@
         textColor="#014a39"
       ></reflection-item> 
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -46,7 +44,7 @@ export default {
   components: {ReflectionItem},
   data() {
     return {
-      mainImages: ["/assets/seattle.png", "/assets/SiblingPhoto.png","/assets/kittens.jpeg"],
+      mainImages: ["/assets/seattle.png", "/assets/SiblingPhoto.png","/assets/kittens.png"],
       enjoymentItems: [{
         title: 'Favorite Hike',
         description: 'Green Mountain',

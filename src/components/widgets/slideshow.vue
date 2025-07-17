@@ -5,14 +5,14 @@
       <div v-if="(imagePaths && imagePaths.length > 0) || (htmlUrls && htmlUrls.length > 0)" class="image-container">
         <transition :name="transitionName" mode="out-in">
           <div v-if="updateImage" class="slideshow_container" :key="imagePaths[currentIndex]" :style="`background-color: ${backgroundColor};`">
-            <div class="fullscreen-button" @click="openModal" :style="`color: ${textColor};`">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
-              </svg>
-            </div>
             <div :class="textLocation">
               <div>
-                <img v-if="imagePaths && imagePaths.length > 0" :src="imagePaths[currentIndex]" alt="Slideshow Image" class="slideshow-image" :key="imagePaths[currentIndex]" @click="openModal" style="margin: auto;"/>
+                <CustomImage v-if="imagePaths && imagePaths.length > 0"
+                  :src="imagePaths[currentIndex]"
+                  :alt="headerArray ? headerArray[currentIndex] : 'Slideshow Image'"
+                  width="100%"
+                  :fullscreenEnabled="true"
+                />
                 <div v-if="htmlUrls && htmlUrls.length > 0" v-html="htmlContent" :key="htmlUrls[currentIndex]"></div>
               </div>
               <div class="slideshow_text">
@@ -27,33 +27,15 @@
         No images available.
       </div>
  
-      <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal" >
-        <div class="modal-content" :style="`background-color: ${backgroundColor};`">
-          <div class="modal_relative_obj">
-            <div class="flex_container_for_sizing">
-            <div class="modal_image_container" :style="`background-image: url(${imagePaths[currentIndex]})` " alt="Full-Screen Image">
-              <!-- <img :src="imagePaths[currentIndex]" alt="Full-Screen Image" class="modal-image"/> -->
-            </div>
-            <div class="modal_text">
-              <h3 v-if="headerArray" v-text="headerArray[currentIndex]" :style="`color: ${textColor}`"></h3>
-              <div v-if="bodyArray" v-text="bodyArray[currentIndex]" :style="`color: ${textColor}`"></div>
-            </div>
-          </div>
-            <div :class="'controls ' + controlLocation" v-if="displayControlObject()">
-              <div class="button_custom" @click="clickPrev" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>&larr;</b></div>   
-              <!-- &larr; -->
-              <!-- &rarr; -->
-              <div class="button_custom" v-if="autoPlay" @click="handlePauseClick" :style="`background-color: ${buttonColor }; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>{{ playPauseIcon }}</b></div>
-              <div class="button_custom" @click="clickNext" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>&rarr;</b></div>
-            </div>
-          </div>
-        </div>
-      </div>
       <transition :name="transitionName" mode="out-in">
         <div :class="'controls ' + controlLocation" v-if="displayControlObject()">
-          <div class="button_custom" @click="clickPrev" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>&larr;</b></div>   
+          <div class="button_custom" @click="clickPrev" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`">
+            <div class="arrow-left"></div>
+          </div>   
           <div class="button_custom" v-if="autoPlay" @click="handlePauseClick" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>{{ playPauseIcon }}</b></div>
-          <div class="button_custom" @click="clickNext" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`"><b>&rarr;</b></div>
+          <div class="button_custom" @click="clickNext" :style="`background-color: ${buttonColor}; color: ${buttonAccentColor}; box-shadow: 0px 1px 1px ${buttonAccentColor}`">
+            <div class="arrow-right"></div>
+          </div>
         </div>
     </transition>
     </div>
@@ -379,14 +361,14 @@
     margin: 0 auto;
   }
   .fade-enter-active, .fade-leave-active {
-    transition: opacity 1s ease;
+    transition: opacity 0.6s ease-in-out;
   }
   .fade-enter, .fade-leave-to /* .fade-leave-active in versions <2.1.8 */ {
     opacity: 0;
   }
 
   .fade-faster-enter-active, .fade-faster-leave-active {
-    transition: opacity .5s ease;
+    transition: opacity 0.3s ease-in-out;
   }
   .fade-faster-enter, .fade-faster-leave-to /* .fade-leave-active in versions <2.1.8 */ {
     opacity: 0;
@@ -399,6 +381,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 8px solid currentColor;
+  }
+
+  .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 8px solid currentColor;
   }
   
   .slideshow-image {
@@ -480,76 +478,7 @@
     margin: 0 5px;
   }
 
-  .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  display: flex;
-  flex-direction: column;   
-  height: 90vh;
-  width: 90vw;
-  max-height: 100%;
-  max-width: 90vw;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #fff; /* or your `backgroundColor` variable */
-  box-sizing: border-box;
-}
-
-.modal_relative_obj {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-.flex_container_for_sizing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  overflow: hidden;
-}
-
-.modal_image_container {
-  flex: 1;
-  max-height: 100%;
-  width: 100%;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
-}
-
-.modal-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Prevents overflow by maintaining aspect ratio */
-}
-
-.modal_text {
-  flex-shrink: 0;
-  margin-top: 10px;
-  overflow-y: auto; /* Allows text scroll if too long */
-  max-height: 50%; /* Prevents text from taking too much space */
-  text-align: left;
-}
-
-.fullscreen-button {
+  .fullscreen-button {
   position: absolute;
   top: 10px;
   right: 10px;
